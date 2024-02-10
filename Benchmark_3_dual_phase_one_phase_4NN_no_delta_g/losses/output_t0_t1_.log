@@ -1,0 +1,2116 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pyDOE in /home/selfetni/.local/lib/python3.10/site-packages (0.3.8)
+Requirement already satisfied: numpy in /home/selfetni/.local/lib/python3.10/site-packages (from pyDOE) (1.24.1)
+Requirement already satisfied: scipy in /home/selfetni/.local/lib/python3.10/site-packages (from pyDOE) (1.11.3)
+2024-01-10 17:50:58.163543: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-01-10 17:50:58.798483: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-01-10 17:51:01.026711: E tensorflow/compiler/xla/stream_executor/cuda/cuda_driver.cc:268] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2024-01-10 17:51:01.026759: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:168] retrieving CUDA diagnostic information for host: WS8692.zit.bam.de
+2024-01-10 17:51:01.026772: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:175] hostname: WS8692.zit.bam.de
+2024-01-10 17:51:01.026877: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:199] libcuda reported version is: 535.129.3
+2024-01-10 17:51:01.026906: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:203] kernel reported version is: 535.129.3
+2024-01-10 17:51:01.026917: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:309] kernel version seems to match DSO: 535.129.3
+X_f_train: (40000, 3), X_ini_all: (4225, 3), X_lb_train: (800, 3), X_ub_train: (800, 3), X_ltb_train: (800, 3), X_rtb_train: (800, 3), phi_ini_all: (4225, 1)
+
+ ! Initilization of all workers pinns 
+
+File 'intercations_file.txt' has been successfully removed.
+debug:epoch, flag_reduce_batches, flag:  0 0 0
+
+ -------------------------------------------------------------
+  -----  Epoch: 0 <==> N_batches: 4, self.pinns: 4    -------
+  ----- time domain:  t_min: 0.00000, t_max: 0.04898
+--------------------------------------------------------------
+
+
+ !!! no tranfer of learning  !!! 
+
+shapes:  (4225, 3) (4225, 1)
+quarters_max_indices: 0000, 0100, 0200, 0300
+dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
+                           'limits': ListWrapper([0.0, 4.642857142857142, 0.0, 4.642857142857142])}],
+             'quarter2': [{'idx_pinn': '0100',
+                           'limits': ListWrapper([0.0, 4.642857142857142, 4.642857142857142, 9.285714285714285])}],
+             'quarter3': [{'idx_pinn': '0200',
+                           'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
+             'quarter4': [{'idx_pinn': '0300',
+                           'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
+findfont: Font family ['STIXGeneral'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXGeneral'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXGeneral'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXNonUnicode'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXNonUnicode'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXNonUnicode'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeOneSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeTwoSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeThreeSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeFourSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeFiveSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['cmtt10'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['cmb10'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['cmss10'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['DejaVu Sans Display'] not found. Falling back to DejaVu Sans.
+ 
+ !!! updating Collocation points at epoch  0 !!! 
+
+WARNING:tensorflow:Calling GradientTape.gradient on a persistent tape inside its context is significantly less efficient than calling it outside the context (it causes the gradient ops to be recorded on the tape, leading to increased CPU and memory usage). Only call GradientTape.gradient inside the context if you actually want to trace the gradient in order to compute higher order derivatives.
+WARNING:tensorflow:Calling GradientTape.gradient on a persistent tape inside its context is significantly less efficient than calling it outside the context (it causes the gradient ops to be recorded on the tape, leading to increased CPU and memory usage). Only call GradientTape.gradient inside the context if you actually want to trace the gradient in order to compute higher order derivatives.
+WARNING:tensorflow:Calling GradientTape.gradient on a persistent tape inside its context is significantly less efficient than calling it outside the context (it causes the gradient ops to be recorded on the tape, leading to increased CPU and memory usage). Only call GradientTape.gradient inside the context if you actually want to trace the gradient in order to compute higher order derivatives.
+WARNING:tensorflow:Calling GradientTape.gradient on a persistent tape inside its context is significantly less efficient than calling it outside the context (it causes the gradient ops to be recorded on the tape, leading to increased CPU and memory usage). Only call GradientTape.gradient inside the context if you actually want to trace the gradient in order to compute higher order derivatives.
+WARNING:tensorflow:Calling GradientTape.gradient on a persistent tape inside its context is significantly less efficient than calling it outside the context (it causes the gradient ops to be recorded on the tape, leading to increased CPU and memory usage). Only call GradientTape.gradient inside the context if you actually want to trace the gradient in order to compute higher order derivatives.
+
+==> Epoch: 0, Mean_loss of pinns: 1.657e-01, loss_BC: 0.000e+00, loss_IC: 5.952e-02, loss_f: 1.061e-01
+ => minimum loss: 6.487e-02, corresponding pinn/batch index: 0200
+ => maximum loss: 2.978e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+
+==> Epoch: 10, Mean_loss of pinns: 1.575e-01, loss_BC: 0.000e+00, loss_IC: 5.951e-02, loss_f: 9.797e-02
+ => minimum loss: 6.424e-02, corresponding pinn/batch index: 0200
+ => maximum loss: 2.819e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 20, Mean_loss of pinns: 1.498e-01, loss_BC: 0.000e+00, loss_IC: 5.949e-02, loss_f: 9.032e-02
+ => minimum loss: 6.402e-02, corresponding pinn/batch index: 0200
+ => maximum loss: 2.667e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 30, Mean_loss of pinns: 1.426e-01, loss_BC: 0.000e+00, loss_IC: 5.947e-02, loss_f: 8.316e-02
+ => minimum loss: 6.390e-02, corresponding pinn/batch index: 0200
+ => maximum loss: 2.521e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 40, Mean_loss of pinns: 1.359e-01, loss_BC: 0.000e+00, loss_IC: 5.946e-02, loss_f: 7.646e-02
+ => minimum loss: 6.376e-02, corresponding pinn/batch index: 0200
+ => maximum loss: 2.383e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  49
+
+ ! Scipy iteration number:  1
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 6.095e-02, loss_BC: 0.000e+00, loss_IC: 6.047e-02,loss_f: 4.858e-04
+pinn: 0200, Iter: 100, total_loss: 6.007e-02, loss_BC: 0.000e+00, loss_IC: 5.985e-02,loss_f: 2.120e-04
+pinn: 0000, Iter: 100, total_loss: 6.269e-02, loss_BC: 0.000e+00, loss_IC: 6.231e-02,loss_f: 3.811e-04
+pinn: 0100, Iter: 100, total_loss: 5.301e-02, loss_BC: 0.000e+00, loss_IC: 5.281e-02,loss_f: 2.081e-04
+pinn: 0300, Iter: 200, total_loss: 6.094e-02, loss_BC: 0.000e+00, loss_IC: 6.033e-02,loss_f: 6.044e-04
+pinn: 0200, Iter: 200, total_loss: 5.991e-02, loss_BC: 0.000e+00, loss_IC: 5.942e-02,loss_f: 4.977e-04
+pinn: 0000, Iter: 200, total_loss: 6.261e-02, loss_BC: 0.000e+00, loss_IC: 6.199e-02,loss_f: 6.144e-04
+pinn: 0100, Iter: 200, total_loss: 5.279e-02, loss_BC: 0.000e+00, loss_IC: 5.227e-02,loss_f: 5.222e-04
+pinn: 0300, Iter: 300, total_loss: 6.092e-02, loss_BC: 0.000e+00, loss_IC: 6.035e-02,loss_f: 5.750e-04
+pinn: 0200, Iter: 300, total_loss: 5.991e-02, loss_BC: 0.000e+00, loss_IC: 5.941e-02,loss_f: 5.028e-04
+pinn: 0100, Iter: 300, total_loss: 5.278e-02, loss_BC: 0.000e+00, loss_IC: 5.227e-02,loss_f: 5.122e-04
+pinn: 0000, Iter: 300, total_loss: 6.260e-02, loss_BC: 0.000e+00, loss_IC: 6.199e-02,loss_f: 6.108e-04
+pinn: 0300, Iter: 400, total_loss: 6.090e-02, loss_BC: 0.000e+00, loss_IC: 6.027e-02,loss_f: 6.367e-04
+pinn: 0200, Iter: 400, total_loss: 5.991e-02, loss_BC: 0.000e+00, loss_IC: 5.940e-02,loss_f: 5.050e-04
+pinn: 0100, Iter: 400, total_loss: 5.278e-02, loss_BC: 0.000e+00, loss_IC: 5.224e-02,loss_f: 5.445e-04
+pinn: 0000, Iter: 400, total_loss: 6.258e-02, loss_BC: 0.000e+00, loss_IC: 6.202e-02,loss_f: 5.656e-04
+pinn: 0300, Iter: 500, total_loss: 6.090e-02, loss_BC: 0.000e+00, loss_IC: 6.029e-02,loss_f: 6.132e-04
+pinn: 0200, Iter: 500, total_loss: 5.990e-02, loss_BC: 0.000e+00, loss_IC: 5.940e-02,loss_f: 4.945e-04
+pinn: 0100, Iter: 500, total_loss: 5.277e-02, loss_BC: 0.000e+00, loss_IC: 5.224e-02,loss_f: 5.321e-04
+pinn: 0000, Iter: 500, total_loss: 6.256e-02, loss_BC: 0.000e+00, loss_IC: 6.200e-02,loss_f: 5.659e-04
+pinn: 0300, Iter: 600, total_loss: 6.089e-02, loss_BC: 0.000e+00, loss_IC: 6.025e-02,loss_f: 6.427e-04
+pinn: 0200, Iter: 600, total_loss: 5.988e-02, loss_BC: 0.000e+00, loss_IC: 5.939e-02,loss_f: 4.840e-04
+pinn: 0100, Iter: 600, total_loss: 5.277e-02, loss_BC: 0.000e+00, loss_IC: 5.226e-02,loss_f: 5.078e-04
+pinn: 0000, Iter: 600, total_loss: 6.255e-02, loss_BC: 0.000e+00, loss_IC: 6.193e-02,loss_f: 6.177e-04
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 49, Mean_loss of pinns: 5.902e-02, loss_BC: 0.000e+00, loss_IC: 5.846e-02, loss_f: 5.622e-04
+ => minimum loss: 5.277e-02, corresponding pinn index: 0100
+ => maximum loss: 6.255e-02, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  50 !!! 
+
+
+==> Epoch: 50, Mean_loss of pinns: 5.903e-02, loss_BC: 0.000e+00, loss_IC: 5.846e-02, loss_f: 5.754e-04
+ => minimum loss: 5.277e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.257e-02, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 60, Mean_loss of pinns: 5.903e-02, loss_BC: 0.000e+00, loss_IC: 5.846e-02, loss_f: 5.742e-04
+ => minimum loss: 5.277e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.257e-02, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 70, Mean_loss of pinns: 5.903e-02, loss_BC: 0.000e+00, loss_IC: 5.846e-02, loss_f: 5.740e-04
+ => minimum loss: 5.277e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.257e-02, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 80, Mean_loss of pinns: 5.903e-02, loss_BC: 0.000e+00, loss_IC: 5.846e-02, loss_f: 5.738e-04
+ => minimum loss: 5.277e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.257e-02, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 90, Mean_loss of pinns: 5.903e-02, loss_BC: 0.000e+00, loss_IC: 5.846e-02, loss_f: 5.737e-04
+ => minimum loss: 5.277e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.257e-02, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  99
+
+ ! Scipy iteration number:  2
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 6.090e-02, loss_BC: 0.000e+00, loss_IC: 6.029e-02,loss_f: 6.078e-04
+pinn: 0100, Iter: 100, total_loss: 5.276e-02, loss_BC: 0.000e+00, loss_IC: 5.223e-02,loss_f: 5.279e-04
+pinn: 0200, Iter: 100, total_loss: 5.987e-02, loss_BC: 0.000e+00, loss_IC: 5.927e-02,loss_f: 6.014e-04
+pinn: 0000, Iter: 100, total_loss: 6.255e-02, loss_BC: 0.000e+00, loss_IC: 6.187e-02,loss_f: 6.817e-04
+pinn: 0300, Iter: 200, total_loss: 6.081e-02, loss_BC: 0.000e+00, loss_IC: 6.014e-02,loss_f: 6.715e-04
+pinn: 0100, Iter: 200, total_loss: 5.266e-02, loss_BC: 0.000e+00, loss_IC: 5.203e-02,loss_f: 6.319e-04
+pinn: 0200, Iter: 200, total_loss: 5.973e-02, loss_BC: 0.000e+00, loss_IC: 5.903e-02,loss_f: 6.974e-04
+pinn: 0000, Iter: 200, total_loss: 6.237e-02, loss_BC: 0.000e+00, loss_IC: 6.178e-02,loss_f: 5.968e-04
+pinn: 0300, Iter: 300, total_loss: 6.079e-02, loss_BC: 0.000e+00, loss_IC: 6.012e-02,loss_f: 6.739e-04
+pinn: 0100, Iter: 300, total_loss: 5.100e-02, loss_BC: 0.000e+00, loss_IC: 5.000e-02,loss_f: 1.009e-03
+pinn: 0200, Iter: 300, total_loss: 5.960e-02, loss_BC: 0.000e+00, loss_IC: 5.868e-02,loss_f: 9.228e-04
+pinn: 0000, Iter: 300, total_loss: 6.167e-02, loss_BC: 0.000e+00, loss_IC: 6.104e-02,loss_f: 6.353e-04
+pinn: 0300, Iter: 400, total_loss: 6.075e-02, loss_BC: 0.000e+00, loss_IC: 6.013e-02,loss_f: 6.179e-04
+pinn: 0100, Iter: 400, total_loss: 4.499e-02, loss_BC: 0.000e+00, loss_IC: 4.197e-02,loss_f: 3.028e-03
+pinn: 0200, Iter: 400, total_loss: 5.416e-02, loss_BC: 0.000e+00, loss_IC: 5.110e-02,loss_f: 3.065e-03
+pinn: 0000, Iter: 400, total_loss: 6.074e-02, loss_BC: 0.000e+00, loss_IC: 6.022e-02,loss_f: 5.180e-04
+pinn: 0300, Iter: 500, total_loss: 6.069e-02, loss_BC: 0.000e+00, loss_IC: 6.004e-02,loss_f: 6.426e-04
+pinn: 0100, Iter: 500, total_loss: 4.213e-02, loss_BC: 0.000e+00, loss_IC: 4.062e-02,loss_f: 1.511e-03
+pinn: 0200, Iter: 500, total_loss: 5.283e-02, loss_BC: 0.000e+00, loss_IC: 5.145e-02,loss_f: 1.371e-03
+pinn: 0000, Iter: 500, total_loss: 5.958e-02, loss_BC: 0.000e+00, loss_IC: 5.785e-02,loss_f: 1.735e-03
+pinn: 0300, Iter: 600, total_loss: 6.063e-02, loss_BC: 0.000e+00, loss_IC: 5.983e-02,loss_f: 7.927e-04
+pinn: 0100, Iter: 600, total_loss: 3.870e-02, loss_BC: 0.000e+00, loss_IC: 3.674e-02,loss_f: 1.967e-03
+pinn: 0200, Iter: 600, total_loss: 5.207e-02, loss_BC: 0.000e+00, loss_IC: 4.962e-02,loss_f: 2.452e-03
+pinn: 0000, Iter: 600, total_loss: 5.799e-02, loss_BC: 0.000e+00, loss_IC: 5.612e-02,loss_f: 1.875e-03
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 99, Mean_loss of pinns: 5.188e-02, loss_BC: 0.000e+00, loss_IC: 4.987e-02, loss_f: 2.008e-03
+ => minimum loss: 3.781e-02, corresponding pinn index: 0100
+ => maximum loss: 6.049e-02, corresponding pinn  index: 0300
+ 
+ !!! updating Collocation points at epoch  100 !!! 
+
+
+==> Epoch: 100, Mean_loss of pinns: 5.207e-02, loss_BC: 0.000e+00, loss_IC: 4.987e-02, loss_f: 2.198e-03
+ => minimum loss: 3.812e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.051e-02, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 110, Mean_loss of pinns: 5.206e-02, loss_BC: 0.000e+00, loss_IC: 4.988e-02, loss_f: 2.179e-03
+ => minimum loss: 3.811e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.051e-02, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 120, Mean_loss of pinns: 5.205e-02, loss_BC: 0.000e+00, loss_IC: 4.988e-02, loss_f: 2.172e-03
+ => minimum loss: 3.809e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.051e-02, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 130, Mean_loss of pinns: 5.204e-02, loss_BC: 0.000e+00, loss_IC: 4.988e-02, loss_f: 2.168e-03
+ => minimum loss: 3.807e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.051e-02, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 140, Mean_loss of pinns: 5.204e-02, loss_BC: 0.000e+00, loss_IC: 4.987e-02, loss_f: 2.166e-03
+ => minimum loss: 3.806e-02, corresponding pinn/batch index: 0100
+ => maximum loss: 6.051e-02, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  149
+
+ ! Scipy iteration number:  3
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 5.954e-02, loss_BC: 0.000e+00, loss_IC: 5.857e-02,loss_f: 9.735e-04
+pinn: 0100, Iter: 100, total_loss: 3.488e-02, loss_BC: 0.000e+00, loss_IC: 3.254e-02,loss_f: 2.340e-03
+pinn: 0200, Iter: 100, total_loss: 5.183e-02, loss_BC: 0.000e+00, loss_IC: 4.975e-02,loss_f: 2.072e-03
+pinn: 0000, Iter: 100, total_loss: 5.346e-02, loss_BC: 0.000e+00, loss_IC: 5.052e-02,loss_f: 2.940e-03
+pinn: 0300, Iter: 200, total_loss: 5.861e-02, loss_BC: 0.000e+00, loss_IC: 5.723e-02,loss_f: 1.381e-03
+pinn: 0100, Iter: 200, total_loss: 2.916e-02, loss_BC: 0.000e+00, loss_IC: 2.449e-02,loss_f: 4.670e-03
+pinn: 0000, Iter: 200, total_loss: 5.446e-02, loss_BC: 0.000e+00, loss_IC: 4.787e-02,loss_f: 6.592e-03
+pinn: 0200, Iter: 200, total_loss: 5.116e-02, loss_BC: 0.000e+00, loss_IC: 4.950e-02,loss_f: 1.664e-03
+pinn: 0300, Iter: 300, total_loss: 5.427e-02, loss_BC: 0.000e+00, loss_IC: 5.121e-02,loss_f: 3.066e-03
+pinn: 0100, Iter: 300, total_loss: 2.121e-02, loss_BC: 0.000e+00, loss_IC: 1.717e-02,loss_f: 4.039e-03
+pinn: 0000, Iter: 300, total_loss: 4.807e-02, loss_BC: 0.000e+00, loss_IC: 4.571e-02,loss_f: 2.355e-03
+pinn: 0200, Iter: 300, total_loss: 5.063e-02, loss_BC: 0.000e+00, loss_IC: 4.863e-02,loss_f: 2.001e-03
+pinn: 0300, Iter: 400, total_loss: 5.126e-02, loss_BC: 0.000e+00, loss_IC: 4.856e-02,loss_f: 2.698e-03
+pinn: 0100, Iter: 400, total_loss: 1.474e-02, loss_BC: 0.000e+00, loss_IC: 1.105e-02,loss_f: 3.689e-03
+pinn: 0000, Iter: 400, total_loss: 4.476e-02, loss_BC: 0.000e+00, loss_IC: 4.184e-02,loss_f: 2.919e-03
+pinn: 0200, Iter: 400, total_loss: 4.978e-02, loss_BC: 0.000e+00, loss_IC: 4.752e-02,loss_f: 2.252e-03
+pinn: 0100, Iter: 500, total_loss: 9.130e-03, loss_BC: 0.000e+00, loss_IC: 6.189e-03,loss_f: 2.941e-03
+pinn: 0300, Iter: 500, total_loss: 4.819e-02, loss_BC: 0.000e+00, loss_IC: 4.453e-02,loss_f: 3.662e-03
+pinn: 0000, Iter: 500, total_loss: 4.088e-02, loss_BC: 0.000e+00, loss_IC: 3.669e-02,loss_f: 4.191e-03
+pinn: 0200, Iter: 500, total_loss: 4.933e-02, loss_BC: 0.000e+00, loss_IC: 4.714e-02,loss_f: 2.193e-03
+pinn: 0100, Iter: 600, total_loss: 6.014e-03, loss_BC: 0.000e+00, loss_IC: 4.101e-03,loss_f: 1.913e-03
+pinn: 0300, Iter: 600, total_loss: 4.331e-02, loss_BC: 0.000e+00, loss_IC: 3.664e-02,loss_f: 6.672e-03
+pinn: 0000, Iter: 600, total_loss: 3.628e-02, loss_BC: 0.000e+00, loss_IC: 3.103e-02,loss_f: 5.248e-03
+pinn: 0200, Iter: 600, total_loss: 4.908e-02, loss_BC: 0.000e+00, loss_IC: 4.714e-02,loss_f: 1.933e-03
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 149, Mean_loss of pinns: 3.201e-02, loss_BC: 0.000e+00, loss_IC: 2.816e-02, loss_f: 3.858e-03
+ => minimum loss: 4.773e-03, corresponding pinn index: 0100
+ => maximum loss: 4.863e-02, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  150 !!! 
+
+
+==> Epoch: 150, Mean_loss of pinns: 3.185e-02, loss_BC: 0.000e+00, loss_IC: 2.816e-02, loss_f: 3.696e-03
+ => minimum loss: 4.688e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.865e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 160, Mean_loss of pinns: 3.184e-02, loss_BC: 0.000e+00, loss_IC: 2.818e-02, loss_f: 3.664e-03
+ => minimum loss: 4.667e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.867e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 170, Mean_loss of pinns: 3.182e-02, loss_BC: 0.000e+00, loss_IC: 2.818e-02, loss_f: 3.641e-03
+ => minimum loss: 4.639e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.865e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 180, Mean_loss of pinns: 3.180e-02, loss_BC: 0.000e+00, loss_IC: 2.817e-02, loss_f: 3.633e-03
+ => minimum loss: 4.619e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.865e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 190, Mean_loss of pinns: 3.179e-02, loss_BC: 0.000e+00, loss_IC: 2.815e-02, loss_f: 3.636e-03
+ => minimum loss: 4.606e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.863e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  199
+
+ ! Scipy iteration number:  4
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0000, Iter: 100, total_loss: 3.153e-02, loss_BC: 0.000e+00, loss_IC: 2.643e-02,loss_f: 5.096e-03
+pinn: 0200, Iter: 100, total_loss: 4.809e-02, loss_BC: 0.000e+00, loss_IC: 4.658e-02,loss_f: 1.519e-03
+pinn: 0300, Iter: 100, total_loss: 3.615e-02, loss_BC: 0.000e+00, loss_IC: 3.096e-02,loss_f: 5.192e-03
+pinn: 0100, Iter: 100, total_loss: 3.785e-03, loss_BC: 0.000e+00, loss_IC: 2.962e-03,loss_f: 8.228e-04
+pinn: 0200, Iter: 200, total_loss: 4.769e-02, loss_BC: 0.000e+00, loss_IC: 4.593e-02,loss_f: 1.754e-03
+pinn: 0000, Iter: 200, total_loss: 2.901e-02, loss_BC: 0.000e+00, loss_IC: 2.463e-02,loss_f: 4.372e-03
+pinn: 0100, Iter: 200, total_loss: 2.699e-03, loss_BC: 0.000e+00, loss_IC: 2.124e-03,loss_f: 5.753e-04
+pinn: 0300, Iter: 200, total_loss: 3.241e-02, loss_BC: 0.000e+00, loss_IC: 2.732e-02,loss_f: 5.090e-03
+pinn: 0200, Iter: 300, total_loss: 4.666e-02, loss_BC: 0.000e+00, loss_IC: 4.508e-02,loss_f: 1.571e-03
+pinn: 0000, Iter: 300, total_loss: 2.683e-02, loss_BC: 0.000e+00, loss_IC: 2.127e-02,loss_f: 5.562e-03
+pinn: 0100, Iter: 300, total_loss: 2.018e-03, loss_BC: 0.000e+00, loss_IC: 1.493e-03,loss_f: 5.245e-04
+pinn: 0300, Iter: 300, total_loss: 2.839e-02, loss_BC: 0.000e+00, loss_IC: 2.318e-02,loss_f: 5.202e-03
+pinn: 0200, Iter: 400, total_loss: 4.635e-02, loss_BC: 0.000e+00, loss_IC: 4.397e-02,loss_f: 2.377e-03
+pinn: 0000, Iter: 400, total_loss: 2.467e-02, loss_BC: 0.000e+00, loss_IC: 1.940e-02,loss_f: 5.270e-03
+pinn: 0300, Iter: 400, total_loss: 2.381e-02, loss_BC: 0.000e+00, loss_IC: 1.831e-02,loss_f: 5.504e-03
+pinn: 0100, Iter: 400, total_loss: 1.475e-03, loss_BC: 0.000e+00, loss_IC: 9.652e-04,loss_f: 5.094e-04
+pinn: 0200, Iter: 500, total_loss: 4.587e-02, loss_BC: 0.000e+00, loss_IC: 4.375e-02,loss_f: 2.124e-03
+pinn: 0000, Iter: 500, total_loss: 2.135e-02, loss_BC: 0.000e+00, loss_IC: 1.585e-02,loss_f: 5.503e-03
+pinn: 0300, Iter: 500, total_loss: 1.731e-02, loss_BC: 0.000e+00, loss_IC: 1.065e-02,loss_f: 6.661e-03
+pinn: 0100, Iter: 500, total_loss: 1.164e-03, loss_BC: 0.000e+00, loss_IC: 7.262e-04,loss_f: 4.381e-04
+pinn: 0200, Iter: 600, total_loss: 4.499e-02, loss_BC: 0.000e+00, loss_IC: 4.212e-02,loss_f: 2.866e-03
+pinn: 0000, Iter: 600, total_loss: 1.851e-02, loss_BC: 0.000e+00, loss_IC: 1.300e-02,loss_f: 5.517e-03
+pinn: 0300, Iter: 600, total_loss: 9.305e-03, loss_BC: 0.000e+00, loss_IC: 6.117e-03,loss_f: 3.188e-03
+pinn: 0100, Iter: 600, total_loss: 8.577e-04, loss_BC: 0.000e+00, loss_IC: 5.197e-04,loss_f: 3.380e-04
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 199, Mean_loss of pinns: 1.690e-02, loss_BC: 0.000e+00, loss_IC: 1.441e-02, loss_f: 2.486e-03
+ => minimum loss: 7.219e-04, corresponding pinn index: 0100
+ => maximum loss: 4.476e-02, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  200 !!! 
+
+
+==> Epoch: 200, Mean_loss of pinns: 1.790e-02, loss_BC: 0.000e+00, loss_IC: 1.441e-02, loss_f: 3.491e-03
+ => minimum loss: 1.327e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.520e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 210, Mean_loss of pinns: 1.778e-02, loss_BC: 0.000e+00, loss_IC: 1.449e-02, loss_f: 3.291e-03
+ => minimum loss: 1.302e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.519e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 220, Mean_loss of pinns: 1.771e-02, loss_BC: 0.000e+00, loss_IC: 1.459e-02, loss_f: 3.116e-03
+ => minimum loss: 1.277e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.518e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 230, Mean_loss of pinns: 1.767e-02, loss_BC: 0.000e+00, loss_IC: 1.464e-02, loss_f: 3.026e-03
+ => minimum loss: 1.262e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.517e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 240, Mean_loss of pinns: 1.765e-02, loss_BC: 0.000e+00, loss_IC: 1.468e-02, loss_f: 2.974e-03
+ => minimum loss: 1.252e-03, corresponding pinn/batch index: 0100
+ => maximum loss: 4.516e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  249
+
+ ! Scipy iteration number:  5
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 7.499e-03, loss_BC: 0.000e+00, loss_IC: 5.240e-03,loss_f: 2.258e-03
+pinn: 0100, Iter: 100, total_loss: 9.318e-04, loss_BC: 0.000e+00, loss_IC: 4.715e-04,loss_f: 4.603e-04
+pinn: 0200, Iter: 100, total_loss: 4.454e-02, loss_BC: 0.000e+00, loss_IC: 4.202e-02,loss_f: 2.513e-03
+pinn: 0000, Iter: 100, total_loss: 1.306e-02, loss_BC: 0.000e+00, loss_IC: 9.839e-03,loss_f: 3.225e-03
+pinn: 0300, Iter: 200, total_loss: 5.697e-03, loss_BC: 0.000e+00, loss_IC: 4.062e-03,loss_f: 1.635e-03
+pinn: 0200, Iter: 200, total_loss: 4.382e-02, loss_BC: 0.000e+00, loss_IC: 4.176e-02,loss_f: 2.058e-03
+pinn: 0000, Iter: 200, total_loss: 1.108e-02, loss_BC: 0.000e+00, loss_IC: 7.801e-03,loss_f: 3.279e-03
+pinn: 0100, Iter: 200, total_loss: 7.783e-04, loss_BC: 0.000e+00, loss_IC: 4.902e-04,loss_f: 2.881e-04
+pinn: 0300, Iter: 300, total_loss: 4.232e-03, loss_BC: 0.000e+00, loss_IC: 2.724e-03,loss_f: 1.508e-03
+pinn: 0000, Iter: 300, total_loss: 9.165e-03, loss_BC: 0.000e+00, loss_IC: 5.994e-03,loss_f: 3.171e-03
+pinn: 0100, Iter: 300, total_loss: 6.763e-04, loss_BC: 0.000e+00, loss_IC: 4.778e-04,loss_f: 1.985e-04
+pinn: 0200, Iter: 300, total_loss: 4.241e-02, loss_BC: 0.000e+00, loss_IC: 4.042e-02,loss_f: 1.987e-03
+pinn: 0300, Iter: 400, total_loss: 2.820e-03, loss_BC: 0.000e+00, loss_IC: 1.708e-03,loss_f: 1.112e-03
+pinn: 0100, Iter: 400, total_loss: 6.101e-04, loss_BC: 0.000e+00, loss_IC: 4.743e-04,loss_f: 1.358e-04
+pinn: 0000, Iter: 400, total_loss: 6.830e-03, loss_BC: 0.000e+00, loss_IC: 4.470e-03,loss_f: 2.359e-03
+pinn: 0200, Iter: 400, total_loss: 4.060e-02, loss_BC: 0.000e+00, loss_IC: 3.804e-02,loss_f: 2.560e-03
+pinn: 0300, Iter: 500, total_loss: 2.224e-03, loss_BC: 0.000e+00, loss_IC: 1.364e-03,loss_f: 8.593e-04
+pinn: 0000, Iter: 500, total_loss: 5.025e-03, loss_BC: 0.000e+00, loss_IC: 3.331e-03,loss_f: 1.694e-03
+pinn: 0100, Iter: 500, total_loss: 5.574e-04, loss_BC: 0.000e+00, loss_IC: 4.391e-04,loss_f: 1.182e-04
+pinn: 0200, Iter: 500, total_loss: 3.990e-02, loss_BC: 0.000e+00, loss_IC: 3.722e-02,loss_f: 2.676e-03
+pinn: 0300, Iter: 600, total_loss: 1.741e-03, loss_BC: 0.000e+00, loss_IC: 9.238e-04,loss_f: 8.168e-04
+pinn: 0000, Iter: 600, total_loss: 4.172e-03, loss_BC: 0.000e+00, loss_IC: 2.616e-03,loss_f: 1.557e-03
+pinn: 0100, Iter: 600, total_loss: 4.789e-04, loss_BC: 0.000e+00, loss_IC: 3.436e-04,loss_f: 1.353e-04
+pinn: 0200, Iter: 600, total_loss: 3.898e-02, loss_BC: 0.000e+00, loss_IC: 3.560e-02,loss_f: 3.386e-03
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 249, Mean_loss of pinns: 1.087e-02, loss_BC: 0.000e+00, loss_IC: 9.435e-03, loss_f: 1.432e-03
+ => minimum loss: 4.264e-04, corresponding pinn index: 0100
+ => maximum loss: 3.854e-02, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  250 !!! 
+
+
+==> Epoch: 250, Mean_loss of pinns: 1.085e-02, loss_BC: 0.000e+00, loss_IC: 9.435e-03, loss_f: 1.411e-03
+ => minimum loss: 4.209e-04, corresponding pinn/batch index: 0100
+ => maximum loss: 3.876e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 260, Mean_loss of pinns: 1.082e-02, loss_BC: 0.000e+00, loss_IC: 9.424e-03, loss_f: 1.401e-03
+ => minimum loss: 4.192e-04, corresponding pinn/batch index: 0100
+ => maximum loss: 3.872e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 270, Mean_loss of pinns: 1.080e-02, loss_BC: 0.000e+00, loss_IC: 9.414e-03, loss_f: 1.387e-03
+ => minimum loss: 4.168e-04, corresponding pinn/batch index: 0100
+ => maximum loss: 3.869e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 280, Mean_loss of pinns: 1.078e-02, loss_BC: 0.000e+00, loss_IC: 9.398e-03, loss_f: 1.387e-03
+ => minimum loss: 4.147e-04, corresponding pinn/batch index: 0100
+ => maximum loss: 3.867e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 290, Mean_loss of pinns: 1.077e-02, loss_BC: 0.000e+00, loss_IC: 9.392e-03, loss_f: 1.381e-03
+ => minimum loss: 4.131e-04, corresponding pinn/batch index: 0100
+ => maximum loss: 3.865e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  299
+
+ ! Scipy iteration number:  6
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0200, Iter: 100, total_loss: 3.705e-02, loss_BC: 0.000e+00, loss_IC: 3.359e-02,loss_f: 3.465e-03
+pinn: 0300, Iter: 100, total_loss: 7.877e-04, loss_BC: 0.000e+00, loss_IC: 5.359e-04,loss_f: 2.518e-04
+pinn: 0000, Iter: 100, total_loss: 2.488e-03, loss_BC: 0.000e+00, loss_IC: 1.837e-03,loss_f: 6.506e-04
+pinn: 0100, Iter: 100, total_loss: 3.514e-04, loss_BC: 0.000e+00, loss_IC: 2.746e-04,loss_f: 7.673e-05
+pinn: 0300, Iter: 200, total_loss: 6.639e-04, loss_BC: 0.000e+00, loss_IC: 4.430e-04,loss_f: 2.209e-04
+pinn: 0200, Iter: 200, total_loss: 3.541e-02, loss_BC: 0.000e+00, loss_IC: 3.089e-02,loss_f: 4.516e-03
+pinn: 0000, Iter: 200, total_loss: 2.077e-03, loss_BC: 0.000e+00, loss_IC: 1.451e-03,loss_f: 6.263e-04
+pinn: 0100, Iter: 200, total_loss: 3.261e-04, loss_BC: 0.000e+00, loss_IC: 2.593e-04,loss_f: 6.688e-05
+pinn: 0300, Iter: 300, total_loss: 5.815e-04, loss_BC: 0.000e+00, loss_IC: 3.631e-04,loss_f: 2.184e-04
+pinn: 0200, Iter: 300, total_loss: 3.368e-02, loss_BC: 0.000e+00, loss_IC: 2.609e-02,loss_f: 7.592e-03
+pinn: 0100, Iter: 300, total_loss: 2.901e-04, loss_BC: 0.000e+00, loss_IC: 2.280e-04,loss_f: 6.210e-05
+pinn: 0000, Iter: 300, total_loss: 1.806e-03, loss_BC: 0.000e+00, loss_IC: 1.249e-03,loss_f: 5.565e-04
+pinn: 0300, Iter: 400, total_loss: 4.732e-04, loss_BC: 0.000e+00, loss_IC: 2.932e-04,loss_f: 1.800e-04
+pinn: 0200, Iter: 400, total_loss: 2.937e-02, loss_BC: 0.000e+00, loss_IC: 2.475e-02,loss_f: 4.622e-03
+pinn: 0100, Iter: 400, total_loss: 2.606e-04, loss_BC: 0.000e+00, loss_IC: 1.955e-04,loss_f: 6.516e-05
+pinn: 0000, Iter: 400, total_loss: 1.535e-03, loss_BC: 0.000e+00, loss_IC: 9.772e-04,loss_f: 5.579e-04
+pinn: 0300, Iter: 500, total_loss: 3.974e-04, loss_BC: 0.000e+00, loss_IC: 2.495e-04,loss_f: 1.479e-04
+pinn: 0200, Iter: 500, total_loss: 2.790e-02, loss_BC: 0.000e+00, loss_IC: 2.444e-02,loss_f: 3.463e-03
+pinn: 0100, Iter: 500, total_loss: 2.330e-04, loss_BC: 0.000e+00, loss_IC: 1.634e-04,loss_f: 6.954e-05
+pinn: 0000, Iter: 500, total_loss: 1.266e-03, loss_BC: 0.000e+00, loss_IC: 7.558e-04,loss_f: 5.103e-04
+pinn: 0300, Iter: 600, total_loss: 3.209e-04, loss_BC: 0.000e+00, loss_IC: 2.078e-04,loss_f: 1.131e-04
+pinn: 0200, Iter: 600, total_loss: 2.661e-02, loss_BC: 0.000e+00, loss_IC: 2.255e-02,loss_f: 4.051e-03
+pinn: 0100, Iter: 600, total_loss: 2.049e-04, loss_BC: 0.000e+00, loss_IC: 1.335e-04,loss_f: 7.145e-05
+pinn: 0000, Iter: 600, total_loss: 1.014e-03, loss_BC: 0.000e+00, loss_IC: 6.162e-04,loss_f: 3.976e-04
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 299, Mean_loss of pinns: 6.714e-03, loss_BC: 0.000e+00, loss_IC: 5.761e-03, loss_f: 9.531e-04
+ => minimum loss: 1.919e-04, corresponding pinn index: 0100
+ => maximum loss: 2.555e-02, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  300 !!! 
+
+
+==> Epoch: 300, Mean_loss of pinns: 7.082e-03, loss_BC: 0.000e+00, loss_IC: 5.761e-03, loss_f: 1.321e-03
+ => minimum loss: 3.016e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.598e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 310, Mean_loss of pinns: 7.021e-03, loss_BC: 0.000e+00, loss_IC: 5.789e-03, loss_f: 1.232e-03
+ => minimum loss: 2.989e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.593e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 320, Mean_loss of pinns: 6.978e-03, loss_BC: 0.000e+00, loss_IC: 5.813e-03, loss_f: 1.165e-03
+ => minimum loss: 2.962e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.591e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 330, Mean_loss of pinns: 6.963e-03, loss_BC: 0.000e+00, loss_IC: 5.827e-03, loss_f: 1.136e-03
+ => minimum loss: 2.941e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.590e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 340, Mean_loss of pinns: 6.956e-03, loss_BC: 0.000e+00, loss_IC: 5.842e-03, loss_f: 1.115e-03
+ => minimum loss: 2.926e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.589e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  349
+
+ ! Scipy iteration number:  7
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 2.374e-04, loss_BC: 0.000e+00, loss_IC: 1.577e-04,loss_f: 7.970e-05
+pinn: 0200, Iter: 100, total_loss: 2.336e-02, loss_BC: 0.000e+00, loss_IC: 1.999e-02,loss_f: 3.370e-03
+pinn: 0100, Iter: 100, total_loss: 5.048e-04, loss_BC: 0.000e+00, loss_IC: 2.527e-04,loss_f: 2.521e-04
+pinn: 0000, Iter: 100, total_loss: 8.522e-04, loss_BC: 0.000e+00, loss_IC: 5.741e-04,loss_f: 2.781e-04
+pinn: 0300, Iter: 200, total_loss: 1.883e-04, loss_BC: 0.000e+00, loss_IC: 1.441e-04,loss_f: 4.419e-05
+pinn: 0200, Iter: 200, total_loss: 2.137e-02, loss_BC: 0.000e+00, loss_IC: 1.767e-02,loss_f: 3.699e-03
+pinn: 0100, Iter: 200, total_loss: 4.041e-04, loss_BC: 0.000e+00, loss_IC: 2.378e-04,loss_f: 1.663e-04
+pinn: 0000, Iter: 200, total_loss: 7.530e-04, loss_BC: 0.000e+00, loss_IC: 4.998e-04,loss_f: 2.532e-04
+pinn: 0300, Iter: 300, total_loss: 1.700e-04, loss_BC: 0.000e+00, loss_IC: 1.291e-04,loss_f: 4.098e-05
+pinn: 0100, Iter: 300, total_loss: 3.554e-04, loss_BC: 0.000e+00, loss_IC: 2.349e-04,loss_f: 1.206e-04
+pinn: 0200, Iter: 300, total_loss: 1.899e-02, loss_BC: 0.000e+00, loss_IC: 1.473e-02,loss_f: 4.255e-03
+pinn: 0000, Iter: 300, total_loss: 6.507e-04, loss_BC: 0.000e+00, loss_IC: 4.115e-04,loss_f: 2.392e-04
+pinn: 0300, Iter: 400, total_loss: 1.543e-04, loss_BC: 0.000e+00, loss_IC: 1.160e-04,loss_f: 3.829e-05
+pinn: 0100, Iter: 400, total_loss: 3.243e-04, loss_BC: 0.000e+00, loss_IC: 2.166e-04,loss_f: 1.077e-04
+pinn: 0000, Iter: 400, total_loss: 5.756e-04, loss_BC: 0.000e+00, loss_IC: 3.558e-04,loss_f: 2.198e-04
+pinn: 0200, Iter: 400, total_loss: 1.597e-02, loss_BC: 0.000e+00, loss_IC: 1.312e-02,loss_f: 2.844e-03
+pinn: 0300, Iter: 500, total_loss: 1.366e-04, loss_BC: 0.000e+00, loss_IC: 9.348e-05,loss_f: 4.312e-05
+pinn: 0100, Iter: 500, total_loss: 2.974e-04, loss_BC: 0.000e+00, loss_IC: 1.951e-04,loss_f: 1.024e-04
+pinn: 0000, Iter: 500, total_loss: 5.111e-04, loss_BC: 0.000e+00, loss_IC: 2.809e-04,loss_f: 2.302e-04
+pinn: 0200, Iter: 500, total_loss: 1.377e-02, loss_BC: 0.000e+00, loss_IC: 1.116e-02,loss_f: 2.607e-03
+pinn: 0300, Iter: 600, total_loss: 1.213e-04, loss_BC: 0.000e+00, loss_IC: 8.673e-05,loss_f: 3.460e-05
+pinn: 0000, Iter: 600, total_loss: 4.500e-04, loss_BC: 0.000e+00, loss_IC: 2.732e-04,loss_f: 1.768e-04
+pinn: 0100, Iter: 600, total_loss: 2.823e-04, loss_BC: 0.000e+00, loss_IC: 1.833e-04,loss_f: 9.902e-05
+pinn: 0200, Iter: 600, total_loss: 1.253e-02, loss_BC: 0.000e+00, loss_IC: 1.052e-02,loss_f: 2.008e-03
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 349, Mean_loss of pinns: 3.106e-03, loss_BC: 0.000e+00, loss_IC: 2.436e-03, loss_f: 6.693e-04
+ => minimum loss: 1.107e-04, corresponding pinn index: 0300
+ => maximum loss: 1.164e-02, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  350 !!! 
+
+
+==> Epoch: 350, Mean_loss of pinns: 3.605e-03, loss_BC: 0.000e+00, loss_IC: 2.436e-03, loss_f: 1.169e-03
+ => minimum loss: 3.119e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 1.167e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 360, Mean_loss of pinns: 3.493e-03, loss_BC: 0.000e+00, loss_IC: 2.444e-03, loss_f: 1.048e-03
+ => minimum loss: 2.789e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 1.161e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 370, Mean_loss of pinns: 3.428e-03, loss_BC: 0.000e+00, loss_IC: 2.459e-03, loss_f: 9.689e-04
+ => minimum loss: 2.457e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 1.155e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 380, Mean_loss of pinns: 3.406e-03, loss_BC: 0.000e+00, loss_IC: 2.467e-03, loss_f: 9.387e-04
+ => minimum loss: 2.338e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 1.150e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 390, Mean_loss of pinns: 3.390e-03, loss_BC: 0.000e+00, loss_IC: 2.464e-03, loss_f: 9.267e-04
+ => minimum loss: 2.307e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 1.147e-02, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  399
+
+ ! Scipy iteration number:  8
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 1.701e-04, loss_BC: 0.000e+00, loss_IC: 9.780e-05,loss_f: 7.229e-05
+pinn: 0200, Iter: 100, total_loss: 1.022e-02, loss_BC: 0.000e+00, loss_IC: 8.163e-03,loss_f: 2.059e-03
+pinn: 0000, Iter: 100, total_loss: 5.195e-04, loss_BC: 0.000e+00, loss_IC: 2.605e-04,loss_f: 2.590e-04
+pinn: 0100, Iter: 100, total_loss: 7.610e-04, loss_BC: 0.000e+00, loss_IC: 3.723e-04,loss_f: 3.887e-04
+pinn: 0300, Iter: 200, total_loss: 1.407e-04, loss_BC: 0.000e+00, loss_IC: 8.845e-05,loss_f: 5.223e-05
+pinn: 0100, Iter: 200, total_loss: 6.389e-04, loss_BC: 0.000e+00, loss_IC: 3.676e-04,loss_f: 2.713e-04
+pinn: 0200, Iter: 200, total_loss: 8.755e-03, loss_BC: 0.000e+00, loss_IC: 6.723e-03,loss_f: 2.032e-03
+pinn: 0000, Iter: 200, total_loss: 4.788e-04, loss_BC: 0.000e+00, loss_IC: 2.660e-04,loss_f: 2.128e-04
+pinn: 0300, Iter: 300, total_loss: 1.266e-04, loss_BC: 0.000e+00, loss_IC: 8.017e-05,loss_f: 4.645e-05
+pinn: 0100, Iter: 300, total_loss: 5.759e-04, loss_BC: 0.000e+00, loss_IC: 3.955e-04,loss_f: 1.804e-04
+pinn: 0000, Iter: 300, total_loss: 4.420e-04, loss_BC: 0.000e+00, loss_IC: 2.659e-04,loss_f: 1.761e-04
+pinn: 0200, Iter: 300, total_loss: 7.605e-03, loss_BC: 0.000e+00, loss_IC: 5.867e-03,loss_f: 1.738e-03
+pinn: 0300, Iter: 400, total_loss: 1.166e-04, loss_BC: 0.000e+00, loss_IC: 7.710e-05,loss_f: 3.947e-05
+pinn: 0100, Iter: 400, total_loss: 5.441e-04, loss_BC: 0.000e+00, loss_IC: 3.991e-04,loss_f: 1.450e-04
+pinn: 0000, Iter: 400, total_loss: 4.191e-04, loss_BC: 0.000e+00, loss_IC: 2.753e-04,loss_f: 1.438e-04
+pinn: 0200, Iter: 400, total_loss: 5.947e-03, loss_BC: 0.000e+00, loss_IC: 4.474e-03,loss_f: 1.473e-03
+pinn: 0300, Iter: 500, total_loss: 1.093e-04, loss_BC: 0.000e+00, loss_IC: 7.440e-05,loss_f: 3.490e-05
+pinn: 0100, Iter: 500, total_loss: 5.178e-04, loss_BC: 0.000e+00, loss_IC: 3.834e-04,loss_f: 1.344e-04
+pinn: 0000, Iter: 500, total_loss: 3.938e-04, loss_BC: 0.000e+00, loss_IC: 2.705e-04,loss_f: 1.233e-04
+pinn: 0200, Iter: 500, total_loss: 4.230e-03, loss_BC: 0.000e+00, loss_IC: 3.383e-03,loss_f: 8.471e-04
+pinn: 0300, Iter: 600, total_loss: 1.013e-04, loss_BC: 0.000e+00, loss_IC: 6.981e-05,loss_f: 3.148e-05
+pinn: 0200, Iter: 600, total_loss: 3.163e-03, loss_BC: 0.000e+00, loss_IC: 2.259e-03,loss_f: 9.041e-04
+pinn: 0100, Iter: 600, total_loss: 4.981e-04, loss_BC: 0.000e+00, loss_IC: 3.702e-04,loss_f: 1.279e-04
+pinn: 0000, Iter: 600, total_loss: 3.635e-04, loss_BC: 0.000e+00, loss_IC: 2.500e-04,loss_f: 1.135e-04
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 399, Mean_loss of pinns: 8.306e-04, loss_BC: 0.000e+00, loss_IC: 5.872e-04, loss_f: 2.434e-04
+ => minimum loss: 9.587e-05, corresponding pinn index: 0300
+ => maximum loss: 2.413e-03, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  400 !!! 
+
+
+==> Epoch: 400, Mean_loss of pinns: 9.717e-04, loss_BC: 0.000e+00, loss_IC: 5.872e-04, loss_f: 3.845e-04
+ => minimum loss: 2.166e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.732e-03, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 410, Mean_loss of pinns: 9.545e-04, loss_BC: 0.000e+00, loss_IC: 5.862e-04, loss_f: 3.682e-04
+ => minimum loss: 2.088e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.705e-03, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 420, Mean_loss of pinns: 9.432e-04, loss_BC: 0.000e+00, loss_IC: 5.832e-04, loss_f: 3.600e-04
+ => minimum loss: 1.996e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.689e-03, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 430, Mean_loss of pinns: 9.348e-04, loss_BC: 0.000e+00, loss_IC: 5.814e-04, loss_f: 3.534e-04
+ => minimum loss: 1.946e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.676e-03, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 440, Mean_loss of pinns: 9.289e-04, loss_BC: 0.000e+00, loss_IC: 5.804e-04, loss_f: 3.485e-04
+ => minimum loss: 1.924e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 2.666e-03, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  449
+
+ ! Scipy iteration number:  9
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 1.411e-04, loss_BC: 0.000e+00, loss_IC: 7.251e-05,loss_f: 6.859e-05
+pinn: 0100, Iter: 100, total_loss: 2.277e-04, loss_BC: 0.000e+00, loss_IC: 1.786e-04,loss_f: 4.913e-05
+pinn: 0200, Iter: 100, total_loss: 2.024e-03, loss_BC: 0.000e+00, loss_IC: 1.565e-03,loss_f: 4.585e-04
+pinn: 0000, Iter: 100, total_loss: 3.675e-04, loss_BC: 0.000e+00, loss_IC: 2.415e-04,loss_f: 1.260e-04
+pinn: 0300, Iter: 200, total_loss: 1.267e-04, loss_BC: 0.000e+00, loss_IC: 6.723e-05,loss_f: 5.950e-05
+pinn: 0100, Iter: 200, total_loss: 1.926e-04, loss_BC: 0.000e+00, loss_IC: 1.565e-04,loss_f: 3.616e-05
+pinn: 0000, Iter: 200, total_loss: 3.347e-04, loss_BC: 0.000e+00, loss_IC: 2.328e-04,loss_f: 1.019e-04
+pinn: 0200, Iter: 200, total_loss: 1.682e-03, loss_BC: 0.000e+00, loss_IC: 1.313e-03,loss_f: 3.697e-04
+pinn: 0300, Iter: 300, total_loss: 1.121e-04, loss_BC: 0.000e+00, loss_IC: 6.372e-05,loss_f: 4.840e-05
+pinn: 0200, Iter: 300, total_loss: 1.409e-03, loss_BC: 0.000e+00, loss_IC: 1.138e-03,loss_f: 2.714e-04
+pinn: 0000, Iter: 300, total_loss: 3.073e-04, loss_BC: 0.000e+00, loss_IC: 2.073e-04,loss_f: 1.000e-04
+pinn: 0100, Iter: 300, total_loss: 1.725e-04, loss_BC: 0.000e+00, loss_IC: 1.379e-04,loss_f: 3.452e-05
+pinn: 0300, Iter: 400, total_loss: 1.014e-04, loss_BC: 0.000e+00, loss_IC: 6.003e-05,loss_f: 4.132e-05
+pinn: 0200, Iter: 400, total_loss: 1.031e-03, loss_BC: 0.000e+00, loss_IC: 8.027e-04,loss_f: 2.288e-04
+pinn: 0000, Iter: 400, total_loss: 2.879e-04, loss_BC: 0.000e+00, loss_IC: 1.961e-04,loss_f: 9.178e-05
+pinn: 0100, Iter: 400, total_loss: 1.466e-04, loss_BC: 0.000e+00, loss_IC: 1.024e-04,loss_f: 4.420e-05
+pinn: 0300, Iter: 500, total_loss: 9.024e-05, loss_BC: 0.000e+00, loss_IC: 5.686e-05,loss_f: 3.337e-05
+pinn: 0200, Iter: 500, total_loss: 7.859e-04, loss_BC: 0.000e+00, loss_IC: 5.373e-04,loss_f: 2.486e-04
+pinn: 0000, Iter: 500, total_loss: 2.751e-04, loss_BC: 0.000e+00, loss_IC: 1.813e-04,loss_f: 9.377e-05
+pinn: 0100, Iter: 500, total_loss: 1.292e-04, loss_BC: 0.000e+00, loss_IC: 8.161e-05,loss_f: 4.758e-05
+pinn: 0300, Iter: 600, total_loss: 7.784e-05, loss_BC: 0.000e+00, loss_IC: 4.986e-05,loss_f: 2.798e-05
+pinn: 0200, Iter: 600, total_loss: 6.013e-04, loss_BC: 0.000e+00, loss_IC: 4.003e-04,loss_f: 2.010e-04
+pinn: 0000, Iter: 600, total_loss: 2.604e-04, loss_BC: 0.000e+00, loss_IC: 1.657e-04,loss_f: 9.470e-05
+pinn: 0100, Iter: 600, total_loss: 1.141e-04, loss_BC: 0.000e+00, loss_IC: 7.142e-05,loss_f: 4.270e-05
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 449, Mean_loss of pinns: 2.261e-04, loss_BC: 0.000e+00, loss_IC: 1.425e-04, loss_f: 8.365e-05
+ => minimum loss: 7.120e-05, corresponding pinn index: 0300
+ => maximum loss: 4.814e-04, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  450 !!! 
+
+
+==> Epoch: 450, Mean_loss of pinns: 4.042e-04, loss_BC: 0.000e+00, loss_IC: 1.425e-04, loss_f: 2.618e-04
+ => minimum loss: 8.775e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.423e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 460, Mean_loss of pinns: 3.956e-04, loss_BC: 0.000e+00, loss_IC: 1.432e-04, loss_f: 2.524e-04
+ => minimum loss: 8.648e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.262e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 470, Mean_loss of pinns: 3.857e-04, loss_BC: 0.000e+00, loss_IC: 1.453e-04, loss_f: 2.405e-04
+ => minimum loss: 8.528e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.025e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 480, Mean_loss of pinns: 3.796e-04, loss_BC: 0.000e+00, loss_IC: 1.476e-04, loss_f: 2.319e-04
+ => minimum loss: 8.444e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 5.850e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 490, Mean_loss of pinns: 3.757e-04, loss_BC: 0.000e+00, loss_IC: 1.489e-04, loss_f: 2.268e-04
+ => minimum loss: 8.384e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 5.738e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  499
+
+ ! Scipy iteration number:  10
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 7.230e-05, loss_BC: 0.000e+00, loss_IC: 4.740e-05,loss_f: 2.490e-05
+pinn: 0100, Iter: 100, total_loss: 2.526e-04, loss_BC: 0.000e+00, loss_IC: 1.056e-04,loss_f: 1.470e-04
+pinn: 0000, Iter: 100, total_loss: 2.995e-04, loss_BC: 0.000e+00, loss_IC: 1.494e-04,loss_f: 1.501e-04
+pinn: 0200, Iter: 100, total_loss: 4.119e-04, loss_BC: 0.000e+00, loss_IC: 2.895e-04,loss_f: 1.224e-04
+pinn: 0100, Iter: 200, total_loss: 1.599e-04, loss_BC: 0.000e+00, loss_IC: 9.071e-05,loss_f: 6.916e-05
+pinn: 0300, Iter: 200, total_loss: 6.616e-05, loss_BC: 0.000e+00, loss_IC: 4.507e-05,loss_f: 2.109e-05
+pinn: 0000, Iter: 200, total_loss: 2.722e-04, loss_BC: 0.000e+00, loss_IC: 1.489e-04,loss_f: 1.233e-04
+pinn: 0200, Iter: 200, total_loss: 3.764e-04, loss_BC: 0.000e+00, loss_IC: 2.957e-04,loss_f: 8.065e-05
+pinn: 0100, Iter: 300, total_loss: 1.389e-04, loss_BC: 0.000e+00, loss_IC: 8.513e-05,loss_f: 5.376e-05
+pinn: 0300, Iter: 300, total_loss: 6.115e-05, loss_BC: 0.000e+00, loss_IC: 4.253e-05,loss_f: 1.862e-05
+pinn: 0000, Iter: 300, total_loss: 2.457e-04, loss_BC: 0.000e+00, loss_IC: 1.376e-04,loss_f: 1.081e-04
+pinn: 0200, Iter: 300, total_loss: 3.563e-04, loss_BC: 0.000e+00, loss_IC: 2.822e-04,loss_f: 7.414e-05
+pinn: 0300, Iter: 400, total_loss: 5.832e-05, loss_BC: 0.000e+00, loss_IC: 4.075e-05,loss_f: 1.757e-05
+pinn: 0100, Iter: 400, total_loss: 1.283e-04, loss_BC: 0.000e+00, loss_IC: 8.419e-05,loss_f: 4.416e-05
+pinn: 0000, Iter: 400, total_loss: 2.296e-04, loss_BC: 0.000e+00, loss_IC: 1.347e-04,loss_f: 9.496e-05
+pinn: 0200, Iter: 400, total_loss: 3.170e-04, loss_BC: 0.000e+00, loss_IC: 2.476e-04,loss_f: 6.943e-05
+pinn: 0300, Iter: 500, total_loss: 5.522e-05, loss_BC: 0.000e+00, loss_IC: 3.869e-05,loss_f: 1.653e-05
+pinn: 0100, Iter: 500, total_loss: 1.197e-04, loss_BC: 0.000e+00, loss_IC: 8.049e-05,loss_f: 3.921e-05
+pinn: 0000, Iter: 500, total_loss: 2.204e-04, loss_BC: 0.000e+00, loss_IC: 1.350e-04,loss_f: 8.539e-05
+pinn: 0200, Iter: 500, total_loss: 2.816e-04, loss_BC: 0.000e+00, loss_IC: 2.125e-04,loss_f: 6.914e-05
+pinn: 0100, Iter: 600, total_loss: 1.128e-04, loss_BC: 0.000e+00, loss_IC: 7.809e-05,loss_f: 3.473e-05
+pinn: 0300, Iter: 600, total_loss: 5.139e-05, loss_BC: 0.000e+00, loss_IC: 3.594e-05,loss_f: 1.545e-05
+pinn: 0000, Iter: 600, total_loss: 2.105e-04, loss_BC: 0.000e+00, loss_IC: 1.299e-04,loss_f: 8.062e-05
+pinn: 0200, Iter: 600, total_loss: 2.594e-04, loss_BC: 0.000e+00, loss_IC: 1.881e-04,loss_f: 7.130e-05
+
+ !!! number of pinns above the Treshhold:  3
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 499, Mean_loss of pinns: 1.492e-04, loss_BC: 0.000e+00, loss_IC: 1.036e-04, loss_f: 4.553e-05
+ => minimum loss: 4.738e-05, corresponding pinn index: 0300
+ => maximum loss: 2.414e-04, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  500 !!! 
+
+
+==> Epoch: 500, Mean_loss of pinns: 4.901e-04, loss_BC: 0.000e+00, loss_IC: 1.036e-04, loss_f: 3.864e-04
+ => minimum loss: 7.885e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.398e-03, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 510, Mean_loss of pinns: 3.728e-04, loss_BC: 0.000e+00, loss_IC: 1.116e-04, loss_f: 2.612e-04
+ => minimum loss: 7.716e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 9.357e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 520, Mean_loss of pinns: 3.053e-04, loss_BC: 0.000e+00, loss_IC: 1.353e-04, loss_f: 1.700e-04
+ => minimum loss: 7.497e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.718e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 530, Mean_loss of pinns: 2.921e-04, loss_BC: 0.000e+00, loss_IC: 1.519e-04, loss_f: 1.402e-04
+ => minimum loss: 7.311e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.229e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 540, Mean_loss of pinns: 2.878e-04, loss_BC: 0.000e+00, loss_IC: 1.557e-04, loss_f: 1.322e-04
+ => minimum loss: 7.166e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.088e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  549
+
+ ! Scipy iteration number:  11
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 5.000e-05, loss_BC: 0.000e+00, loss_IC: 3.106e-05,loss_f: 1.894e-05
+pinn: 0200, Iter: 100, total_loss: 2.590e-04, loss_BC: 0.000e+00, loss_IC: 1.800e-04,loss_f: 7.907e-05
+pinn: 0100, Iter: 100, total_loss: 1.546e-04, loss_BC: 0.000e+00, loss_IC: 8.862e-05,loss_f: 6.602e-05
+pinn: 0000, Iter: 100, total_loss: 5.001e-04, loss_BC: 0.000e+00, loss_IC: 2.631e-04,loss_f: 2.370e-04
+pinn: 0200, Iter: 200, total_loss: 2.418e-04, loss_BC: 0.000e+00, loss_IC: 1.834e-04,loss_f: 5.841e-05
+pinn: 0300, Iter: 200, total_loss: 4.671e-05, loss_BC: 0.000e+00, loss_IC: 3.066e-05,loss_f: 1.605e-05
+pinn: 0100, Iter: 200, total_loss: 1.445e-04, loss_BC: 0.000e+00, loss_IC: 8.754e-05,loss_f: 5.693e-05
+pinn: 0000, Iter: 200, total_loss: 4.367e-04, loss_BC: 0.000e+00, loss_IC: 2.205e-04,loss_f: 2.162e-04
+pinn: 0200, Iter: 300, total_loss: 2.250e-04, loss_BC: 0.000e+00, loss_IC: 1.783e-04,loss_f: 4.671e-05
+pinn: 0300, Iter: 300, total_loss: 4.451e-05, loss_BC: 0.000e+00, loss_IC: 3.105e-05,loss_f: 1.346e-05
+pinn: 0000, Iter: 300, total_loss: 3.653e-04, loss_BC: 0.000e+00, loss_IC: 1.949e-04,loss_f: 1.704e-04
+pinn: 0100, Iter: 300, total_loss: 1.368e-04, loss_BC: 0.000e+00, loss_IC: 8.778e-05,loss_f: 4.898e-05
+pinn: 0200, Iter: 400, total_loss: 2.135e-04, loss_BC: 0.000e+00, loss_IC: 1.723e-04,loss_f: 4.116e-05
+pinn: 0300, Iter: 400, total_loss: 4.283e-05, loss_BC: 0.000e+00, loss_IC: 3.036e-05,loss_f: 1.247e-05
+pinn: 0000, Iter: 400, total_loss: 3.244e-04, loss_BC: 0.000e+00, loss_IC: 1.806e-04,loss_f: 1.438e-04
+pinn: 0100, Iter: 400, total_loss: 1.294e-04, loss_BC: 0.000e+00, loss_IC: 8.528e-05,loss_f: 4.415e-05
+pinn: 0200, Iter: 500, total_loss: 2.024e-04, loss_BC: 0.000e+00, loss_IC: 1.650e-04,loss_f: 3.744e-05
+pinn: 0300, Iter: 500, total_loss: 4.169e-05, loss_BC: 0.000e+00, loss_IC: 2.992e-05,loss_f: 1.177e-05
+pinn: 0000, Iter: 500, total_loss: 2.988e-04, loss_BC: 0.000e+00, loss_IC: 1.654e-04,loss_f: 1.334e-04
+pinn: 0100, Iter: 500, total_loss: 1.255e-04, loss_BC: 0.000e+00, loss_IC: 8.463e-05,loss_f: 4.090e-05
+pinn: 0200, Iter: 600, total_loss: 1.926e-04, loss_BC: 0.000e+00, loss_IC: 1.544e-04,loss_f: 3.821e-05
+pinn: 0300, Iter: 600, total_loss: 4.025e-05, loss_BC: 0.000e+00, loss_IC: 2.849e-05,loss_f: 1.176e-05
+pinn: 0000, Iter: 600, total_loss: 2.751e-04, loss_BC: 0.000e+00, loss_IC: 1.569e-04,loss_f: 1.182e-04
+pinn: 0100, Iter: 600, total_loss: 1.206e-04, loss_BC: 0.000e+00, loss_IC: 7.883e-05,loss_f: 4.181e-05
+
+ !!! number of pinns above the Treshhold:  3
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 549, Mean_loss of pinns: 1.486e-04, loss_BC: 0.000e+00, loss_IC: 9.891e-05, loss_f: 4.972e-05
+ => minimum loss: 3.929e-05, corresponding pinn index: 0300
+ => maximum loss: 2.597e-04, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  550 !!! 
+
+
+==> Epoch: 550, Mean_loss of pinns: 4.580e-04, loss_BC: 0.000e+00, loss_IC: 9.891e-05, loss_f: 3.591e-04
+ => minimum loss: 2.017e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 7.896e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 560, Mean_loss of pinns: 3.476e-04, loss_BC: 0.000e+00, loss_IC: 1.071e-04, loss_f: 2.405e-04
+ => minimum loss: 1.983e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 4.253e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 570, Mean_loss of pinns: 3.047e-04, loss_BC: 0.000e+00, loss_IC: 1.326e-04, loss_f: 1.722e-04
+ => minimum loss: 1.963e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 3.826e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 580, Mean_loss of pinns: 3.001e-04, loss_BC: 0.000e+00, loss_IC: 1.471e-04, loss_f: 1.530e-04
+ => minimum loss: 1.951e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 3.724e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 590, Mean_loss of pinns: 2.949e-04, loss_BC: 0.000e+00, loss_IC: 1.460e-04, loss_f: 1.489e-04
+ => minimum loss: 1.944e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 3.669e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  599
+
+ ! Scipy iteration number:  12
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 1.641e-04, loss_BC: 0.000e+00, loss_IC: 9.960e-05,loss_f: 6.450e-05
+pinn: 0200, Iter: 100, total_loss: 1.763e-04, loss_BC: 0.000e+00, loss_IC: 1.385e-04,loss_f: 3.781e-05
+pinn: 0100, Iter: 100, total_loss: 2.393e-04, loss_BC: 0.000e+00, loss_IC: 1.291e-04,loss_f: 1.102e-04
+pinn: 0000, Iter: 100, total_loss: 2.447e-04, loss_BC: 0.000e+00, loss_IC: 1.451e-04,loss_f: 9.960e-05
+pinn: 0300, Iter: 200, total_loss: 1.278e-04, loss_BC: 0.000e+00, loss_IC: 7.945e-05,loss_f: 4.839e-05
+pinn: 0100, Iter: 200, total_loss: 2.087e-04, loss_BC: 0.000e+00, loss_IC: 1.354e-04,loss_f: 7.328e-05
+pinn: 0200, Iter: 200, total_loss: 1.711e-04, loss_BC: 0.000e+00, loss_IC: 1.368e-04,loss_f: 3.428e-05
+pinn: 0000, Iter: 200, total_loss: 2.000e-04, loss_BC: 0.000e+00, loss_IC: 1.373e-04,loss_f: 6.264e-05
+pinn: 0300, Iter: 300, total_loss: 1.134e-04, loss_BC: 0.000e+00, loss_IC: 7.527e-05,loss_f: 3.813e-05
+pinn: 0100, Iter: 300, total_loss: 1.938e-04, loss_BC: 0.000e+00, loss_IC: 1.345e-04,loss_f: 5.936e-05
+pinn: 0000, Iter: 300, total_loss: 1.846e-04, loss_BC: 0.000e+00, loss_IC: 1.257e-04,loss_f: 5.888e-05
+pinn: 0200, Iter: 300, total_loss: 1.628e-04, loss_BC: 0.000e+00, loss_IC: 1.319e-04,loss_f: 3.093e-05
+pinn: 0300, Iter: 400, total_loss: 1.060e-04, loss_BC: 0.000e+00, loss_IC: 7.196e-05,loss_f: 3.399e-05
+pinn: 0100, Iter: 400, total_loss: 1.789e-04, loss_BC: 0.000e+00, loss_IC: 1.273e-04,loss_f: 5.162e-05
+pinn: 0000, Iter: 400, total_loss: 1.631e-04, loss_BC: 0.000e+00, loss_IC: 1.101e-04,loss_f: 5.298e-05
+pinn: 0200, Iter: 400, total_loss: 1.574e-04, loss_BC: 0.000e+00, loss_IC: 1.306e-04,loss_f: 2.690e-05
+pinn: 0300, Iter: 500, total_loss: 9.899e-05, loss_BC: 0.000e+00, loss_IC: 6.933e-05,loss_f: 2.966e-05
+pinn: 0100, Iter: 500, total_loss: 1.699e-04, loss_BC: 0.000e+00, loss_IC: 1.220e-04,loss_f: 4.788e-05
+pinn: 0200, Iter: 500, total_loss: 1.487e-04, loss_BC: 0.000e+00, loss_IC: 1.223e-04,loss_f: 2.648e-05
+pinn: 0000, Iter: 500, total_loss: 1.514e-04, loss_BC: 0.000e+00, loss_IC: 1.030e-04,loss_f: 4.839e-05
+pinn: 0300, Iter: 600, total_loss: 8.983e-05, loss_BC: 0.000e+00, loss_IC: 6.221e-05,loss_f: 2.762e-05
+pinn: 0100, Iter: 600, total_loss: 1.619e-04, loss_BC: 0.000e+00, loss_IC: 1.195e-04,loss_f: 4.239e-05
+pinn: 0200, Iter: 600, total_loss: 1.429e-04, loss_BC: 0.000e+00, loss_IC: 1.149e-04,loss_f: 2.809e-05
+pinn: 0000, Iter: 600, total_loss: 1.413e-04, loss_BC: 0.000e+00, loss_IC: 9.187e-05,loss_f: 4.942e-05
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 599, Mean_loss of pinns: 1.283e-04, loss_BC: 0.000e+00, loss_IC: 9.324e-05, loss_f: 3.504e-05
+ => minimum loss: 8.569e-05, corresponding pinn index: 0300
+ => maximum loss: 1.537e-04, corresponding pinn  index: 0100
+ 
+ !!! updating Collocation points at epoch  600 !!! 
+
+
+==> Epoch: 600, Mean_loss of pinns: 3.158e-04, loss_BC: 0.000e+00, loss_IC: 9.324e-05, loss_f: 2.226e-04
+ => minimum loss: 1.400e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 4.526e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 610, Mean_loss of pinns: 2.817e-04, loss_BC: 0.000e+00, loss_IC: 9.558e-05, loss_f: 1.861e-04
+ => minimum loss: 1.395e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 4.309e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 620, Mean_loss of pinns: 2.559e-04, loss_BC: 0.000e+00, loss_IC: 1.040e-04, loss_f: 1.519e-04
+ => minimum loss: 1.391e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 4.082e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 630, Mean_loss of pinns: 2.467e-04, loss_BC: 0.000e+00, loss_IC: 1.097e-04, loss_f: 1.370e-04
+ => minimum loss: 1.388e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 3.895e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 640, Mean_loss of pinns: 2.405e-04, loss_BC: 0.000e+00, loss_IC: 1.103e-04, loss_f: 1.301e-04
+ => minimum loss: 1.385e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 3.742e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  649
+
+ ! Scipy iteration number:  13
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0100, Iter: 100, total_loss: 1.416e-04, loss_BC: 0.000e+00, loss_IC: 9.059e-05,loss_f: 5.105e-05
+pinn: 0200, Iter: 100, total_loss: 1.310e-04, loss_BC: 0.000e+00, loss_IC: 1.055e-04,loss_f: 2.556e-05
+pinn: 0000, Iter: 100, total_loss: 2.029e-04, loss_BC: 0.000e+00, loss_IC: 1.071e-04,loss_f: 9.578e-05
+pinn: 0300, Iter: 100, total_loss: 1.123e-04, loss_BC: 0.000e+00, loss_IC: 7.007e-05,loss_f: 4.226e-05
+pinn: 0100, Iter: 200, total_loss: 1.105e-04, loss_BC: 0.000e+00, loss_IC: 7.966e-05,loss_f: 3.085e-05
+pinn: 0000, Iter: 200, total_loss: 1.870e-04, loss_BC: 0.000e+00, loss_IC: 1.016e-04,loss_f: 8.538e-05
+pinn: 0300, Iter: 200, total_loss: 9.420e-05, loss_BC: 0.000e+00, loss_IC: 6.052e-05,loss_f: 3.368e-05
+pinn: 0200, Iter: 200, total_loss: 1.242e-04, loss_BC: 0.000e+00, loss_IC: 9.811e-05,loss_f: 2.613e-05
+pinn: 0100, Iter: 300, total_loss: 1.004e-04, loss_BC: 0.000e+00, loss_IC: 7.578e-05,loss_f: 2.463e-05
+pinn: 0000, Iter: 300, total_loss: 1.719e-04, loss_BC: 0.000e+00, loss_IC: 9.124e-05,loss_f: 8.066e-05
+pinn: 0200, Iter: 300, total_loss: 1.191e-04, loss_BC: 0.000e+00, loss_IC: 9.298e-05,loss_f: 2.608e-05
+pinn: 0300, Iter: 300, total_loss: 8.619e-05, loss_BC: 0.000e+00, loss_IC: 5.494e-05,loss_f: 3.125e-05
+pinn: 0100, Iter: 400, total_loss: 9.061e-05, loss_BC: 0.000e+00, loss_IC: 6.957e-05,loss_f: 2.104e-05
+pinn: 0200, Iter: 400, total_loss: 1.148e-04, loss_BC: 0.000e+00, loss_IC: 8.747e-05,loss_f: 2.735e-05
+pinn: 0000, Iter: 400, total_loss: 1.539e-04, loss_BC: 0.000e+00, loss_IC: 8.531e-05,loss_f: 6.860e-05
+pinn: 0300, Iter: 400, total_loss: 7.793e-05, loss_BC: 0.000e+00, loss_IC: 4.849e-05,loss_f: 2.944e-05
+pinn: 0100, Iter: 500, total_loss: 8.426e-05, loss_BC: 0.000e+00, loss_IC: 6.281e-05,loss_f: 2.145e-05
+pinn: 0000, Iter: 500, total_loss: 1.467e-04, loss_BC: 0.000e+00, loss_IC: 8.131e-05,loss_f: 6.537e-05
+pinn: 0200, Iter: 500, total_loss: 1.071e-04, loss_BC: 0.000e+00, loss_IC: 7.987e-05,loss_f: 2.723e-05
+pinn: 0300, Iter: 500, total_loss: 7.234e-05, loss_BC: 0.000e+00, loss_IC: 4.336e-05,loss_f: 2.898e-05
+pinn: 0100, Iter: 600, total_loss: 7.898e-05, loss_BC: 0.000e+00, loss_IC: 5.658e-05,loss_f: 2.240e-05
+pinn: 0200, Iter: 600, total_loss: 1.006e-04, loss_BC: 0.000e+00, loss_IC: 7.341e-05,loss_f: 2.720e-05
+pinn: 0000, Iter: 600, total_loss: 1.378e-04, loss_BC: 0.000e+00, loss_IC: 7.617e-05,loss_f: 6.163e-05
+pinn: 0300, Iter: 600, total_loss: 6.681e-05, loss_BC: 0.000e+00, loss_IC: 4.087e-05,loss_f: 2.594e-05
+
+ !!! number of pinns above the Treshhold:  4
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 649, Mean_loss of pinns: 9.052e-05, loss_BC: 0.000e+00, loss_IC: 5.750e-05, loss_f: 3.302e-05
+ => minimum loss: 6.162e-05, corresponding pinn index: 0300
+ => maximum loss: 1.312e-04, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  650 !!! 
+
+
+==> Epoch: 650, Mean_loss of pinns: 1.947e-04, loss_BC: 0.000e+00, loss_IC: 5.750e-05, loss_f: 1.372e-04
+ => minimum loss: 1.127e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 3.080e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 660, Mean_loss of pinns: 1.911e-04, loss_BC: 0.000e+00, loss_IC: 5.774e-05, loss_f: 1.333e-04
+ => minimum loss: 1.116e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 3.040e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 670, Mean_loss of pinns: 1.861e-04, loss_BC: 0.000e+00, loss_IC: 5.888e-05, loss_f: 1.272e-04
+ => minimum loss: 1.110e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 2.962e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 680, Mean_loss of pinns: 1.821e-04, loss_BC: 0.000e+00, loss_IC: 6.008e-05, loss_f: 1.220e-04
+ => minimum loss: 1.106e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 2.880e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 690, Mean_loss of pinns: 1.791e-04, loss_BC: 0.000e+00, loss_IC: 6.102e-05, loss_f: 1.181e-04
+ => minimum loss: 1.103e-04, corresponding pinn/batch index: 0200
+ => maximum loss: 2.809e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  699
+
+ ! Scipy iteration number:  14
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 8.868e-05, loss_BC: 0.000e+00, loss_IC: 4.016e-05,loss_f: 4.853e-05
+pinn: 0200, Iter: 100, total_loss: 9.650e-05, loss_BC: 0.000e+00, loss_IC: 6.633e-05,loss_f: 3.016e-05
+pinn: 0000, Iter: 100, total_loss: 1.237e-04, loss_BC: 0.000e+00, loss_IC: 7.120e-05,loss_f: 5.251e-05
+pinn: 0100, Iter: 100, total_loss: 1.126e-04, loss_BC: 0.000e+00, loss_IC: 5.518e-05,loss_f: 5.745e-05
+pinn: 0300, Iter: 200, total_loss: 7.802e-05, loss_BC: 0.000e+00, loss_IC: 3.864e-05,loss_f: 3.938e-05
+pinn: 0200, Iter: 200, total_loss: 8.972e-05, loss_BC: 0.000e+00, loss_IC: 6.826e-05,loss_f: 2.147e-05
+pinn: 0000, Iter: 200, total_loss: 1.116e-04, loss_BC: 0.000e+00, loss_IC: 6.978e-05,loss_f: 4.185e-05
+pinn: 0100, Iter: 200, total_loss: 8.188e-05, loss_BC: 0.000e+00, loss_IC: 5.259e-05,loss_f: 2.928e-05
+pinn: 0300, Iter: 300, total_loss: 6.551e-05, loss_BC: 0.000e+00, loss_IC: 3.527e-05,loss_f: 3.024e-05
+pinn: 0200, Iter: 300, total_loss: 8.537e-05, loss_BC: 0.000e+00, loss_IC: 6.772e-05,loss_f: 1.766e-05
+pinn: 0000, Iter: 300, total_loss: 1.010e-04, loss_BC: 0.000e+00, loss_IC: 6.475e-05,loss_f: 3.623e-05
+pinn: 0100, Iter: 300, total_loss: 7.114e-05, loss_BC: 0.000e+00, loss_IC: 5.281e-05,loss_f: 1.833e-05
+pinn: 0300, Iter: 400, total_loss: 5.925e-05, loss_BC: 0.000e+00, loss_IC: 3.388e-05,loss_f: 2.537e-05
+pinn: 0200, Iter: 400, total_loss: 8.258e-05, loss_BC: 0.000e+00, loss_IC: 6.662e-05,loss_f: 1.596e-05
+pinn: 0000, Iter: 400, total_loss: 9.586e-05, loss_BC: 0.000e+00, loss_IC: 5.998e-05,loss_f: 3.587e-05
+pinn: 0100, Iter: 400, total_loss: 6.793e-05, loss_BC: 0.000e+00, loss_IC: 5.178e-05,loss_f: 1.615e-05
+pinn: 0300, Iter: 500, total_loss: 5.229e-05, loss_BC: 0.000e+00, loss_IC: 3.036e-05,loss_f: 2.193e-05
+pinn: 0200, Iter: 500, total_loss: 8.071e-05, loss_BC: 0.000e+00, loss_IC: 6.514e-05,loss_f: 1.557e-05
+pinn: 0000, Iter: 500, total_loss: 9.162e-05, loss_BC: 0.000e+00, loss_IC: 5.844e-05,loss_f: 3.318e-05
+pinn: 0100, Iter: 500, total_loss: 6.585e-05, loss_BC: 0.000e+00, loss_IC: 5.129e-05,loss_f: 1.457e-05
+pinn: 0300, Iter: 600, total_loss: 4.627e-05, loss_BC: 0.000e+00, loss_IC: 2.863e-05,loss_f: 1.764e-05
+pinn: 0200, Iter: 600, total_loss: 7.852e-05, loss_BC: 0.000e+00, loss_IC: 6.271e-05,loss_f: 1.582e-05
+pinn: 0000, Iter: 600, total_loss: 8.825e-05, loss_BC: 0.000e+00, loss_IC: 5.611e-05,loss_f: 3.213e-05
+pinn: 0100, Iter: 600, total_loss: 6.349e-05, loss_BC: 0.000e+00, loss_IC: 5.073e-05,loss_f: 1.276e-05
+
+ !!! number of pinns above the Treshhold:  3
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 699, Mean_loss of pinns: 6.642e-05, loss_BC: 0.000e+00, loss_IC: 4.805e-05, loss_f: 1.837e-05
+ => minimum loss: 4.172e-05, corresponding pinn index: 0300
+ => maximum loss: 8.529e-05, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  700 !!! 
+
+
+==> Epoch: 700, Mean_loss of pinns: 1.375e-04, loss_BC: 0.000e+00, loss_IC: 4.805e-05, loss_f: 8.943e-05
+ => minimum loss: 6.933e-05, corresponding pinn/batch index: 0100
+ => maximum loss: 1.893e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 710, Mean_loss of pinns: 1.331e-04, loss_BC: 0.000e+00, loss_IC: 4.837e-05, loss_f: 8.471e-05
+ => minimum loss: 6.939e-05, corresponding pinn/batch index: 0100
+ => maximum loss: 1.817e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 720, Mean_loss of pinns: 1.283e-04, loss_BC: 0.000e+00, loss_IC: 4.897e-05, loss_f: 7.934e-05
+ => minimum loss: 6.922e-05, corresponding pinn/batch index: 0100
+ => maximum loss: 1.714e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 730, Mean_loss of pinns: 1.246e-04, loss_BC: 0.000e+00, loss_IC: 4.969e-05, loss_f: 7.489e-05
+ => minimum loss: 6.897e-05, corresponding pinn/batch index: 0100
+ => maximum loss: 1.629e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 740, Mean_loss of pinns: 1.219e-04, loss_BC: 0.000e+00, loss_IC: 5.033e-05, loss_f: 7.161e-05
+ => minimum loss: 6.875e-05, corresponding pinn/batch index: 0100
+ => maximum loss: 1.573e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  749
+
+ ! Scipy iteration number:  15
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0100, Iter: 100, total_loss: 6.127e-05, loss_BC: 0.000e+00, loss_IC: 4.722e-05,loss_f: 1.405e-05
+pinn: 0000, Iter: 100, total_loss: 1.190e-04, loss_BC: 0.000e+00, loss_IC: 5.825e-05,loss_f: 6.080e-05
+pinn: 0200, Iter: 100, total_loss: 8.444e-05, loss_BC: 0.000e+00, loss_IC: 6.263e-05,loss_f: 2.181e-05
+pinn: 0300, Iter: 100, total_loss: 5.801e-05, loss_BC: 0.000e+00, loss_IC: 2.896e-05,loss_f: 2.905e-05
+pinn: 0100, Iter: 200, total_loss: 5.693e-05, loss_BC: 0.000e+00, loss_IC: 4.355e-05,loss_f: 1.338e-05
+pinn: 0000, Iter: 200, total_loss: 1.023e-04, loss_BC: 0.000e+00, loss_IC: 5.801e-05,loss_f: 4.428e-05
+pinn: 0200, Iter: 200, total_loss: 7.996e-05, loss_BC: 0.000e+00, loss_IC: 6.295e-05,loss_f: 1.701e-05
+pinn: 0300, Iter: 200, total_loss: 4.316e-05, loss_BC: 0.000e+00, loss_IC: 2.730e-05,loss_f: 1.586e-05
+pinn: 0100, Iter: 300, total_loss: 5.318e-05, loss_BC: 0.000e+00, loss_IC: 3.975e-05,loss_f: 1.343e-05
+pinn: 0300, Iter: 300, total_loss: 3.946e-05, loss_BC: 0.000e+00, loss_IC: 2.702e-05,loss_f: 1.243e-05
+pinn: 0000, Iter: 300, total_loss: 9.818e-05, loss_BC: 0.000e+00, loss_IC: 5.723e-05,loss_f: 4.095e-05
+pinn: 0200, Iter: 300, total_loss: 7.725e-05, loss_BC: 0.000e+00, loss_IC: 6.143e-05,loss_f: 1.582e-05
+pinn: 0100, Iter: 400, total_loss: 5.051e-05, loss_BC: 0.000e+00, loss_IC: 3.564e-05,loss_f: 1.487e-05
+pinn: 0300, Iter: 400, total_loss: 3.619e-05, loss_BC: 0.000e+00, loss_IC: 2.638e-05,loss_f: 9.815e-06
+pinn: 0200, Iter: 400, total_loss: 7.540e-05, loss_BC: 0.000e+00, loss_IC: 6.068e-05,loss_f: 1.472e-05
+pinn: 0000, Iter: 400, total_loss: 9.388e-05, loss_BC: 0.000e+00, loss_IC: 5.723e-05,loss_f: 3.665e-05
+pinn: 0100, Iter: 500, total_loss: 4.798e-05, loss_BC: 0.000e+00, loss_IC: 3.250e-05,loss_f: 1.548e-05
+pinn: 0300, Iter: 500, total_loss: 3.391e-05, loss_BC: 0.000e+00, loss_IC: 2.570e-05,loss_f: 8.215e-06
+pinn: 0000, Iter: 500, total_loss: 9.164e-05, loss_BC: 0.000e+00, loss_IC: 5.575e-05,loss_f: 3.588e-05
+pinn: 0200, Iter: 500, total_loss: 7.314e-05, loss_BC: 0.000e+00, loss_IC: 5.896e-05,loss_f: 1.418e-05
+pinn: 0100, Iter: 600, total_loss: 4.424e-05, loss_BC: 0.000e+00, loss_IC: 2.895e-05,loss_f: 1.529e-05
+pinn: 0300, Iter: 600, total_loss: 3.271e-05, loss_BC: 0.000e+00, loss_IC: 2.495e-05,loss_f: 7.756e-06
+pinn: 0000, Iter: 600, total_loss: 8.857e-05, loss_BC: 0.000e+00, loss_IC: 5.332e-05,loss_f: 3.525e-05
+pinn: 0200, Iter: 600, total_loss: 7.142e-05, loss_BC: 0.000e+00, loss_IC: 5.807e-05,loss_f: 1.335e-05
+
+ !!! number of pinns above the Treshhold:  2
+
+ !!! pinns above the Treshhold ==> 0000, 0200
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 749, Mean_loss of pinns: 5.684e-05, loss_BC: 0.000e+00, loss_IC: 3.968e-05, loss_f: 1.715e-05
+ => minimum loss: 3.112e-05, corresponding pinn index: 0300
+ => maximum loss: 8.563e-05, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  750 !!! 
+
+
+==> Epoch: 750, Mean_loss of pinns: 1.774e-04, loss_BC: 0.000e+00, loss_IC: 3.968e-05, loss_f: 1.377e-04
+ => minimum loss: 4.509e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.967e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 760, Mean_loss of pinns: 1.714e-04, loss_BC: 0.000e+00, loss_IC: 4.019e-05, loss_f: 1.312e-04
+ => minimum loss: 4.397e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.923e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 770, Mean_loss of pinns: 1.661e-04, loss_BC: 0.000e+00, loss_IC: 4.081e-05, loss_f: 1.253e-04
+ => minimum loss: 4.324e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.888e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 780, Mean_loss of pinns: 1.620e-04, loss_BC: 0.000e+00, loss_IC: 4.142e-05, loss_f: 1.205e-04
+ => minimum loss: 4.284e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.858e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 790, Mean_loss of pinns: 1.586e-04, loss_BC: 0.000e+00, loss_IC: 4.175e-05, loss_f: 1.169e-04
+ => minimum loss: 4.260e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.828e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+ !!! Scipy optimize: !!! - Epoch:  799
+
+ ! Scipy iteration number:  16
+Processes:  3
+Number of pinns to optimize weights:  3
+ !!! pinns to optimize ==> 0000, 0100, 0200
+
+
+pinn: 0100, Iter: 100, total_loss: 1.363e-04, loss_BC: 0.000e+00, loss_IC: 4.464e-05,loss_f: 9.164e-05
+pinn: 0000, Iter: 100, total_loss: 9.591e-05, loss_BC: 0.000e+00, loss_IC: 5.483e-05,loss_f: 4.108e-05
+pinn: 0200, Iter: 100, total_loss: 9.677e-05, loss_BC: 0.000e+00, loss_IC: 6.251e-05,loss_f: 3.426e-05
+pinn: 0100, Iter: 200, total_loss: 1.084e-04, loss_BC: 0.000e+00, loss_IC: 4.109e-05,loss_f: 6.732e-05
+pinn: 0200, Iter: 200, total_loss: 8.847e-05, loss_BC: 0.000e+00, loss_IC: 6.215e-05,loss_f: 2.632e-05
+pinn: 0000, Iter: 200, total_loss: 8.931e-05, loss_BC: 0.000e+00, loss_IC: 5.359e-05,loss_f: 3.572e-05
+pinn: 0100, Iter: 300, total_loss: 7.932e-05, loss_BC: 0.000e+00, loss_IC: 4.028e-05,loss_f: 3.904e-05
+pinn: 0000, Iter: 300, total_loss: 8.433e-05, loss_BC: 0.000e+00, loss_IC: 5.247e-05,loss_f: 3.186e-05
+pinn: 0200, Iter: 300, total_loss: 8.268e-05, loss_BC: 0.000e+00, loss_IC: 6.161e-05,loss_f: 2.106e-05
+pinn: 0100, Iter: 400, total_loss: 6.737e-05, loss_BC: 0.000e+00, loss_IC: 3.901e-05,loss_f: 2.836e-05
+pinn: 0000, Iter: 400, total_loss: 8.048e-05, loss_BC: 0.000e+00, loss_IC: 5.138e-05,loss_f: 2.909e-05
+pinn: 0200, Iter: 400, total_loss: 7.851e-05, loss_BC: 0.000e+00, loss_IC: 6.179e-05,loss_f: 1.672e-05
+pinn: 0100, Iter: 500, total_loss: 6.118e-05, loss_BC: 0.000e+00, loss_IC: 3.812e-05,loss_f: 2.305e-05
+pinn: 0000, Iter: 500, total_loss: 7.791e-05, loss_BC: 0.000e+00, loss_IC: 5.072e-05,loss_f: 2.719e-05
+pinn: 0200, Iter: 500, total_loss: 7.593e-05, loss_BC: 0.000e+00, loss_IC: 6.120e-05,loss_f: 1.472e-05
+pinn: 0100, Iter: 600, total_loss: 5.821e-05, loss_BC: 0.000e+00, loss_IC: 3.736e-05,loss_f: 2.085e-05
+pinn: 0000, Iter: 600, total_loss: 7.391e-05, loss_BC: 0.000e+00, loss_IC: 4.578e-05,loss_f: 2.813e-05
+pinn: 0200, Iter: 600, total_loss: 7.440e-05, loss_BC: 0.000e+00, loss_IC: 6.022e-05,loss_f: 1.417e-05
+
+ !!! number of pinns above the Treshhold:  3
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 799, Mean_loss of pinns: 6.742e-05, loss_BC: 0.000e+00, loss_IC: 4.670e-05, loss_f: 2.072e-05
+ => minimum loss: 5.627e-05, corresponding pinn index: 0100
+ => maximum loss: 7.390e-05, corresponding pinn  index: 0200
+ 
+ !!! updating Collocation points at epoch  800 !!! 
+
+
+==> Epoch: 800, Mean_loss of pinns: 1.058e-04, loss_BC: 0.000e+00, loss_IC: 4.118e-05, loss_f: 6.464e-05
+ => minimum loss: 3.731e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.767e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 810, Mean_loss of pinns: 1.013e-04, loss_BC: 0.000e+00, loss_IC: 4.131e-05, loss_f: 6.000e-05
+ => minimum loss: 3.695e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.716e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 820, Mean_loss of pinns: 9.769e-05, loss_BC: 0.000e+00, loss_IC: 4.146e-05, loss_f: 5.624e-05
+ => minimum loss: 3.658e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.666e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 830, Mean_loss of pinns: 9.487e-05, loss_BC: 0.000e+00, loss_IC: 4.160e-05, loss_f: 5.327e-05
+ => minimum loss: 3.635e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.628e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 840, Mean_loss of pinns: 9.304e-05, loss_BC: 0.000e+00, loss_IC: 4.158e-05, loss_f: 5.146e-05
+ => minimum loss: 3.620e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.604e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+ !!! Scipy optimize: !!! - Epoch:  849
+
+ ! Scipy iteration number:  17
+Processes:  3
+Number of pinns to optimize weights:  3
+ !!! pinns to optimize ==> 0000, 0100, 0200
+
+
+pinn: 0200, Iter: 100, total_loss: 7.503e-05, loss_BC: 0.000e+00, loss_IC: 5.681e-05,loss_f: 1.822e-05
+pinn: 0000, Iter: 100, total_loss: 1.104e-04, loss_BC: 0.000e+00, loss_IC: 4.994e-05,loss_f: 6.046e-05
+pinn: 0100, Iter: 100, total_loss: 4.843e-05, loss_BC: 0.000e+00, loss_IC: 3.446e-05,loss_f: 1.396e-05
+pinn: 0200, Iter: 200, total_loss: 7.225e-05, loss_BC: 0.000e+00, loss_IC: 5.700e-05,loss_f: 1.525e-05
+pinn: 0100, Iter: 200, total_loss: 4.348e-05, loss_BC: 0.000e+00, loss_IC: 3.198e-05,loss_f: 1.150e-05
+pinn: 0000, Iter: 200, total_loss: 9.630e-05, loss_BC: 0.000e+00, loss_IC: 5.074e-05,loss_f: 4.556e-05
+pinn: 0200, Iter: 300, total_loss: 6.940e-05, loss_BC: 0.000e+00, loss_IC: 5.637e-05,loss_f: 1.303e-05
+pinn: 0100, Iter: 300, total_loss: 4.075e-05, loss_BC: 0.000e+00, loss_IC: 2.987e-05,loss_f: 1.088e-05
+pinn: 0000, Iter: 300, total_loss: 9.057e-05, loss_BC: 0.000e+00, loss_IC: 4.977e-05,loss_f: 4.080e-05
+pinn: 0200, Iter: 400, total_loss: 6.750e-05, loss_BC: 0.000e+00, loss_IC: 5.477e-05,loss_f: 1.274e-05
+pinn: 0000, Iter: 400, total_loss: 8.388e-05, loss_BC: 0.000e+00, loss_IC: 4.836e-05,loss_f: 3.553e-05
+pinn: 0100, Iter: 400, total_loss: 3.856e-05, loss_BC: 0.000e+00, loss_IC: 2.762e-05,loss_f: 1.094e-05
+pinn: 0200, Iter: 500, total_loss: 6.600e-05, loss_BC: 0.000e+00, loss_IC: 5.292e-05,loss_f: 1.309e-05
+pinn: 0000, Iter: 500, total_loss: 7.859e-05, loss_BC: 0.000e+00, loss_IC: 4.679e-05,loss_f: 3.181e-05
+pinn: 0100, Iter: 500, total_loss: 3.766e-05, loss_BC: 0.000e+00, loss_IC: 2.627e-05,loss_f: 1.139e-05
+pinn: 0200, Iter: 600, total_loss: 6.448e-05, loss_BC: 0.000e+00, loss_IC: 5.087e-05,loss_f: 1.362e-05
+pinn: 0000, Iter: 600, total_loss: 7.516e-05, loss_BC: 0.000e+00, loss_IC: 4.519e-05,loss_f: 2.997e-05
+pinn: 0100, Iter: 600, total_loss: 3.581e-05, loss_BC: 0.000e+00, loss_IC: 2.424e-05,loss_f: 1.157e-05
+
+ !!! number of pinns above the Treshhold:  2
+
+ !!! pinns above the Treshhold ==> 0000, 0200
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 849, Mean_loss of pinns: 5.720e-05, loss_BC: 0.000e+00, loss_IC: 3.861e-05, loss_f: 1.859e-05
+ => minimum loss: 3.482e-05, corresponding pinn index: 0100
+ => maximum loss: 7.290e-05, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  850 !!! 
+
+
+==> Epoch: 850, Mean_loss of pinns: 9.541e-05, loss_BC: 0.000e+00, loss_IC: 3.533e-05, loss_f: 6.008e-05
+ => minimum loss: 3.737e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.296e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0200
+
+==> Epoch: 860, Mean_loss of pinns: 8.879e-05, loss_BC: 0.000e+00, loss_IC: 3.561e-05, loss_f: 5.318e-05
+ => minimum loss: 3.700e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.046e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0200
+
+==> Epoch: 870, Mean_loss of pinns: 8.315e-05, loss_BC: 0.000e+00, loss_IC: 3.641e-05, loss_f: 4.674e-05
+ => minimum loss: 3.645e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.835e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0200
+
+==> Epoch: 880, Mean_loss of pinns: 7.992e-05, loss_BC: 0.000e+00, loss_IC: 3.679e-05, loss_f: 4.313e-05
+ => minimum loss: 3.604e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.716e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0200
+
+==> Epoch: 890, Mean_loss of pinns: 7.789e-05, loss_BC: 0.000e+00, loss_IC: 3.683e-05, loss_f: 4.106e-05
+ => minimum loss: 3.578e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 1.641e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0200
+
+ !!! Scipy optimize: !!! - Epoch:  899
+
+ ! Scipy iteration number:  18
+Processes:  2
+Number of pinns to optimize weights:  2
+ !!! pinns to optimize ==> 0000, 0200
+
+
+pinn: 0200, Iter: 100, total_loss: 6.486e-05, loss_BC: 0.000e+00, loss_IC: 4.983e-05,loss_f: 1.503e-05
+pinn: 0000, Iter: 100, total_loss: 1.009e-04, loss_BC: 0.000e+00, loss_IC: 5.070e-05,loss_f: 5.022e-05
+pinn: 0200, Iter: 200, total_loss: 6.354e-05, loss_BC: 0.000e+00, loss_IC: 4.960e-05,loss_f: 1.393e-05
+pinn: 0000, Iter: 200, total_loss: 8.980e-05, loss_BC: 0.000e+00, loss_IC: 4.801e-05,loss_f: 4.179e-05
+pinn: 0200, Iter: 300, total_loss: 6.194e-05, loss_BC: 0.000e+00, loss_IC: 4.922e-05,loss_f: 1.272e-05
+pinn: 0000, Iter: 300, total_loss: 8.576e-05, loss_BC: 0.000e+00, loss_IC: 4.600e-05,loss_f: 3.977e-05
+pinn: 0200, Iter: 400, total_loss: 6.059e-05, loss_BC: 0.000e+00, loss_IC: 4.841e-05,loss_f: 1.217e-05
+pinn: 0000, Iter: 400, total_loss: 7.909e-05, loss_BC: 0.000e+00, loss_IC: 4.313e-05,loss_f: 3.596e-05
+pinn: 0200, Iter: 500, total_loss: 5.936e-05, loss_BC: 0.000e+00, loss_IC: 4.699e-05,loss_f: 1.237e-05
+pinn: 0000, Iter: 500, total_loss: 7.262e-05, loss_BC: 0.000e+00, loss_IC: 4.180e-05,loss_f: 3.082e-05
+pinn: 0200, Iter: 600, total_loss: 5.809e-05, loss_BC: 0.000e+00, loss_IC: 4.560e-05,loss_f: 1.249e-05
+pinn: 0000, Iter: 600, total_loss: 6.820e-05, loss_BC: 0.000e+00, loss_IC: 4.019e-05,loss_f: 2.801e-05
+
+ !!! number of pinns above the Treshhold:  2
+
+ !!! pinns above the Treshhold ==> 0000, 0200
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 899, Mean_loss of pinns: 6.135e-05, loss_BC: 0.000e+00, loss_IC: 4.108e-05, loss_f: 2.027e-05
+ => minimum loss: 5.647e-05, corresponding pinn index: 0200
+ => maximum loss: 6.623e-05, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  900 !!! 
+
+
+==> Epoch: 900, Mean_loss of pinns: 3.385e-04, loss_BC: 0.000e+00, loss_IC: 3.238e-05, loss_f: 3.062e-04
+ => minimum loss: 6.016e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 9.700e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 910, Mean_loss of pinns: 1.715e-04, loss_BC: 0.000e+00, loss_IC: 4.855e-05, loss_f: 1.229e-04
+ => minimum loss: 5.987e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 3.602e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 920, Mean_loss of pinns: 1.483e-04, loss_BC: 0.000e+00, loss_IC: 8.399e-05, loss_f: 6.431e-05
+ => minimum loss: 5.961e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 2.899e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 930, Mean_loss of pinns: 1.485e-04, loss_BC: 0.000e+00, loss_IC: 9.121e-05, loss_f: 5.731e-05
+ => minimum loss: 5.941e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 2.945e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 940, Mean_loss of pinns: 1.412e-04, loss_BC: 0.000e+00, loss_IC: 8.105e-05, loss_f: 6.016e-05
+ => minimum loss: 5.925e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 2.697e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  949
+
+ ! Scipy iteration number:  19
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 1.485e-04, loss_BC: 0.000e+00, loss_IC: 9.954e-05,loss_f: 4.897e-05
+pinn: 0100, Iter: 100, total_loss: 4.653e-05, loss_BC: 0.000e+00, loss_IC: 2.432e-05,loss_f: 2.220e-05
+pinn: 0000, Iter: 100, total_loss: 1.332e-04, loss_BC: 0.000e+00, loss_IC: 6.419e-05,loss_f: 6.903e-05
+pinn: 0200, Iter: 100, total_loss: 5.562e-05, loss_BC: 0.000e+00, loss_IC: 4.286e-05,loss_f: 1.276e-05
+pinn: 0300, Iter: 200, total_loss: 1.155e-04, loss_BC: 0.000e+00, loss_IC: 7.720e-05,loss_f: 3.832e-05
+pinn: 0100, Iter: 200, total_loss: 3.978e-05, loss_BC: 0.000e+00, loss_IC: 2.409e-05,loss_f: 1.569e-05
+pinn: 0000, Iter: 200, total_loss: 1.121e-04, loss_BC: 0.000e+00, loss_IC: 5.743e-05,loss_f: 5.464e-05
+pinn: 0200, Iter: 200, total_loss: 5.387e-05, loss_BC: 0.000e+00, loss_IC: 4.251e-05,loss_f: 1.136e-05
+pinn: 0300, Iter: 300, total_loss: 9.094e-05, loss_BC: 0.000e+00, loss_IC: 6.488e-05,loss_f: 2.606e-05
+pinn: 0100, Iter: 300, total_loss: 3.612e-05, loss_BC: 0.000e+00, loss_IC: 2.392e-05,loss_f: 1.220e-05
+pinn: 0000, Iter: 300, total_loss: 9.835e-05, loss_BC: 0.000e+00, loss_IC: 5.371e-05,loss_f: 4.463e-05
+pinn: 0200, Iter: 300, total_loss: 5.282e-05, loss_BC: 0.000e+00, loss_IC: 4.164e-05,loss_f: 1.117e-05
+pinn: 0300, Iter: 400, total_loss: 8.483e-05, loss_BC: 0.000e+00, loss_IC: 6.110e-05,loss_f: 2.373e-05
+pinn: 0100, Iter: 400, total_loss: 3.447e-05, loss_BC: 0.000e+00, loss_IC: 2.384e-05,loss_f: 1.064e-05
+pinn: 0000, Iter: 400, total_loss: 9.130e-05, loss_BC: 0.000e+00, loss_IC: 5.051e-05,loss_f: 4.079e-05
+pinn: 0200, Iter: 400, total_loss: 5.238e-05, loss_BC: 0.000e+00, loss_IC: 4.144e-05,loss_f: 1.093e-05
+pinn: 0300, Iter: 500, total_loss: 8.004e-05, loss_BC: 0.000e+00, loss_IC: 5.740e-05,loss_f: 2.264e-05
+pinn: 0100, Iter: 500, total_loss: 3.342e-05, loss_BC: 0.000e+00, loss_IC: 2.364e-05,loss_f: 9.783e-06
+pinn: 0000, Iter: 500, total_loss: 8.492e-05, loss_BC: 0.000e+00, loss_IC: 4.658e-05,loss_f: 3.834e-05
+pinn: 0200, Iter: 500, total_loss: 5.159e-05, loss_BC: 0.000e+00, loss_IC: 4.061e-05,loss_f: 1.098e-05
+pinn: 0300, Iter: 600, total_loss: 7.616e-05, loss_BC: 0.000e+00, loss_IC: 5.473e-05,loss_f: 2.143e-05
+pinn: 0100, Iter: 600, total_loss: 3.208e-05, loss_BC: 0.000e+00, loss_IC: 2.300e-05,loss_f: 9.079e-06
+pinn: 0000, Iter: 600, total_loss: 7.706e-05, loss_BC: 0.000e+00, loss_IC: 4.257e-05,loss_f: 3.448e-05
+pinn: 0200, Iter: 600, total_loss: 5.061e-05, loss_BC: 0.000e+00, loss_IC: 3.955e-05,loss_f: 1.106e-05
+
+ !!! number of pinns above the Treshhold:  2
+
+ !!! pinns above the Treshhold ==> 0000, 0300
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 949, Mean_loss of pinns: 5.618e-05, loss_BC: 0.000e+00, loss_IC: 3.804e-05, loss_f: 1.814e-05
+ => minimum loss: 3.121e-05, corresponding pinn index: 0100
+ => maximum loss: 7.223e-05, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  950 !!! 
+
+
+==> Epoch: 950, Mean_loss of pinns: 6.802e-04, loss_BC: 0.000e+00, loss_IC: 3.804e-05, loss_f: 6.421e-04
+ => minimum loss: 5.731e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 1.508e-03, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 960, Mean_loss of pinns: 4.955e-04, loss_BC: 0.000e+00, loss_IC: 4.926e-05, loss_f: 4.463e-04
+ => minimum loss: 5.687e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 8.504e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 970, Mean_loss of pinns: 4.149e-04, loss_BC: 0.000e+00, loss_IC: 8.704e-05, loss_f: 3.278e-04
+ => minimum loss: 5.660e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 7.464e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 980, Mean_loss of pinns: 3.839e-04, loss_BC: 0.000e+00, loss_IC: 1.086e-04, loss_f: 2.753e-04
+ => minimum loss: 5.641e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 6.334e-04, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 990, Mean_loss of pinns: 3.548e-04, loss_BC: 0.000e+00, loss_IC: 1.123e-04, loss_f: 2.425e-04
+ => minimum loss: 5.628e-05, corresponding pinn/batch index: 0200
+ => maximum loss: 5.864e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  999
+
+ ! Scipy iteration number:  20
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0300, Iter: 100, total_loss: 8.272e-05, loss_BC: 0.000e+00, loss_IC: 3.033e-05,loss_f: 5.239e-05
+pinn: 0100, Iter: 100, total_loss: 2.424e-04, loss_BC: 0.000e+00, loss_IC: 1.436e-04,loss_f: 9.884e-05
+pinn: 0200, Iter: 100, total_loss: 5.019e-05, loss_BC: 0.000e+00, loss_IC: 3.706e-05,loss_f: 1.313e-05
+pinn: 0000, Iter: 100, total_loss: 1.381e-04, loss_BC: 0.000e+00, loss_IC: 3.272e-05,loss_f: 1.054e-04
+pinn: 0300, Iter: 200, total_loss: 5.206e-05, loss_BC: 0.000e+00, loss_IC: 2.709e-05,loss_f: 2.497e-05
+pinn: 0100, Iter: 200, total_loss: 2.123e-04, loss_BC: 0.000e+00, loss_IC: 1.371e-04,loss_f: 7.513e-05
+pinn: 0200, Iter: 200, total_loss: 4.782e-05, loss_BC: 0.000e+00, loss_IC: 3.712e-05,loss_f: 1.070e-05
+pinn: 0000, Iter: 200, total_loss: 1.065e-04, loss_BC: 0.000e+00, loss_IC: 2.964e-05,loss_f: 7.683e-05
+pinn: 0300, Iter: 300, total_loss: 3.943e-05, loss_BC: 0.000e+00, loss_IC: 2.536e-05,loss_f: 1.407e-05
+pinn: 0100, Iter: 300, total_loss: 1.945e-04, loss_BC: 0.000e+00, loss_IC: 1.293e-04,loss_f: 6.517e-05
+pinn: 0200, Iter: 300, total_loss: 4.669e-05, loss_BC: 0.000e+00, loss_IC: 3.708e-05,loss_f: 9.604e-06
+pinn: 0000, Iter: 300, total_loss: 9.409e-05, loss_BC: 0.000e+00, loss_IC: 2.849e-05,loss_f: 6.560e-05
+pinn: 0300, Iter: 400, total_loss: 3.437e-05, loss_BC: 0.000e+00, loss_IC: 2.399e-05,loss_f: 1.039e-05
+pinn: 0100, Iter: 400, total_loss: 1.837e-04, loss_BC: 0.000e+00, loss_IC: 1.278e-04,loss_f: 5.592e-05
+pinn: 0200, Iter: 400, total_loss: 4.553e-05, loss_BC: 0.000e+00, loss_IC: 3.687e-05,loss_f: 8.664e-06
+pinn: 0000, Iter: 400, total_loss: 8.042e-05, loss_BC: 0.000e+00, loss_IC: 2.801e-05,loss_f: 5.242e-05
+pinn: 0300, Iter: 500, total_loss: 3.220e-05, loss_BC: 0.000e+00, loss_IC: 2.366e-05,loss_f: 8.539e-06
+pinn: 0100, Iter: 500, total_loss: 1.712e-04, loss_BC: 0.000e+00, loss_IC: 1.165e-04,loss_f: 5.465e-05
+pinn: 0000, Iter: 500, total_loss: 7.494e-05, loss_BC: 0.000e+00, loss_IC: 2.845e-05,loss_f: 4.649e-05
+pinn: 0200, Iter: 500, total_loss: 4.490e-05, loss_BC: 0.000e+00, loss_IC: 3.644e-05,loss_f: 8.460e-06
+pinn: 0300, Iter: 600, total_loss: 3.096e-05, loss_BC: 0.000e+00, loss_IC: 2.333e-05,loss_f: 7.631e-06
+pinn: 0100, Iter: 600, total_loss: 1.536e-04, loss_BC: 0.000e+00, loss_IC: 1.005e-04,loss_f: 5.308e-05
+pinn: 0200, Iter: 600, total_loss: 4.408e-05, loss_BC: 0.000e+00, loss_IC: 3.586e-05,loss_f: 8.220e-06
+pinn: 0000, Iter: 600, total_loss: 7.043e-05, loss_BC: 0.000e+00, loss_IC: 2.904e-05,loss_f: 4.139e-05
+
+ !!! number of pinns above the Treshhold:  2
+
+ !!! pinns above the Treshhold ==> 0000, 0100
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 999, Mean_loss of pinns: 7.115e-05, loss_BC: 0.000e+00, loss_IC: 4.521e-05, loss_f: 2.595e-05
+ => minimum loss: 2.956e-05, corresponding pinn index: 0300
+ => maximum loss: 1.444e-04, corresponding pinn  index: 0100
+ 
+ !!! updating Collocation points at epoch  1000 !!! 
+
+
+==> Epoch: 1000, Mean_loss of pinns: 1.358e-04, loss_BC: 0.000e+00, loss_IC: 4.521e-05, loss_f: 9.061e-05
+ => minimum loss: 3.373e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.451e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0100
+
+==> Epoch: 1010, Mean_loss of pinns: 1.228e-04, loss_BC: 0.000e+00, loss_IC: 4.335e-05, loss_f: 7.940e-05
+ => minimum loss: 3.459e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.335e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0100
+
+==> Epoch: 1020, Mean_loss of pinns: 1.117e-04, loss_BC: 0.000e+00, loss_IC: 4.240e-05, loss_f: 6.926e-05
+ => minimum loss: 3.487e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.228e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0100
+
+==> Epoch: 1030, Mean_loss of pinns: 1.055e-04, loss_BC: 0.000e+00, loss_IC: 4.224e-05, loss_f: 6.322e-05
+ => minimum loss: 3.469e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.149e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0100
+
+==> Epoch: 1040, Mean_loss of pinns: 1.023e-04, loss_BC: 0.000e+00, loss_IC: 4.217e-05, loss_f: 6.016e-05
+ => minimum loss: 3.443e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 2.093e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0000, 0100
+
+ !!! Scipy optimize: !!! - Epoch:  1049
+
+ ! Scipy iteration number:  21
+Processes:  2
+Number of pinns to optimize weights:  2
+ !!! pinns to optimize ==> 0000, 0100
+
+
+pinn: 0100, Iter: 100, total_loss: 8.810e-05, loss_BC: 0.000e+00, loss_IC: 3.552e-05,loss_f: 5.258e-05
+pinn: 0000, Iter: 100, total_loss: 6.453e-05, loss_BC: 0.000e+00, loss_IC: 3.111e-05,loss_f: 3.341e-05
+pinn: 0100, Iter: 200, total_loss: 6.239e-05, loss_BC: 0.000e+00, loss_IC: 2.738e-05,loss_f: 3.501e-05
+pinn: 0000, Iter: 200, total_loss: 5.567e-05, loss_BC: 0.000e+00, loss_IC: 2.937e-05,loss_f: 2.630e-05
+pinn: 0100, Iter: 300, total_loss: 4.809e-05, loss_BC: 0.000e+00, loss_IC: 2.623e-05,loss_f: 2.187e-05
+pinn: 0000, Iter: 300, total_loss: 5.156e-05, loss_BC: 0.000e+00, loss_IC: 2.982e-05,loss_f: 2.173e-05
+pinn: 0100, Iter: 400, total_loss: 4.275e-05, loss_BC: 0.000e+00, loss_IC: 2.448e-05,loss_f: 1.827e-05
+pinn: 0000, Iter: 400, total_loss: 4.956e-05, loss_BC: 0.000e+00, loss_IC: 2.909e-05,loss_f: 2.047e-05
+pinn: 0100, Iter: 500, total_loss: 3.921e-05, loss_BC: 0.000e+00, loss_IC: 2.526e-05,loss_f: 1.396e-05
+pinn: 0000, Iter: 500, total_loss: 4.787e-05, loss_BC: 0.000e+00, loss_IC: 2.830e-05,loss_f: 1.957e-05
+pinn: 0100, Iter: 600, total_loss: 3.673e-05, loss_BC: 0.000e+00, loss_IC: 2.398e-05,loss_f: 1.275e-05
+pinn: 0000, Iter: 600, total_loss: 4.571e-05, loss_BC: 0.000e+00, loss_IC: 2.784e-05,loss_f: 1.787e-05
+
+ !!! number of pinns above the Treshhold:  0
+
+ !!! pinns above the Treshhold ==> 
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 1049, Mean_loss of pinns: 3.995e-05, loss_BC: 0.000e+00, loss_IC: 2.550e-05, loss_f: 1.445e-05
+ => minimum loss: 3.567e-05, corresponding pinn index: 0100
+ => maximum loss: 4.424e-05, corresponding pinn  index: 0000
+
+ !!! -------------------------- !!! 
+
+ !!! Start addressing continuity at epoch 1049 !!! 
+
+ !!! --------------------------!!! 
+
+==> Epoch: 1050, Mean_loss of pinns: 3.816e-01, loss_BC: 8.893e-02, loss_IC: 2.762e-05, loss_f: 1.256e-05
+ => minimum loss: 4.491e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 9.155e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 1060, Mean_loss of pinns: 3.898e-01, loss_BC: 1.122e-01, loss_IC: 3.960e-05, loss_f: 2.590e-03
+ => minimum loss: 4.475e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 8.874e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 1070, Mean_loss of pinns: 3.661e-01, loss_BC: 1.067e-01, loss_IC: 1.430e-04, loss_f: 2.581e-03
+ => minimum loss: 4.463e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 8.519e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 1080, Mean_loss of pinns: 3.446e-01, loss_BC: 1.015e-01, loss_IC: 2.555e-04, loss_f: 3.092e-03
+ => minimum loss: 4.453e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 8.198e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 1090, Mean_loss of pinns: 3.253e-01, loss_BC: 9.648e-02, loss_IC: 2.868e-04, loss_f: 3.598e-03
+ => minimum loss: 4.444e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 7.887e-01, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+ !!! Scipy optimize: !!! - Epoch:  1099
+
+ ! Scipy iteration number:  21
+Processes:  3
+Number of pinns to optimize weights:  3
+ !!! pinns to optimize ==> 0000, 0100, 0200
+
+
+pinn: 0000, Iter: 100, total_loss: 1.262e-03, loss_BC: 0.000e+00, loss_IC: 4.516e-04,loss_f: 7.897e-04
+pinn: 0100, Iter: 100, total_loss: 9.984e-04, loss_BC: 0.000e+00, loss_IC: 1.184e-04,loss_f: 8.387e-04
+pinn: 0200, Iter: 100, total_loss: 2.538e-04, loss_BC: 0.000e+00, loss_IC: 5.224e-05,loss_f: 1.766e-04
+pinn: 0000, Iter: 200, total_loss: 7.863e-04, loss_BC: 0.000e+00, loss_IC: 3.059e-04,loss_f: 4.772e-04
+pinn: 0200, Iter: 200, total_loss: 1.371e-04, loss_BC: 0.000e+00, loss_IC: 3.910e-05,loss_f: 9.088e-05
+pinn: 0100, Iter: 200, total_loss: 4.131e-04, loss_BC: 0.000e+00, loss_IC: 6.744e-05,loss_f: 3.455e-04
+pinn: 0200, Iter: 300, total_loss: 9.266e-05, loss_BC: 0.000e+00, loss_IC: 3.548e-05,loss_f: 4.766e-05
+pinn: 0000, Iter: 300, total_loss: 5.591e-04, loss_BC: 0.000e+00, loss_IC: 2.354e-04,loss_f: 3.230e-04
+pinn: 0100, Iter: 300, total_loss: 1.921e-04, loss_BC: 0.000e+00, loss_IC: 4.541e-05,loss_f: 1.466e-04
+pinn: 0200, Iter: 400, total_loss: 7.292e-05, loss_BC: 0.000e+00, loss_IC: 3.479e-05,loss_f: 3.365e-05
+pinn: 0000, Iter: 400, total_loss: 3.656e-04, loss_BC: 0.000e+00, loss_IC: 1.331e-04,loss_f: 2.324e-04
+pinn: 0100, Iter: 400, total_loss: 1.090e-04, loss_BC: 0.000e+00, loss_IC: 3.248e-05,loss_f: 7.648e-05
+pinn: 0200, Iter: 500, total_loss: 5.722e-05, loss_BC: 0.000e+00, loss_IC: 3.608e-05,loss_f: 1.740e-05
+pinn: 0000, Iter: 500, total_loss: 2.693e-04, loss_BC: 0.000e+00, loss_IC: 1.054e-04,loss_f: 1.639e-04
+pinn: 0100, Iter: 500, total_loss: 8.100e-05, loss_BC: 0.000e+00, loss_IC: 2.468e-05,loss_f: 5.614e-05
+pinn: 0200, Iter: 600, total_loss: 5.347e-05, loss_BC: 0.000e+00, loss_IC: 3.589e-05,loss_f: 1.551e-05
+pinn: 0000, Iter: 600, total_loss: 2.160e-04, loss_BC: 0.000e+00, loss_IC: 7.620e-05,loss_f: 1.398e-04
+pinn: 0100, Iter: 600, total_loss: 6.441e-05, loss_BC: 0.000e+00, loss_IC: 2.516e-05,loss_f: 3.898e-05
+
+ !!! number of pinns above the Treshhold:  3
+
+ !!! pinns above the Treshhold ==> 0000, 0100, 0200
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 1099, Mean_loss of pinns: 9.455e-05, loss_BC: 0.000e+00, loss_IC: 3.936e-05, loss_f: 5.464e-05
+ => minimum loss: 5.098e-05, corresponding pinn index: 0200
+ => maximum loss: 1.776e-04, corresponding pinn  index: 0000
+ 
+ !!! updating Collocation points at epoch  1100 !!! 
+
+
+==> Epoch: 1100, Mean_loss of pinns: 9.681e-04, loss_BC: 5.549e-05, loss_IC: 3.541e-05, loss_f: 8.742e-04
+ => minimum loss: 1.402e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 1.754e-03, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 1110, Mean_loss of pinns: 6.576e-04, loss_BC: 6.578e-05, loss_IC: 4.435e-05, loss_f: 5.444e-04
+ => minimum loss: 1.327e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 1.228e-03, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 1120, Mean_loss of pinns: 4.822e-04, loss_BC: 8.370e-05, loss_IC: 6.872e-05, loss_f: 3.268e-04
+ => minimum loss: 1.232e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 8.524e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 1130, Mean_loss of pinns: 4.330e-04, loss_BC: 8.979e-05, loss_IC: 8.693e-05, loss_f: 2.532e-04
+ => minimum loss: 1.168e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 7.403e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+==> Epoch: 1140, Mean_loss of pinns: 4.171e-04, loss_BC: 9.592e-05, loss_IC: 9.641e-05, loss_f: 2.217e-04
+ => minimum loss: 1.129e-04, corresponding pinn/batch index: 0300
+ => maximum loss: 7.051e-04, corresponding pinn/batch  index: 0000
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 4
+pinns above Threshold: 0000, 0100, 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  1149
+
+ ! Scipy iteration number:  22
+Processes:  4
+Number of pinns to optimize weights:  4
+ !!! pinns to optimize ==> 0000, 0100, 0200, 0300
+
+
+pinn: 0100, Iter: 100, total_loss: 2.454e-04, loss_BC: 0.000e+00, loss_IC: 1.446e-04,loss_f: 1.004e-04
+pinn: 0300, Iter: 100, total_loss: 5.269e-05, loss_BC: 0.000e+00, loss_IC: 2.463e-05,loss_f: 1.818e-05
+pinn: 0200, Iter: 100, total_loss: 9.956e-05, loss_BC: 0.000e+00, loss_IC: 4.663e-05,loss_f: 5.136e-05
+pinn: 0000, Iter: 100, total_loss: 2.209e-04, loss_BC: 0.000e+00, loss_IC: 8.208e-05,loss_f: 1.388e-04
+pinn: 0100, Iter: 200, total_loss: 2.175e-04, loss_BC: 0.000e+00, loss_IC: 1.248e-04,loss_f: 9.236e-05
+pinn: 0000, Iter: 200, total_loss: 1.713e-04, loss_BC: 0.000e+00, loss_IC: 6.265e-05,loss_f: 1.087e-04
+pinn: 0300, Iter: 200, total_loss: 4.099e-05, loss_BC: 0.000e+00, loss_IC: 2.336e-05,loss_f: 9.149e-06
+pinn: 0200, Iter: 200, total_loss: 7.534e-05, loss_BC: 0.000e+00, loss_IC: 4.157e-05,loss_f: 3.165e-05
+pinn: 0100, Iter: 300, total_loss: 1.970e-04, loss_BC: 0.000e+00, loss_IC: 1.184e-04,loss_f: 7.825e-05
+pinn: 0300, Iter: 300, total_loss: 3.736e-05, loss_BC: 0.000e+00, loss_IC: 2.239e-05,loss_f: 7.571e-06
+pinn: 0000, Iter: 300, total_loss: 1.384e-04, loss_BC: 0.000e+00, loss_IC: 5.558e-05,loss_f: 8.286e-05
+pinn: 0200, Iter: 300, total_loss: 6.418e-05, loss_BC: 0.000e+00, loss_IC: 3.888e-05,loss_f: 2.280e-05
+pinn: 0100, Iter: 400, total_loss: 1.797e-04, loss_BC: 0.000e+00, loss_IC: 1.125e-04,loss_f: 6.676e-05
+pinn: 0000, Iter: 400, total_loss: 1.153e-04, loss_BC: 0.000e+00, loss_IC: 4.531e-05,loss_f: 7.003e-05
+pinn: 0300, Iter: 400, total_loss: 3.493e-05, loss_BC: 0.000e+00, loss_IC: 2.205e-05,loss_f: 6.765e-06
+pinn: 0200, Iter: 400, total_loss: 5.680e-05, loss_BC: 0.000e+00, loss_IC: 3.938e-05,loss_f: 1.468e-05
+pinn: 0100, Iter: 500, total_loss: 1.563e-04, loss_BC: 0.000e+00, loss_IC: 1.002e-04,loss_f: 5.568e-05
+pinn: 0000, Iter: 500, total_loss: 1.009e-04, loss_BC: 0.000e+00, loss_IC: 3.540e-05,loss_f: 6.551e-05
+pinn: 0300, Iter: 500, total_loss: 3.238e-05, loss_BC: 0.000e+00, loss_IC: 2.155e-05,loss_f: 6.179e-06
+pinn: 0200, Iter: 500, total_loss: 5.288e-05, loss_BC: 0.000e+00, loss_IC: 3.892e-05,loss_f: 1.128e-05
+pinn: 0100, Iter: 600, total_loss: 1.370e-04, loss_BC: 0.000e+00, loss_IC: 8.654e-05,loss_f: 4.989e-05
+pinn: 0000, Iter: 600, total_loss: 8.761e-05, loss_BC: 0.000e+00, loss_IC: 3.042e-05,loss_f: 5.719e-05
+pinn: 0300, Iter: 600, total_loss: 3.028e-05, loss_BC: 0.000e+00, loss_IC: 2.051e-05,loss_f: 6.548e-06
+pinn: 0200, Iter: 600, total_loss: 5.014e-05, loss_BC: 0.000e+00, loss_IC: 3.856e-05,loss_f: 9.200e-06
+
+ !!! number of pinns above the Treshhold:  2
+
+ !!! pinns above the Treshhold ==> 0000, 0100
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 1149, Mean_loss of pinns: 6.831e-05, loss_BC: 0.000e+00, loss_IC: 3.755e-05, loss_f: 2.937e-05
+ => minimum loss: 2.858e-05, corresponding pinn index: 0300
+ => maximum loss: 1.193e-04, corresponding pinn  index: 0100
+ 
+ !!! updating Collocation points at epoch  1150 !!! 
+
+
+==> Epoch: 1150, Mean_loss of pinns: 1.627e-04, loss_BC: 1.232e-05, loss_IC: 3.755e-05, loss_f: 1.114e-04
+ => minimum loss: 3.712e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 3.745e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 1160, Mean_loss of pinns: 1.597e-04, loss_BC: 1.184e-05, loss_IC: 3.743e-05, loss_f: 1.091e-04
+ => minimum loss: 3.691e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 3.671e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 1170, Mean_loss of pinns: 1.558e-04, loss_BC: 1.125e-05, loss_IC: 3.754e-05, loss_f: 1.056e-04
+ => minimum loss: 3.643e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 3.564e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 1180, Mean_loss of pinns: 1.509e-04, loss_BC: 9.536e-06, loss_IC: 3.734e-05, loss_f: 1.026e-04
+ => minimum loss: 3.604e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 3.448e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+==> Epoch: 1190, Mean_loss of pinns: 1.480e-04, loss_BC: 9.694e-06, loss_IC: 3.678e-05, loss_f: 1.001e-04
+ => minimum loss: 3.576e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 3.362e-04, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 3
+pinns above Threshold: 0000, 0100, 0200
+
+ !!! Scipy optimize: !!! - Epoch:  1199
+
+ ! Scipy iteration number:  23
+Processes:  3
+Number of pinns to optimize weights:  3
+ !!! pinns to optimize ==> 0000, 0100, 0200
+
+
+pinn: 0100, Iter: 100, total_loss: 7.617e-05, loss_BC: 0.000e+00, loss_IC: 3.378e-05,loss_f: 4.177e-05
+pinn: 0000, Iter: 100, total_loss: 4.940e-05, loss_BC: 0.000e+00, loss_IC: 6.744e-06,loss_f: 4.265e-05
+pinn: 0200, Iter: 100, total_loss: 5.624e-05, loss_BC: 0.000e+00, loss_IC: 4.189e-05,loss_f: 1.205e-05
+pinn: 0100, Iter: 200, total_loss: 4.916e-05, loss_BC: 0.000e+00, loss_IC: 2.299e-05,loss_f: 2.556e-05
+pinn: 0200, Iter: 200, total_loss: 5.232e-05, loss_BC: 0.000e+00, loss_IC: 4.011e-05,loss_f: 1.006e-05
+pinn: 0000, Iter: 200, total_loss: 3.764e-05, loss_BC: 0.000e+00, loss_IC: 5.855e-06,loss_f: 3.178e-05
+pinn: 0100, Iter: 300, total_loss: 3.951e-05, loss_BC: 0.000e+00, loss_IC: 2.029e-05,loss_f: 1.863e-05
+pinn: 0200, Iter: 300, total_loss: 4.933e-05, loss_BC: 0.000e+00, loss_IC: 3.843e-05,loss_f: 9.085e-06
+pinn: 0000, Iter: 300, total_loss: 3.341e-05, loss_BC: 0.000e+00, loss_IC: 4.676e-06,loss_f: 2.873e-05
+pinn: 0100, Iter: 400, total_loss: 3.411e-05, loss_BC: 0.000e+00, loss_IC: 1.849e-05,loss_f: 1.503e-05
+pinn: 0200, Iter: 400, total_loss: 4.742e-05, loss_BC: 0.000e+00, loss_IC: 3.713e-05,loss_f: 8.706e-06
+pinn: 0000, Iter: 400, total_loss: 2.861e-05, loss_BC: 0.000e+00, loss_IC: 5.229e-06,loss_f: 2.338e-05
+pinn: 0100, Iter: 500, total_loss: 3.072e-05, loss_BC: 0.000e+00, loss_IC: 1.736e-05,loss_f: 1.279e-05
+pinn: 0200, Iter: 500, total_loss: 4.567e-05, loss_BC: 0.000e+00, loss_IC: 3.591e-05,loss_f: 8.372e-06
+pinn: 0000, Iter: 500, total_loss: 2.625e-05, loss_BC: 0.000e+00, loss_IC: 4.795e-06,loss_f: 2.146e-05
+pinn: 0100, Iter: 600, total_loss: 2.719e-05, loss_BC: 0.000e+00, loss_IC: 1.534e-05,loss_f: 1.130e-05
+pinn: 0200, Iter: 600, total_loss: 4.390e-05, loss_BC: 0.000e+00, loss_IC: 3.497e-05,loss_f: 7.638e-06
+pinn: 0000, Iter: 600, total_loss: 2.443e-05, loss_BC: 0.000e+00, loss_IC: 4.771e-06,loss_f: 1.966e-05
+
+ !!! number of pinns above the Treshhold:  0
+
+ !!! pinns above the Treshhold ==> 
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 1199, Mean_loss of pinns: 3.041e-05, loss_BC: 0.000e+00, loss_IC: 1.772e-05, loss_f: 1.209e-05
+ => minimum loss: 2.336e-05, corresponding pinn index: 0000
+ => maximum loss: 4.281e-05, corresponding pinn  index: 0200
+
+==> Epoch: 1200, Mean_loss of pinns: 4.518e-05, loss_BC: 1.349e-05, loss_IC: 1.821e-05, loss_f: 1.237e-05
+ => minimum loss: 2.336e-05, corresponding pinn/batch index: 0000
+ => maximum loss: 7.316e-05, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0200, 0300
+
+==> Epoch: 1210, Mean_loss of pinns: 4.467e-05, loss_BC: 1.285e-05, loss_IC: 1.833e-05, loss_f: 1.239e-05
+ => minimum loss: 2.339e-05, corresponding pinn/batch index: 0000
+ => maximum loss: 7.202e-05, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0200, 0300
+
+==> Epoch: 1220, Mean_loss of pinns: 4.330e-05, loss_BC: 1.113e-05, loss_IC: 1.868e-05, loss_f: 1.239e-05
+ => minimum loss: 2.341e-05, corresponding pinn/batch index: 0000
+ => maximum loss: 6.757e-05, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0200, 0300
+
+==> Epoch: 1230, Mean_loss of pinns: 4.185e-05, loss_BC: 9.431e-06, loss_IC: 1.894e-05, loss_f: 1.238e-05
+ => minimum loss: 2.340e-05, corresponding pinn/batch index: 0000
+ => maximum loss: 6.266e-05, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0200, 0300
+
+==> Epoch: 1240, Mean_loss of pinns: 4.193e-05, loss_BC: 9.397e-06, loss_IC: 1.906e-05, loss_f: 1.237e-05
+ => minimum loss: 2.339e-05, corresponding pinn/batch index: 0000
+ => maximum loss: 6.274e-05, corresponding pinn/batch  index: 0300
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0200, 0300
+
+ !!! Scipy optimize: !!! - Epoch:  1249
+
+ ! Scipy iteration number:  23
+Processes:  2
+Number of pinns to optimize weights:  2
+ !!! pinns to optimize ==> 0200, 0300
+
+
+pinn: 0200, Iter: 100, total_loss: 4.203e-05, loss_BC: 0.000e+00, loss_IC: 3.400e-05,loss_f: 6.770e-06
+pinn: 0300, Iter: 100, total_loss: 3.049e-05, loss_BC: 0.000e+00, loss_IC: 1.972e-05,loss_f: 8.137e-06
+pinn: 0200, Iter: 200, total_loss: 4.136e-05, loss_BC: 0.000e+00, loss_IC: 3.366e-05,loss_f: 6.456e-06
+pinn: 0300, Iter: 200, total_loss: 2.871e-05, loss_BC: 0.000e+00, loss_IC: 1.958e-05,loss_f: 6.535e-06
+pinn: 0200, Iter: 300, total_loss: 4.069e-05, loss_BC: 0.000e+00, loss_IC: 3.289e-05,loss_f: 6.561e-06
+pinn: 0300, Iter: 300, total_loss: 2.716e-05, loss_BC: 0.000e+00, loss_IC: 1.918e-05,loss_f: 5.473e-06
+pinn: 0200, Iter: 400, total_loss: 3.989e-05, loss_BC: 0.000e+00, loss_IC: 3.214e-05,loss_f: 6.550e-06
+pinn: 0300, Iter: 400, total_loss: 2.597e-05, loss_BC: 0.000e+00, loss_IC: 1.866e-05,loss_f: 4.937e-06
+pinn: 0200, Iter: 500, total_loss: 3.889e-05, loss_BC: 0.000e+00, loss_IC: 3.066e-05,loss_f: 7.085e-06
+pinn: 0300, Iter: 500, total_loss: 2.495e-05, loss_BC: 0.000e+00, loss_IC: 1.813e-05,loss_f: 4.625e-06
+pinn: 0200, Iter: 600, total_loss: 3.764e-05, loss_BC: 0.000e+00, loss_IC: 2.906e-05,loss_f: 7.555e-06
+pinn: 0300, Iter: 600, total_loss: 2.379e-05, loss_BC: 0.000e+00, loss_IC: 1.715e-05,loss_f: 4.710e-06
+
+ !!! number of pinns above the Treshhold:  0
+
+ !!! pinns above the Treshhold ==> 
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 1249, Mean_loss of pinns: 2.983e-05, loss_BC: 0.000e+00, loss_IC: 2.226e-05, loss_f: 6.180e-06
+ => minimum loss: 2.323e-05, corresponding pinn index: 0300
+ => maximum loss: 3.642e-05, corresponding pinn  index: 0200
+
+==> Epoch: 1250, Mean_loss of pinns: 4.113e-05, loss_BC: 1.409e-05, loss_IC: 1.594e-05, loss_f: 1.028e-05
+ => minimum loss: 2.323e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.687e-05, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 2
+pinns above Threshold: 0100, 0200
+
+==> Epoch: 1260, Mean_loss of pinns: 3.903e-05, loss_BC: 1.193e-05, loss_IC: 1.599e-05, loss_f: 1.029e-05
+ => minimum loss: 2.324e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.185e-05, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 1
+pinns above Threshold: 0100
+
+==> Epoch: 1270, Mean_loss of pinns: 3.737e-05, loss_BC: 1.007e-05, loss_IC: 1.619e-05, loss_f: 1.028e-05
+ => minimum loss: 2.325e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 5.586e-05, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 1
+pinns above Threshold: 0100
+
+==> Epoch: 1280, Mean_loss of pinns: 3.835e-05, loss_BC: 1.089e-05, loss_IC: 1.636e-05, loss_f: 1.027e-05
+ => minimum loss: 2.324e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 6.045e-05, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 1
+pinns above Threshold: 0100
+
+==> Epoch: 1290, Mean_loss of pinns: 3.834e-05, loss_BC: 1.079e-05, loss_IC: 1.645e-05, loss_f: 1.028e-05
+ => minimum loss: 2.324e-05, corresponding pinn/batch index: 0300
+ => maximum loss: 5.944e-05, corresponding pinn/batch  index: 0100
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 1
+pinns above Threshold: 0100
+
+ !!! Scipy optimize: !!! - Epoch:  1299
+
+ ! Scipy iteration number:  23
+Processes:  1
+Number of pinns to optimize weights:  1
+ !!! pinns to optimize ==> 0100
+
+
+pinn: 0100, Iter: 100, total_loss: 2.315e-05, loss_BC: 0.000e+00, loss_IC: 1.338e-05,loss_f: 9.248e-06
+pinn: 0100, Iter: 200, total_loss: 2.173e-05, loss_BC: 0.000e+00, loss_IC: 1.237e-05,loss_f: 8.846e-06
+pinn: 0100, Iter: 300, total_loss: 2.035e-05, loss_BC: 0.000e+00, loss_IC: 1.105e-05,loss_f: 8.830e-06
+pinn: 0100, Iter: 400, total_loss: 1.855e-05, loss_BC: 0.000e+00, loss_IC: 9.169e-06,loss_f: 8.947e-06
+pinn: 0100, Iter: 500, total_loss: 1.695e-05, loss_BC: 0.000e+00, loss_IC: 8.352e-06,loss_f: 8.196e-06
+pinn: 0100, Iter: 600, total_loss: 1.540e-05, loss_BC: 0.000e+00, loss_IC: 7.010e-06,loss_f: 8.032e-06
+
+ !!! number of pinns above the Treshhold:  0
+
+ !!! pinns above the Treshhold ==> 
+
+ !!! Scipy optimization done !!!
+ 
+==> loss after L-BFGS-B optimization for Epoch: 1299, Mean_loss of pinns: 1.406e-05, loss_BC: 0.000e+00, loss_IC: 6.154e-06, loss_f: 7.578e-06
+ => minimum loss: 1.406e-05, corresponding pinn index: 0100
+ => maximum loss: 1.406e-05, corresponding pinn  index: 0100
+
+==> Epoch: 1300, Mean_loss of pinns: 3.194e-05, loss_BC: 7.466e-06, loss_IC: 1.406e-05, loss_f: 9.639e-06
+ => minimum loss: 1.406e-05, corresponding pinn/batch index: 0100
+ => maximum loss: 4.561e-05, corresponding pinn/batch  index: 0200
+ => In : Number of pinns to train: 4
+ => Out : Number of pinns above Threshold: 0
+pinns above Threshold: 
+
+ max_loss: 4.800e-05 < Threshold: 5.000e-05
+
+
+ !!!  saving weights of self.pinns in progress !!! 
+
+
+     ! saving complete ! 
+
+remind ,  N_batches  4
+
+ !!!  saving predictions of pinns in progress !!! 
+
+
+        ! saving complete ! 
+
+
+ pinns to pinns Prediction ===> next time interval 
+Increase time interval ==> Epoch: 1309, total_loss: 3.315e-05, loss_BC: 8.664e-06, loss_IC: 1.406e-05, loss_f: 9.647e-06
+
+ 
+
+ ===================================================> 
+ 
+  Change the time domain to:  t_min: 0.04898, t_max: 0.09796
+
+ ===================================================> 
+ 

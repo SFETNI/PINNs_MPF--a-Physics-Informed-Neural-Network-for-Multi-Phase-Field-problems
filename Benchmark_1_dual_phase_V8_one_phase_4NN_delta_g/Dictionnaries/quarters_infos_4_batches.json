@@ -1,0 +1,1 @@
+{"Phase_0": {"quarter1": [{"idx_pinn": "0000", "limits": [0.0, 0.5, 0.0, 0.5]}], "quarter2": [{"idx_pinn": "0100", "limits": [0.0, 0.5, 0.5, 1.0]}], "quarter3": [{"idx_pinn": "0200", "limits": [0.5, 1.0, 0.0, 0.5]}], "quarter4": [{"idx_pinn": "0300", "limits": [0.5, 1.0, 0.5, 1.0]}]}}
