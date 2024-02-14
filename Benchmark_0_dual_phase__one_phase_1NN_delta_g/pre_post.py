@@ -433,7 +433,6 @@ class PrePost:
             if i == 1:
                 ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.35), ncol=5, frameon=False)
                 
-
-         #plt.savefig('results.png', dpi=500)
+         plt.savefig('results.png', dpi=500)
 
     
