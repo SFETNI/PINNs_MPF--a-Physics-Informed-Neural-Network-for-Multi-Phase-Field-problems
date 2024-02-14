@@ -33,21 +33,29 @@ from pre_post import *
 
 class Sequentialmodel(tf.Module):
     ###############################################
+    """
+    This class implements a Sequential PINN Model using TensorFlow.
+    """
+    
     def __init__(self, layers, X_f_train, X_ini_train, X_lb_train, X_ub_train,\
                  X_ltb_train,X_rtb_train,phi_0,phi_ini_train,X_ini_train_all,phi_ini_train_all, N_ini, X_u_test, X,T,x,y,lb, ub, mu,\
                       sigma, delta_g, R0,\
                         X_center,Y_center,eta,Nx,Ny,Nt,phi_sol,name=None):
         super().__init__(name=name)
+        """
+        Initialize the Sequential Model.
+        """
 
-        self.X_f = X_f_train             
-        self.X_ini = X_ini_train
-        self.X_lb = X_lb_train
-        self.X_ub = X_ub_train
-        self.X_ltb = X_ltb_train
-        self.X_rtb = X_rtb_train
+        # Input training data
+        self.X_f = X_f_train      # Collocation
+        self.X_ini = X_ini_train  # IC
+        self.X_lb = X_lb_train    # BC  lower bound
+        self.X_ub = X_ub_train    # BC  upper bound 
+        self.X_ltb = X_ltb_train  # BC  left bound
+        self.X_rtb = X_rtb_train  # BC  right bound
 
-        self.X_f_sub_domain = X_f_train  # just for initialization, to be updated            
-        self.X_ini_sub_domain = X_ini_train # just for initialization, to be updated 
+        self.X_f_sub_domain = X_f_train      
+        self.X_ini_sub_domain = X_ini_train # just for initialization, to be updated in train 
         self.phi_ini_sub_domain = phi_ini_train # just for initialization, to be updated 
         self.X_lb_sub_domain = X_lb_train # just for initialization, to be updated 
         self.X_ub_sub_domain = X_ub_train # just for initialization, to be updated 
@@ -56,22 +64,22 @@ class Sequentialmodel(tf.Module):
         
         self.X_f_sub_domain_scipy=X_f_train  # just for initializatio, to be updated 
 
-        self.phi_0=phi_0
-        self.phi_ini = phi_ini_train
-        self.X_u_test = X_u_test
-        self.X_ini_all_sub_domain=X_ini_train_all
-        self.phi_ini_all_sub_domain=phi_ini_train_all
-
-
+        self.phi_0=phi_0   #  Initialization matrix
+        self.phi_ini = phi_ini_train  
+        self.X_u_test = X_u_test  # for testing
+        self.X_ini_all_sub_domain=X_ini_train_all  # All ini data 
+        self.phi_ini_all_sub_domain=phi_ini_train_all # All phi data
         self.X_ini_train_all=X_ini_train_all
         self.phi_ini_train_all=phi_ini_train_all
         self.N_ini =N_ini
         self.indices_ini = np.random.choice(len(self.X_ini_all_sub_domain), size=int(self.N_ini/2), replace=True)
         self.lb = lb
         self.ub = ub
+        # Physical param
         self.mu = mu
         self.sigma = sigma
         self.delta_g = delta_g
+        # Geometrical param
         self.R0=R0
         self.X_center=X_center
         self.Y_center=Y_center
@@ -82,47 +90,36 @@ class Sequentialmodel(tf.Module):
         self.Nt=Nt
         self.x=x
         self.y=y
-        self.lr=0.0001
-        self.thresh=0
-        
-       
-
+        self.lr=0.0001  # Learning rate
+        self.thresh=0  # Threshold
+        # Limits of the subdomain
         self.abs_x_min=0  # to update and use during the minibatching (these points are the corners of the global space domain)
         self.abs_x_max=0
         self.abs_y_min =0
         self.abs_y_max=0      
-        
-        
-        self.f=1
-        self.ic=1
-        self.bc=1   
+        # Weighting of the losses 
+        self.f=1  # PDE
+        self.ic=1 # IC
+        self.bc=1 # BC
 
+        # Xavier Initialization                    
         self.W = []  #Weights and biases
         self.parameters = 0 #total number of parameters
-        
         for i in range(len(self.layers)-1):
-            
             input_dim = layers[i]
             output_dim = layers[i+1]
-            
             #Xavier standard deviation 
             std_dv = np.sqrt((2.0/(input_dim + output_dim)))
-
             #weights = normal distribution * Xavier standard deviation + 0
             w = tf.random.normal([input_dim, output_dim], dtype = 'float64') * std_dv
-                       
             w = tf.Variable(w, trainable=True, name = 'w' + str(i+1))
-
             b = tf.Variable(tf.cast(tf.zeros([output_dim]), dtype = 'float64'), trainable = True, name = 'b' + str(i+1))
-                    
             self.W.append(w)
             self.W.append(b)
-            
             self.parameters +=  input_dim * output_dim + output_dim
-
         # Define the Adam optimizer
         self.optimizer_Adam = tf.keras.optimizers.Adam(learning_rate=self.lr, clipnorm=1) 
- 
+        # Load the process class
         self.PRE_POST=PrePost(X=X, T=T, lb=lb, ub=ub,Nx=self.Nx,Ny=self.Ny, x=x, y=y,eta=eta, phi_true=phi_sol,R0=R0)
         """
         # Define the Scipy L-BFGS-B optimizer
@@ -142,6 +139,7 @@ class Sequentialmodel(tf.Module):
                                                     'maxls': 50})      
         """   
     ###############################################
+    # Part of the PDE formulation
     def h(self,phi):
         try:
             square_root_term=    tf.math.sqrt(phi * (1 - phi))
@@ -151,9 +149,17 @@ class Sequentialmodel(tf.Module):
         else:
             return np.pi/self.eta * square_root_term
     ###############################################
-    #@tf.function
-    def evaluate(self,X):
-
+    # Evaluating the neural network model
+    def evaluate(self, X):
+        """
+        Evaluate the neural network model.
+    
+        Parameters:
+        - X: Input data for evaluation.
+    
+        Returns:
+        - H: Evaluated output based on the input data.
+    """
         lb = tf.reshape(self.lb, (1, -1))
         lb = tf.cast(self.lb, tf.float64)
         ub = tf.reshape(self.ub, (1, -1))
@@ -175,6 +181,12 @@ class Sequentialmodel(tf.Module):
         return Y
     ###############################################
     def get_weights(self):
+        """
+        Get weights from a pre-trained model.
+    
+        Returns:
+        - weights: The weights from the pre-trained model.
+        """
         parameters_1d = []  # [.... W_i,b_i.....  ] 1d array
         
         for i in range (len(self.layers)-1):
@@ -188,6 +200,15 @@ class Sequentialmodel(tf.Module):
         return parameters_1d
     ###############################################   
     def set_weights(self,parameters):
+        """
+        Set weights for the model.
+    
+        Parameters:
+        - parameters: The weights to be set for the model.
+    
+        Returns:
+        - None
+        """     
         for i in range (len(self.layers)-1):
 
             shape_w = tf.shape(self.W[2*i]).numpy() # shape of the weight tensor
@@ -206,6 +227,15 @@ class Sequentialmodel(tf.Module):
         del parameters, shape_w,size_w,pick_w
     ###############################################   
     def test_IC(self,pathOutput):
+        """
+        Test the success of the transfer learning.
+    
+        Parameters:
+        - pathOutput: The path where the output will be saved.
+    
+        Returns:
+        - None
+        """
         phi_pred = self.evaluate(self.X_u_test)
         phi_pred = np.reshape(phi_pred,(self.Nx,self.Ny,self.Nt))  
         #------------------------------------
@@ -237,6 +267,16 @@ class Sequentialmodel(tf.Module):
         plt.close()
     ###############################################
     def loss_IC(self,x_ini,phi_ini):  
+        """
+        Compute the IC (Initial Condition) loss.
+    
+        Parameters:
+        - x_ini: Initial condition input data.
+        - phi_ini: Initial condition output data.
+    
+        Returns:
+        - ic_loss: The computed IC loss.
+        """
         #print("x_ini.shape: ",x_ini.shape)  
         #print("phi_ini.shape: ",phi_ini.shape)  
         phi_ini_pred=self.evaluate(x_ini)                                     
@@ -254,6 +294,22 @@ class Sequentialmodel(tf.Module):
         return loss_IC
     ###############################################
     def loss_BC(self,X_lb,X_ub,X_ltb,X_rtb,abs_x_min,abs_x_max,abs_y_min,abs_y_max):
+        """
+        Compute the BC (Boundary Condition) loss.
+    
+        Parameters:
+        - X_lb: Input data for the left boundary.
+        - X_ub: Input data for the upper boundary.
+        - X_ltb: Input data for the left-top boundary.
+        - X_rtb: Input data for the right-top boundary.
+        - abs_x_min: Minimum absolute value of x.
+        - abs_x_max: Maximum absolute value of x.
+        - abs_y_min: Minimum absolute value of y.
+        - abs_y_max: Maximum absolute value of y.
+    
+        Returns:
+        - bc_loss: The computed BC loss.
+        """
         #tf.print("abs_x_min,abs_x_max,abs_y_min,abs_y_max: ", abs_x_min,abs_x_max,abs_y_min,abs_y_max)   
         #tf.print("X_ltb: ", X_ltb)
         #tf.print("X_ltb[:,1]: ", X_ltb[:,1])
@@ -355,6 +411,13 @@ class Sequentialmodel(tf.Module):
         return loss_BC
     ###############################################
     def loss_PDE(self, X_f):
+        """
+        Compute the main PDE (Partial Differential Equation) loss.
+        Parameters:
+        - X_f: Input data for the PDE loss.
+        Returns:
+        - pde_loss: The computed PDE loss.
+        """
         g = tf.Variable(X_f, dtype='float64', trainable=False)
         #tf.print("g: ", tf.shape(g))
         x_f = g[:, :2]  # x_f: x,y
@@ -364,9 +427,7 @@ class Sequentialmodel(tf.Module):
         #t=tf.convert_to_tensor(t, dtype=tf.float64)
         #x=tf.convert_to_tensor(x, dtype=tf.float64)
         #y=tf.convert_to_tensor(y, dtype=tf.float64)
-
         #tf.print("x,y,t shapes: ", tf.shape(x), tf.shape(y), tf.shape(t))
-        #tf.print("x :",x)
 
         with tf.GradientTape(persistent=True) as tape:
             tape.watch(x)
@@ -399,6 +460,25 @@ class Sequentialmodel(tf.Module):
         return loss_f
     ###############################################
     def loss(self,xf,x_ini,x_lb,x_ub,x_ltb,x_rtb,phi_ini,abs_x_min,abs_x_max,abs_y_min,abs_y_max):
+        """
+        Combine individual losses to compute the global loss.
+    
+        Parameters:
+        - xf: Input data for the PDE loss.
+        - x_ini: Initial condition input data.
+        - x_lb: Input data for the left boundary.
+        - x_ub: Input data for the upper boundary.
+        - x_ltb: Input data for the left-top boundary.
+        - x_rtb: Input data for the right-top boundary.
+        - phi_ini: Initial condition output data.
+        - abs_x_min: Minimum absolute value of x.
+        - abs_x_max: Maximum absolute value of x.
+        - abs_y_min: Minimum absolute value of y.
+        - abs_y_max: Maximum absolute value of y.
+    
+        Returns:
+        - global_loss: The computed global loss.
+        """
         loss_IC = self.loss_IC(x_ini,phi_ini)      
         loss_f = self.loss_PDE(xf)        
         loss_BC = self.loss_BC(x_lb,x_ub,x_ltb,x_rtb,abs_x_min,abs_x_max,abs_y_min,abs_y_max)        
