@@ -9,9 +9,8 @@ subprocess.call(['pip', 'install', 'pyDOE'])
 #!pip install pyDOE  # also to install other packages
 import tensorflow as tf
 import datetime, os
-#hide tf logs 
 os.environ['TF_CPPclea_MIN_LOG_LEVEL'] = '2'  # or any {'0', '1', '2'} 
-#0 (default) shows all, 1 to filter out INFO logs, 2 to additionally filter out WARNING logs, and 3 to additionally filter out ERROR logs
+#note: 0 (default) shows all, 1 to filter out INFO logs, 2 to additionally filter out WARNING logs, and 3 to additionally filter out ERROR logs
 import scipy.optimize
 import scipy.io
 import numpy as np
