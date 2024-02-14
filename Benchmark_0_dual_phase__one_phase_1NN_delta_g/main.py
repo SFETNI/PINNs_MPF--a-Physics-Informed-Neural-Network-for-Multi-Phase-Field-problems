@@ -1,14 +1,12 @@
+#################################################################################
+################################## Import        ################################
+#################################################################################
 import subprocess
 import sys
-
-
-#!/home/selfetni/anaconda3/bin/python3.9.19
 #print("PYTHON VERSION: ",sys.version)
 # Install pyDOE using pip
 subprocess.call(['pip', 'install', 'pyDOE'])
-
-#!pip install pyDOE
-
+#!pip install pyDOE  # also to install other packages
 import tensorflow as tf
 import datetime, os
 #hide tf logs 
@@ -44,9 +42,28 @@ import pre_post
 from pre_post import *
 from PINN import *
 
+#################################################################################
+############################## Initialization ###################################
+#################################################################################
 #generate_circles without overlap
 @jit(nopython=True)
 def generate_circles(mean_r, num_circles, std, Nx, Ny, Nz):
+    """
+    Generate circles or spheres in N dimensions.
+    Args:
+    - mean_r (float): Mean radius of the circles/spheres.
+    - num_circles (int): Number of circles/spheres to generate.
+    - std (float): Standard deviation of the radii.
+    - Nx (int): Number of points in the x-dimension.
+    - Ny (int): Number of points in the y-dimension.
+    - Nz (int): Number of points in the z-dimension.
+
+    Returns:
+    - R0 (array): Array containing radii of the circles/spheres.
+    - X_center (array): Array containing x-coordinates of the centers.
+    - Y_center (array): Array containing y-coordinates of the centers.
+    - Z_center (array): Array containing z-coordinates of the centers.
+    """
     # Initialize the arrays for the radii and centers of the circles
     R0 = np.zeros(num_circles)
     X_center = np.zeros(num_circles)
@@ -78,7 +95,9 @@ def generate_circles(mean_r, num_circles, std, Nx, Ny, Nz):
                     break
     
     return R0, X_center, Y_center, Z_center
-
+#################################################################################
+#########################       Main           ##################################
+#################################################################################
 if __name__ == '__main__':
     # Grid parameters
     Nx=64
@@ -101,10 +120,8 @@ if __name__ == '__main__':
     scipy_min_f_pts_per_batch = 500 # minimum number of Collocation points per batch for Scipy optimizer 
     max_ic_scipy_pts=75 #maximum number of IC points per batch for Scipy optimizer 
     N_ini_min_per_batch=10
-    
-    scipy_min_f_pts_per_batch_thresh =0.05  # to delete
+    scipy_min_f_pts_per_batch_thresh =0.05  
     ic_scipy_thresh=0.05 # 
-    
     num_train_intervals=100
     # Define  Collocations, IC and BC points and Domain bounds
     N_ini =N_batches *num_train_intervals # Total number of data points for 'phi': IC
@@ -153,19 +170,18 @@ if __name__ == '__main__':
     #Pre_Post.plot_exact(path=pathOutput)
 
     # plot the initial micro
-    #Pre_Post.plot_init(X_ini_all,phi_0,Nx,Ny,path=pathOutput)
+    Pre_Post.plot_init(X_ini_all,phi_0,Nx,Ny,path=pathOutput)
     
     # get the training data
     X_f_train, X_ini_train,X_lb_train,X_ub_train,X_rtb_train,X_ltb_train,\
         phi_ini_train, X_ini_train_all, phi_ini_train_all=Pre_Post.set_training_data(x,y,X_ini_all,N_ini,phi_0,N_f,tb,lb,ub)
  
     # Plot Collocation_IC_BC points
-    #Pre_Post.plot_Collocation_IC_BC(Nx,Ny,x,y,X_ini_train,X_f_train,X_lb_train,X_ub_train,\
-    #                                X_rtb_train,X_ltb_train,phi_0,phi_ini_train,path=pathOutput)
-      
+    Pre_Post.plot_Collocation_IC_BC(Nx,Ny,x,y,X_ini_train,X_f_train,X_lb_train,X_ub_train,\
+                                    X_rtb_train,X_ltb_train,phi_0,phi_ini_train,path=pathOutput)
+    
     # Testing spatio-temporal domain
     X_phi_test = np.hstack((X.flatten()[:,None],Y.flatten()[:,None], T.flatten()[:,None])) 
-    #tf.print(X_phi_test)
  
     # load PINN class
     import PINN
@@ -182,7 +198,6 @@ if __name__ == '__main__':
                             X=X,T=T,x=x,y=y,lb=lb, ub=ub, mu=mu, sigma=sigma, delta_g=delta_g,\
                                         R0=R0,X_center=X_center,Y_center=Y_center,eta=eta,Nx=Nx,Ny=Ny,Nt=Nt,phi_sol=None)
     
-    
     # transfer learning from already trained model
     weights_files = glob.glob('get_weights/*.json')
     weights_files = sorted(weights_files)
@@ -193,15 +208,13 @@ if __name__ == '__main__':
     weights_loaded=tf.cast(weights_loaded, dtype=tf.float64)
     PINN_.set_weights(weights_loaded) 
     
-
     # test the transfer of the learning
     PINN_.test_IC(pathOutput)
     
     Nfeval = 1  # global print variable
     start_time = time.time() 
-    # train the model with Scipy L-BFGS optimizer  
-                   
-    list_loss= PINN_.train(epochs=50000,batch_size_max=1000,N_batches=N_batches,thresh= 5e-3,epoch_scipy_opt=1,epoch_print=50,\
+    # train the model with Adam and Scipy L-BFGS optimizers
+    list_loss= PINN_.train(epochs=50000,batch_size_max=1000,N_batches=N_batches,thresh= 1e-3,epoch_scipy_opt=1,epoch_print=50,\
                                epoch_resample=1,initial_check=True,save_reg_int=50,\
                                num_train_intervals=num_train_intervals,Nbr_pts_max_per_batch=Nbr_pts_max_per_batch,\
                                scipy_min_f_pts_per_batch=scipy_min_f_pts_per_batch,scipy_min_f_pts_per_batch_thresh=scipy_min_f_pts_per_batch_thresh,\
@@ -209,4 +222,4 @@ if __name__ == '__main__':
                                    discrete_resolv=True,path=pathOutput)  
 
     elapsed = time.time() - start_time  
-    print("Training time : " + (str(datetime.timedelta(seconds=elapsed))) ) 
+    tf.print("Training time : " + (str(datetime.timedelta(seconds=elapsed))) ) 
