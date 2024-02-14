@@ -159,7 +159,7 @@ class Sequentialmodel(tf.Module):
     
         Returns:
         - H: Evaluated output based on the input data.
-    """
+        """
         lb = tf.reshape(self.lb, (1, -1))
         lb = tf.cast(self.lb, tf.float64)
         ub = tf.reshape(self.ub, (1, -1))
@@ -283,7 +283,9 @@ class Sequentialmodel(tf.Module):
         loss_IC = tf.reduce_mean(tf.square(phi_ini-phi_ini_pred))
         
         """
-        epoch=99
+        epoch=99  # for testing select a given epoch # please note that this kind of tests is abondant within
+        the codes , allowing  some ponctual verifications of the grood enchainement 
+        of the training 
         if (epoch+1) % 100 == 0:
             plt.scatter(x_ini[:, 0], x_ini[:, 1],c=phi_ini)
             plt.show()
@@ -449,8 +451,6 @@ class Sequentialmodel(tf.Module):
             lap_phi = phi_xx + phi_yy
         del tape
 
-        #lap_phi = tf.convert_to_tensor(np.pi**2/(2*self.eta**2)*np.sin(np.pi*(r-self.R0)/self.eta)-np.pi/(r*self.eta)*np.cos(np.pi*(r-self.R0)/self.eta), dtype=tf.float64)
-            
         phi_term = (np.pi**2 / (2 * self.eta**2)) * (2 * phi - 1)
         right_side_eqn = self.mu * ( self.sigma * ( lap_phi + phi_term)+ self.h(phi) * self.delta_g ) 
         f =phi_t -right_side_eqn 
@@ -487,6 +487,15 @@ class Sequentialmodel(tf.Module):
         return loss, loss_BC,loss_IC, loss_f # loss_BC,loss_IC, loss_f
     ###############################################
     def optimizerfunc(self,parameters):
+        """
+        Optimize the model parameters.
+    
+        Parameters:
+        - parameters: The parameters used for optimization.
+    
+        Returns:
+        - optimized_parameters: The optimized parameters.
+        """
         global list_loss_scipy
         global Nfeval
         self.set_weights(parameters)
@@ -507,69 +516,41 @@ class Sequentialmodel(tf.Module):
           plt.scatter(X_ini[:, 0], X_ini[:, 1], cmap=plt.get_cmap('viridis'), c=phi_ini)
           plt.colorbar( shrink=0.35)
           plt.show()
-        """
-        #tf.print("X_f.shape:",X_f.shape)
-        #tf.print("\n ")
-        #tf.print("X_ini:",X_ini.shape)
-        #tf.print("\n ")
-        #tf.print("phi_ini:",phi_ini.shape)
-        #tf.print("\n ")
-        #tf.print("X_lb.shape:",X_lb.shape)
-        #tf.print("\n ")
-        #tf.print("X_ub.shape:",X_ub.shape)
-        #tf.print("\n ")
-        #tf.print("X_ltb.shape:",X_ltb.shape)
-        #tf.print("\n ")
-        #tf.print("X_rtb.shape:",X_rtb.shape)
-        #tf.print("\n ")
-        
-
+        """       
         with tf.GradientTape() as tape:
             tape.watch(self.trainable_variables)
-            
             loss_val, loss_BC,loss_IC, loss_f = self.loss(X_f,X_ini,X_lb,X_ub,X_ltb,X_rtb,phi_ini,self.abs_x_min,self.abs_x_max,self.abs_y_min,self.abs_y_max)   
             list_loss_scipy.append([loss_val, loss_BC,loss_IC, loss_f ])
             grads = tape.gradient(loss_val,self.trainable_variables)
                 
-        del X_ini,phi_ini,X_f, X_lb, X_ub, X_ltb, X_rtb
+        del X_ini,phi_ini,X_f, X_lb, X_ub, X_ltb, X_rtb  # for mem optimization
         
         grads_1d = [ ] #flatten grads 
         for i in range (len(self.layers)-1):
-
             grads_w_1d = tf.reshape(grads[2*i],[-1]) #flatten weights 
             grads_b_1d = tf.reshape(grads[2*i+1],[-1]) #flatten biases
-
             grads_1d = tf.concat([grads_1d, grads_w_1d], 0) #concat grad_weights 
             grads_1d = tf.concat([grads_1d, grads_b_1d], 0) #concat grad_biases
-
-        #self.set_weights(grads_1d.numpy())
+            
         del grads, grads_w_1d,grads_b_1d
         return loss_val.numpy(), grads_1d.numpy()
     ###############################################
     def optimizer_callback(self, parameters):
+       """
+        Callback function for the optimizer for printing losses
+    
+        Parameters:
+        - parameters: The parameters used for optimization.
+    
+        Returns:
+        - None
+        """
         global Nfeval
         global list_loss_scipy
 
         if Nfeval % 50 == 0:  # Print during scipy iterations
             tf.print('Iter: {0:d}, total_loss: {1:.3e}, loss_BC: {2:.3e}, loss_IC: {3:.3e}, loss_f: {4:.3e}'.format(Nfeval, list_loss_scipy[-1][0], list_loss_scipy[-1][1], list_loss_scipy[-1][2], list_loss_scipy[-1][3]))
-            #X_ini_ =self.X_ini_all_sub_domain[self.indices_ini]
-            #phi_ini_=self.phi_ini_all_sub_domain[self.indices_ini]
-            #X_ini_ = tf.convert_to_tensor(X_ini_, dtype=tf.float64)
-            #phi_ini_ = tf.convert_to_tensor(phi_ini_, dtype=tf.float64)
-            #tf.print("X_ini:",X_ini_.shape)
-            #tf.print("\n ")
-            #tf.print("phi_ini:",phi_ini_.shape)
-            #tf.print("\n ")
-            #del X_ini_,phi_ini_
-        
-        
-        # Check if the loss is smaller than the threshold
-        #if list_loss_scipy[-1][0] < self.thresh:
-        #    tf.print("here")
-        #    return True, list_loss_scipy  # Returning True stops the optimization
-
         Nfeval += 1
-        
         return  list_loss_scipy  # Returning False continues the optimization
     ###############################################
     def print_final_loss(self,x):
@@ -584,11 +565,22 @@ class Sequentialmodel(tf.Module):
 
         # Print the final loss value
         tf.print(results.fun)
-
         return results
-
     ###############################################
     def process_repository_files(self,path,pathOutput,title,filename):
+        """
+        After convergence for each time interval
+        Process files in the repository and plot results (curves) dynamically.
+    
+        Parameters:
+        - path: Path to the repository files.
+        - pathOutput: Path where the output will be saved.
+        - title: Title for the plot.
+        - filename: Name of the file to be processed.
+    
+        Returns:
+        - None
+        """
         weights_files = self.PRE_POST.read_weights_files(path)
         #tf.print(weights_files)
         t_min = float('inf')
@@ -625,6 +617,7 @@ class Sequentialmodel(tf.Module):
     ###############################################
     def save_predictions(self,epoch,pathOutput,X_u_test,\
                                 X_ini,u_ini,N_b): 
+        # save the phase 
         title = f"φ predicted by PINN" # should be epoch+1 (this for debug purpose)
         filename = f"φ predicted by PINN.jpg"
         
@@ -633,6 +626,8 @@ class Sequentialmodel(tf.Module):
     ###############################################
     def save_predictions_regular_int(self,epoch,pathOutput,X_u_test,\
                                 X_ini,u_ini,N_b,t_min, t_max):
+        # additional optional plot function 
+        # plot results in a periodic way ( convergence or no)
         X_u_test_sub = X_u_test[:, 2] >= t_min
         X_u_test_sub &= X_u_test[:, 2] <= t_max
         X_u_test_sub = X_u_test[X_u_test_sub, :]
@@ -694,6 +689,7 @@ class Sequentialmodel(tf.Module):
         plt.close()
     ###############################################
     def plot_ini(self,batch_X_ini,batch_phi_ini,X_ini,Nx,Ny,path,t_min,t_max,epoch):
+        # Plot the initialization 
         #print(batch_X_ini.shape,batch_u_ini.shape)
         scatter =plt.scatter(batch_X_ini[:,0], batch_X_ini[:,1], c=batch_phi_ini, marker='*', cmap='jet', s=5, label='IC: initial condition')
         cbar = plt.colorbar(scatter, ax=plt.gca())
@@ -718,8 +714,7 @@ class Sequentialmodel(tf.Module):
         # time intervals 
         time_subdomains=np.linspace(0,1,num_train_intervals+1)
         count=0
-        #thresh
-        self.thresh=thresh
+        self.thresh=thresh  # Global Threshold 
         # init
         X_ini=self.X_ini  # N_ini points (user selection)
         phi_ini=self.phi_ini  
@@ -728,8 +723,8 @@ class Sequentialmodel(tf.Module):
 
         # loss
         list_loss=[]
-
         # dummy params
+                  
         flag=0
         flag_weights=1
 
@@ -748,7 +743,7 @@ class Sequentialmodel(tf.Module):
         pid = os.getpid()
         # Get current process object
         process = psutil.Process(pid)
-        with open("usage_log.txt", "w") as f_mem:
+        with open("usage_log.txt", "w") as f_mem:  #to store memory consumption if needed 
             ############################################
             ############### EPOCH LOOP #################
             ############################################
@@ -758,7 +753,6 @@ class Sequentialmodel(tf.Module):
                     self.ic=1
                     self.bc=1      
 
-                #tf.print("epoch: ", epoch)
                 # set time bounds
                 if discrete_resolv:
                     t_min, t_max = time_subdomains[count], time_subdomains[count+1] 
@@ -812,7 +806,6 @@ class Sequentialmodel(tf.Module):
                     else:
                         num_elements_ini = int(len(X_ini) * (1/num_train_intervals) )
                                            
-    
                     #**************************
                     num_x_intervals = int(np.ceil(np.sqrt(N_batches)))
                     num_y_intervals = int(np.ceil(np.sqrt(N_batches)))
@@ -861,10 +854,8 @@ class Sequentialmodel(tf.Module):
                             self.X_ini_all_sub_domain=X_ini_all_sub_domain
                             self.phi_ini_all_sub_domain=phi_ini_all_sub_domain
 
-                        
-                        
                     # *********************************************************************
-                    # --------------   prepare scipy IC points  --------------------------
+                    # --------------   prepare scipy IC data  --------------------------
                     # *********************************************************************
                     number_points_max = max_ic_scipy_pts  # Maximum points per batch for scipy (computing)
                     percentage_threshold = ic_scipy_thresh # Percentage threshold for determining coef_points
@@ -904,6 +895,7 @@ class Sequentialmodel(tf.Module):
                     
                     X_ini_sub_domain = X_ini_all[selected_indices_scipy]
                     phi_ini_sub_domain = phi_ini_all[selected_indices_scipy] 
+                    
                     # *********************************************
                     # check initial condition (epoch==0 or domain change)
                     if initial_check:
@@ -934,7 +926,6 @@ class Sequentialmodel(tf.Module):
                 ####################################################################################################
                 ####################################################################################################
                 # Define the number of minibatches : to correct
-                #roat_N_batches = batch_size
                 flag_filled= True
                 # Define the number of intervals for x and y
                 #num_x_intervals = int(np.ceil(np.sqrt(roat_N_batches)))
@@ -1002,11 +993,10 @@ class Sequentialmodel(tf.Module):
                         batch_phi_ini_all = phi_ini_all_sub_domain[bacth_X_ini_all_indices]
                         # *********************************************************************
                         # ******************     Adaptive minibatching   Scipy  ***************
-                        # *********************************************************************
-                        ### new                         
+                        # *********************************************************************  
                         number_points_min_per_batch = scipy_min_f_pts_per_batch   # can be adjustable
                         percentage_threshold = scipy_min_f_pts_per_batch_thresh        # can be adjustable
-                        total_interface_points_per_batch = np.sum((batch_phi_ini_all>5e-2) & (batch_phi_ini_all <1))
+                        total_interface_points_per_batch = np.sum((batch_phi_ini_all>5e-2) & (batch_phi_ini_all <1))  #5e-2 internal code management (to consider noise)
                         percentage_interface_points_per_batch = total_interface_points_per_batch / len(batch_phi_ini_all)
                         number_points_per_batch = max(int(percentage_interface_points_per_batch / percentage_threshold)*number_points_max, number_points_min_per_batch)
                         #number_points_per_batch=min(number_points_per_batch,Nbr_pts_max_per_batch)
