@@ -102,26 +102,20 @@ if __name__ == '__main__':
     max_ic_scipy_pts=75 #maximum number of IC points per batch for Scipy optimizer 
     N_ini_min_per_batch=10
     
-    
     scipy_min_f_pts_per_batch_thresh =0.05  # to delete
     ic_scipy_thresh=0.05 # 
     
-    
-    
-
     num_train_intervals=100
     # Define  Collocations, IC and BC points and Domain bounds
     N_ini =N_batches *num_train_intervals # Total number of data points for 'phi': IC
     N_f = Nbr_pts_max_per_batch * N_batches *num_train_intervals    # 100000 Total number of collocation points : domain
     N_b=500   # Total number of data points for boundary BC
         
-   # Total number of data points for 'phi': boundary BC
-
+    # Total number of data points for 'phi': boundary BC
     # get radius and coordinates
     R0, X_center, Y_center,Z_center =\
           generate_circles(mean_r=0.3,num_circles=1, std=0, Nx=Nx, Ny=Ny,Nz=100)
     X_center, Y_center=[0.5],[0.5] # single grain
-
     x = np.linspace(lb[0], ub[0], Nx),
     y = np.unique(np.linspace(lb[1], ub[1], Ny))
     t = np.unique(np.linspace(lb[2], ub[2], Nt))
@@ -129,7 +123,6 @@ if __name__ == '__main__':
     y=np.expand_dims(y, axis=1)
     t=np.expand_dims(t, axis=1)
     X, Y,T= np.meshgrid(x,y,t)
-
     tb = np.linspace(start=lb[2], stop=ub[2], num=N_b, endpoint=True)
     tb = np.expand_dims(tb, axis=1)
     
@@ -204,12 +197,10 @@ if __name__ == '__main__':
     # test the transfer of the learning
     PINN_.test_IC(pathOutput)
     
-    Nfeval = 1
+    Nfeval = 1  # global print variable
     start_time = time.time() 
-       
     # train the model with Scipy L-BFGS optimizer  
                    
-    
     list_loss= PINN_.train(epochs=50000,batch_size_max=1000,N_batches=N_batches,thresh= 5e-3,epoch_scipy_opt=1,epoch_print=50,\
                                epoch_resample=1,initial_check=True,save_reg_int=50,\
                                num_train_intervals=num_train_intervals,Nbr_pts_max_per_batch=Nbr_pts_max_per_batch,\
