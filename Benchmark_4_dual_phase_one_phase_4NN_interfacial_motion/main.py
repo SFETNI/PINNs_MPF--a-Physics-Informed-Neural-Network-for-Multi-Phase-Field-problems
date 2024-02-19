@@ -1,25 +1,12 @@
 import subprocess
 import sys
-
 import os
-
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '-1' 
-
-
-
-
-
-
 #tf.print("PYTHON VERSION: ",sys.version)
 # Install pyDOE using pip
 subprocess.call(['pip', 'install', 'pyDOE'])
-
 #!pip install pyDOE
-
 import datetime, os
-
- 
 #0 (default) shows all, 1 to filter out INFO logs, 2 to additionally filter out WARNING logs, and 3 to additionally filter out ERROR logs
 import scipy.optimize
 import scipy.io
@@ -33,42 +20,28 @@ from mpl_toolkits.mplot3d import Axes3D
 import time
 import psutil # memory usage
 from pyDOE import lhs         #Latin Hypercube Sampling
-
 import codecs, json  # save weights
 import math
 import glob
 #from numba import jit
 # generates same random numbers each time
-
-
 import tensorflow as tf
-
-
-
 np.random.seed(1234)
-
 import random
 import datetime
 import shutil
-
 import random
 import scipy.io as sio
 from importlib import reload
 #from sklearn.preprocessing import MinMaxScaler
-
-
 
 import PINN  # python files (classes)
 import pre_post
 from pre_post import *
 from PINN import *
 
-
-
-
-
-
-
+##################################################
+##################################################
 def read_inputs_from_file(file_path):
     variables = {}
 
@@ -93,7 +66,8 @@ def read_inputs_from_file(file_path):
                     variables[key] = value
 
     return variables
-
+##################################################
+##################################################
 #@jit(nopython=True)
 def generate_circles(mean_r, num_circles, std, Nx, Ny, Nz):
     # Initialize the arrays for the radii and centers of the circles
@@ -150,9 +124,6 @@ if __name__ == '__main__':     ###################
     delta_g= 0 
     eta=7*dx
 
-
-
-
     # Define the domain bounds
     lb = np.array([0, 0,0])
     ub = np.array([Nx*dx, Ny*dy,Nt*dt]) 
@@ -160,9 +131,6 @@ if __name__ == '__main__':     ###################
     x = np.linspace(lb[0], ub[0], Nx)
     y = np.linspace(lb[1], ub[1], Ny)
     t= np.linspace(lb[2], ub[2], Nt) 
-        
-
-    num_phases=1
 
     num_phases=1
     loc_index_0 = 0
@@ -182,9 +150,7 @@ if __name__ == '__main__':     ###################
     fraction_zeros_per_int_pts=0.
     coef_increase_points_f=2 # or decrease
     coef_increase_points_ic=2 # or decrease
-    
 
-    
     num_train_intervals=Nt
     # Define  Collocations, IC and BC points and Domain bounds
     N_ini =N_ini_max_per_batch*N_batches *num_train_intervals # Total number of data points for 'phi': IC
@@ -267,8 +233,7 @@ if __name__ == '__main__':     ###################
     # plot the initial micro
     #Pre_Post.plot_init(all_phases,all_phases,Nx,Ny,path=pathOutput)
 
-
-    # Time characteristic
+    # Time characteristic ==> Dimensionless resolution
     T=eta**2 /(sigma*mu)
     # Length characteristic : eta
     # scaled arrays
@@ -282,7 +247,6 @@ if __name__ == '__main__':     ###################
     lb[0], ub[0]=lb[0]/eta, ub[0]/eta
     lb[1], ub[1]= lb[1]/eta, ub[1]/eta
     lb[2], ub[2]= lb[2]/T, ub[2]/T
-    #ub=ub/eta
 
     # get the training data
     X_f_train, X_ini_train_all,X_lb_train,X_ub_train,X_rtb_train,X_ltb_train,phi_ini_all =Pre_Post.set_training_data(x,y,N_ini,\
