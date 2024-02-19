@@ -1,14 +1,14 @@
 #!/bin/bash
 
-#SBATCH --time=4-0:00:00
-#SBATCH --partition=hpc-1024G
+#SBATCH --time=2-0:00:00
+#SBATCH --partition=....
 #SBATCH --ntasks=16
 #SBATCH --job-name=triple_junction
 
 ### Mail to user when job starts, terminates, or aborts
 ### BEGIN|END|FAIL|REQUEUE|ALL
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=seifallah.elfetni@bam.de
+#SBATCH --mail-user=.....
 
 ### Output files
 #SBATCH --error=/home/%u/tmp/job.%J.err
