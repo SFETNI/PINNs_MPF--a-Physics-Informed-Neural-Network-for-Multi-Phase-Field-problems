@@ -107,11 +107,11 @@ if __name__ == '__main__':
     lb = np.array([0, 0,0])
     ub = np.array([1, 1,1]) #np.array([Nx, Ny,Nt])
     
-    # Phyiscal paramters
+    # Physical paramters
     v_n=0.5
     sigma=1
     mu=1e-3
-    delta_g=-100
+    delta_g=-100  # external driving force 
     
     # Numerical parameters 
     N_batches=36 # Total number of data points for 'phi': boundary 
@@ -198,21 +198,24 @@ if __name__ == '__main__':
                                         R0=R0,X_center=X_center,Y_center=Y_center,eta=eta,Nx=Nx,Ny=Ny,Nt=Nt,phi_sol=None)
     
     # transfer learning from already trained model
-    weights_files = glob.glob('get_weights/*.json')
-    weights_files = sorted(weights_files)
-    weights_file = weights_files[-1]
-    t_min, t_max = weights_file.split('_')[2:4]
-    with open(weights_file, 'r') as f:
-        weights_loaded =json.load(f)['weights']
-    weights_loaded=tf.cast(weights_loaded, dtype=tf.float64)
-    PINN_.set_weights(weights_loaded) 
-    
-    # test the transfer of the learning
-    PINN_.test_IC(pathOutput)
+    Transfer_Learning =True 
+    if Transfer_Learning:
+        weights_files = glob.glob('get_weights/*.json')
+        weights_files = sorted(weights_files)
+        weights_file = weights_files[-1]
+        t_min, t_max = weights_file.split('_')[2:4]
+        with open(weights_file, 'r') as f:
+            weights_loaded =json.load(f)['weights']
+        weights_loaded=tf.cast(weights_loaded, dtype=tf.float64)
+        PINN_.set_weights(weights_loaded) 
+        # test the transfer of the learning
+        PINN_.test_IC(pathOutput)
     
     Nfeval = 1  # global print variable
     start_time = time.time() 
     # train the model with Adam and Scipy L-BFGS optimizers
+    # adjust the Threshold if necessary ==> could be set above 1e-4 but 1e-3 allow faster computing without loosing accuracy
+    # adjust also the scipy iterations : to decrease in order to accelerate the  training 
     list_loss= PINN_.train(epochs=50000,batch_size_max=1000,N_batches=N_batches,thresh= 1e-3,epoch_scipy_opt=1,epoch_print=50,\
                                epoch_resample=1,initial_check=True,save_reg_int=50,\
                                num_train_intervals=num_train_intervals,Nbr_pts_max_per_batch=Nbr_pts_max_per_batch,\
