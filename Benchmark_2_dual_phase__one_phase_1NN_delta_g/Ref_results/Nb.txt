@@ -1,0 +1,3 @@
+after a good behaviour  until the middle of the simulation time.. the model can not anymore capt the dependency features ..
+a sensitivity analyis could not change this behaiour ==> This justify the limitation of a single Neural Network
+==> Utility of the Multi-networking  
