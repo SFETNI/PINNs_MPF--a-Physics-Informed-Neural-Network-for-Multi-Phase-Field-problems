@@ -299,8 +299,8 @@ if __name__ == '__main__':     ###################
     Nfeval = 1 #(c.f. PINN.py -- scipy optimizer)
     start_time = time.time() 
     ########################################################################  
-    # NB: in this example the Threshold is increased to accelerate the simulation, please re-set it to 1e-4 or less
-    # for  precision
+    # NB: in this example the Threshold is increased to accelerate the simulation, please re-set it to 1e-4 or less (5e-5)
+    # for more precision
     list_loss= PINN_.train(epochs=50000,batch_size_max=1000,thresh=9e-4,epoch_scipy_opt=50,epoch_print=10,\
                             epoch_resample=1000000,initial_check=True,save_reg_int=500000,\
                             num_train_intervals=num_train_intervals,\
