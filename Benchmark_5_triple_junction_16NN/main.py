@@ -1,25 +1,12 @@
 import subprocess
 import sys
-
 import os
-
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
-
-
-
-
-
-
-
 #tf.print("PYTHON VERSION: ",sys.version)
 # Install pyDOE using pip
 subprocess.call(['pip', 'install', 'pyDOE'])
-
 #!pip install pyDOE
-
 import datetime, os
-
- 
 #(default) shows all, 1 to filter out INFO logs, 2 to additionally filter out WARNING logs, and 3 to additionally filter out ERROR logs
 import scipy.optimize
 import scipy.io
@@ -33,33 +20,24 @@ from mpl_toolkits.mplot3d import Axes3D
 import time
 import psutil # memory usage
 from pyDOE import lhs         #Latin Hypercube Sampling
-
 import codecs, json  # save weights
 import math
 import glob
 #from numba import jit
 # generates same random numbers each time
-
-
 import tensorflow as tf
 np.random.seed(1234)
-
 import random
 import datetime
 import shutil
-
 import random
 import scipy.io as sio
 from importlib import reload
 #from sklearn.preprocessing import MinMaxScaler
-
-
 import PINN  # python files (classes)
 import pre_post
 from pre_post import *
 from PINN import *
-
-
 
 
 def read_inputs_from_file(file_path):
@@ -99,15 +77,13 @@ if __name__ == '__main__':     ###################
     Nx=65
     Ny=65
     Nt= 150
-
     lb = np.array([0, 0,0])
     ub = np.array([1, 1,150]) 
     dx = (ub[0] - lb[0]) / (Nx - 1)
     dy = (ub[1] - lb[1]) / (Ny - 1)
     dt = (ub[2] - lb[2]) / (Nt - 1)
     
-    
-    # phyisical parameters
+    # physical parameters
     sigma= 1
     mu= 1e-4
     eta=6*dx
