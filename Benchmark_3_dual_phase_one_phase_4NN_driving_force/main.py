@@ -1,25 +1,12 @@
 import subprocess
 import sys
-
 import os
-
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '-1' 
-
-
-
-
-
-
 #tf.print("PYTHON VERSION: ",sys.version)
 # Install pyDOE using pip
 subprocess.call(['pip', 'install', 'pyDOE'])
-
 #!pip install pyDOE
-
 import datetime, os
-
- 
 #0 (default) shows all, 1 to filter out INFO logs, 2 to additionally filter out WARNING logs, and 3 to additionally filter out ERROR logs
 import scipy.optimize
 import scipy.io
@@ -39,36 +26,22 @@ import math
 import glob
 #from numba import jit
 # generates same random numbers each time
-
-
 import tensorflow as tf
-
-
-
 np.random.seed(1234)
-
 import random
 import datetime
 import shutil
-
 import random
 import scipy.io as sio
 from importlib import reload
 #from sklearn.preprocessing import MinMaxScaler
-
-
 
 import PINN  # python files (classes)
 import pre_post
 from pre_post import *
 from PINN import *
 
-
-
-
-
-
-
+########################################################
 def read_inputs_from_file(file_path):
     variables = {}
 
@@ -91,9 +64,8 @@ def read_inputs_from_file(file_path):
                 except ValueError:
                     # Otherwise, it is a string value
                     variables[key] = value
-
     return variables
-
+########################################################
 #@jit(nopython=True)
 def generate_circles(mean_r, num_circles, std, Nx, Ny, Nz):
     # Initialize the arrays for the radii and centers of the circles
@@ -127,7 +99,7 @@ def generate_circles(mean_r, num_circles, std, Nx, Ny, Nz):
                     break
     
     return R0, X_center, Y_center, Z_center
-
+########################################################
 ##################################################
 ##################################################
 ##################################################
@@ -136,7 +108,6 @@ if __name__ == '__main__':     ###################
 ##################################################
 ##################################################    
     #inputs = read_inputs_from_file("Input.txt")
-
     # Grid parameters
     Nx=65
     Ny=65
@@ -173,9 +144,7 @@ if __name__ == '__main__':     ###################
     fraction_zeros_per_int_pts=0.
     coef_increase_points_f=2 # or decrease
     coef_increase_points_ic=2 # or decrease
-    
-
-    
+  
     num_train_intervals=Nt
     # Define  Collocations, IC and BC points and Domain bounds
     N_ini =N_ini_max_per_batch*N_batches *num_train_intervals # Total number of data points for 'phi': IC
@@ -230,7 +199,6 @@ if __name__ == '__main__':     ###################
     Pre_Post.EraseFile(path=os.path.join(os.getcwd(),'test_IC'))
     #Pre_Post.EraseFile(path=pathInput) # Initialization 
 
-   
     # Initialize phases
     # get radius and coordinates
     R0, X_center, Y_center,Z_center =\
@@ -262,7 +230,6 @@ if __name__ == '__main__':     ###################
     # get the training data
     X_f_train, X_ini_train_all,X_lb_train,X_ub_train,X_rtb_train,X_ltb_train,phi_ini_all =Pre_Post.set_training_data(x,y,N_ini,\
         all_phases, all_interfaces,all_flags_matrix,N_f,tb,lb,ub,path=pathOutput)
-    
     
     # Plot Collocation_IC_BC points
     #Pre_Post.plot_Collocation_IC_BC(Nx,Ny,x,y,X_ini_train,X_f_train,X_lb_train,X_ub_train,\
@@ -309,9 +276,7 @@ if __name__ == '__main__':     ###################
     global Nfeval
     Nfeval = 1 #(c.f. PINN.py -- scipy optimizer)
     start_time = time.time() 
-    ########################################################################  
-    
-
+    ########################################################################      
     list_loss= PINN_.train(epochs=55000,batch_size_max=1000,thresh=7e-5,epoch_scipy_opt=100,epoch_print=10,\
                             epoch_resample=1000000,initial_check=True,save_reg_int=500000,\
                             num_train_intervals=num_train_intervals,\
