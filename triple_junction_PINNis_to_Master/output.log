@@ -1,0 +1,65 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pyDOE in /home/selfetni/.local/lib/python3.10/site-packages (0.3.8)
+Requirement already satisfied: numpy in /home/selfetni/.local/lib/python3.10/site-packages (from pyDOE) (1.24.1)
+Requirement already satisfied: scipy in /home/selfetni/.local/lib/python3.10/site-packages (from pyDOE) (1.11.3)
+
+[notice] A new release of pip is available: 23.3.2 -> 24.0
+[notice] To update, run: /usr/bin/python3 -m pip install --upgrade pip
+2024-02-21 08:56:08.428306: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-02-21 08:56:09.940982: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-02-21 08:59:19.009071: E tensorflow/compiler/xla/stream_executor/cuda/cuda_driver.cc:268] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2024-02-21 08:59:19.009558: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:168] retrieving CUDA diagnostic information for host: WS8692.zit.bam.de
+2024-02-21 08:59:19.009618: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:175] hostname: WS8692.zit.bam.de
+2024-02-21 08:59:19.009888: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:199] libcuda reported version is: 535.154.5
+2024-02-21 08:59:19.009928: I tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:203] kernel reported version is: 535.129.3
+2024-02-21 08:59:19.009936: E tensorflow/compiler/xla/stream_executor/cuda/cuda_diagnostics.cc:312] kernel version 535.129.3 does not match DSO version 535.154.5 -- cannot find working devices in this configuration
+X_f_train: (160000000, 4), X_ini_all: (40804, 4), X_lb_train: (16000, 3), X_ub_train: (16000, 3), X_ltb_train: (16000, 3), X_rtb_train: (16000, 3), phi_ini_all: (40804, 1)
+
+ ! Initilization of all workers pinns 
+
+
+ ! set initial weights for pinns! 
+
+
+    ! Multiple to Multiple transfer learning ! 
+
+
+ batch_size:  4
+
+    ! set weights completed ! 
+
+
+ -------------------------------------------------------------
+  -----  Epoch: 0 <==> N_batches: 16, pinns: 16    -------
+  ----- time domain:  t_min: 0.00000, t_max: 0.00100
+--------------------------------------------------------------
+
+findfont: Font family ['STIXGeneral'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXGeneral'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXGeneral'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXNonUnicode'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXNonUnicode'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXNonUnicode'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeOneSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeTwoSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeThreeSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeFourSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['STIXSizeFiveSym'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['cmtt10'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['cmb10'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['cmss10'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['DejaVu Sans Display'] not found. Falling back to DejaVu Sans.
+/home/selfetni/Simulations/PINN/Triple_Junction/triple_junction_2D_training_Master/pre_post.py:658: UserWarning: Creating legend with loc="best" can be slow with large amounts of data.
+  plt.savefig(os.path.join(path,title))
+
+==> Epoch: 0, Mean_loss of pinns: 1.490e-01, loss_BC: 0.000e+00, loss_IC: 1.490e-01, loss_f: 0.000e+00
+ => minimum loss: 2.439e-04, corresponding pinn/batch index: 7
+ => maximum loss: 5.420e-01, corresponding pinn/batch  index: 12
+
+==> Epoch: 10, Mean_loss of pinns: 2.623e-01, loss_BC: 0.000e+00, loss_IC: 2.623e-01, loss_f: 0.000e+00
+ => minimum loss: 5.362e-02, corresponding pinn/batch index: 5
+ => maximum loss: 5.311e-01, corresponding pinn/batch  index: 12
+ => In : Number of pinns to train: 7
+ => Out : Number of pinns above Threshold: 7
+pinns above Threshold: 2, 3, 4, 5, 10, 12, 13
