@@ -1,7 +1,7 @@
 ### Files
 main_triple_junction_pinns_to_Master.py: This file contains the main code implementation.
 
-### General information
+### General information  
 This is a demonstration example for the feasibilty of the Multiple to Single transfer of the Learning, that could be explored for similar
 or different physical problems.
 
