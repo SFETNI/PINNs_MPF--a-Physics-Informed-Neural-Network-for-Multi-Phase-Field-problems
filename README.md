@@ -20,7 +20,7 @@ A global approach is taken here to concentrate the MPF problem at the interfacia
 ## Code content
 Please review the supplementary material of the paper (animated video or PDF) to become better familiarized with the code files. Additionally, it is advisable to look into the Benchmark 1 Python scripts (main.py, PINN.py, and Post_process.py) for 2D simulations in a first way. These scripts contain detailed comments about the code sequence before the complexity increases in subsequent benchmarks.
 
-### For optimal performance, it is recommended to use a system with specifications similar to the AMD Ryzen Threadripper PRO 5975WX 32-Cores, which should have a minimum of 32GB of RAM.
+ For optimal performance, it is recommended to use a system with specifications similar to the AMD Ryzen Threadripper PRO 5975WX 32-Cores, which should have a minimum of 32GB of RAM.
 
 ## License Information:
  You are free to use, modify, and distribute the code in accordance with the terms of the license of the loaded packages.
