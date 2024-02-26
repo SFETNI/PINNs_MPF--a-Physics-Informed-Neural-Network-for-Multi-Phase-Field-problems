@@ -154,7 +154,7 @@ class Sequentialmodel(tf.Module):
         self.ic=1
         self.bc=1  
         self.sum=1000
-        self.scipy_max_iter=250
+        self.scipy_max_iter=150
         self.alpha=1 # to incre5ase scipy iterations when reshuffling 
         self.lr=0.000001 #0.000001
         self.precision=tf.float64
@@ -171,13 +171,9 @@ class Sequentialmodel(tf.Module):
         self.N_ini_max_per_batch=np.copy(N_ini_max_per_batch) #maximum number of IC points per batch for Scipy optimizer 
         self.N_ini_min_per_batch=np.copy(N_ini_min_per_batch)
         self.Nfeval_master=multiprocessing.Value('i', 1)
-        self.Nf=30
+        self.Nf=25
         
-   
-        
-        
-        
-        
+
         # workers pinns  
         self.pinns=[]
         self.limits=[]
@@ -686,7 +682,6 @@ class Sequentialmodel(tf.Module):
         del X_lb,X_ub,X_ltb,X_rtb
         return loss_BC
     ###############################################
-    ###############################################
     def get_column_row(self,batch_index, N_batches):
         grid_size = int(np.sqrt(N_batches))
         Grid = np.arange(N_batches).reshape(grid_size, grid_size, order='F').T
@@ -728,54 +723,64 @@ class Sequentialmodel(tf.Module):
 
         return upper_neighbour, est_neighbour, pos_col, pos_row
     ###############################################
+    ###############################################
     def get_neighboring_indices_west_inner(self, pinn, N_batches):
         batch_index = int(pinn.idx_batch)
+        west_neighbour=-1
+        inner_neighbour=-1
         grid_size = int(np.sqrt(N_batches))
         col = batch_index % grid_size
     
         inner_neighbour = batch_index - 1  
         west_neighbour = batch_index - grid_size  
     
-        west_neighbour = str(west_neighbour).zfill(2) + pinn.idx_pinn[-2:]
-        inner_neighbour = str(inner_neighbour).zfill(2) + pinn.idx_pinn[-2:]
+        column, row, pos_col, pos_row= self.get_column_row(batch_index,N_batches)
+        #tf.print(pinn.idx_pinn, inner_neighbour,west_neighbour,pos_col, pos_row)
+        
+        if int(west_neighbour) not in row: 
+            west_neighbour=str(-1)
+        else:
+            west_neighbour = str(west_neighbour).zfill(2) + pinn.idx_pinn[-2:]
+            
+        if int(inner_neighbour) not in column: 
+            inner_neighbour=str(-1)
+        else:
+            inner_neighbour = str(inner_neighbour).zfill(2) + pinn.idx_pinn[-2:]
     
-        return west_neighbour, inner_neighbour,  grid_size-1, grid_size-1
+        return west_neighbour, inner_neighbour,   pos_col, pos_row
+    ###############################################
     ###############################################
     def get_X_ini_all(self,pinn,Master_PINN,pos_col, pos_row,N_batches,X,Y, case): 
-        thresh=self.eta
-        thresh_interface=pinn.thresh_interface
-        self_X_ini_all_sub_domain= Master_PINN.X_ini_all_sub_domain[pinn.all_ini_indices]
-        self_phi_ini_all_sub_domain= Master_PINN.phi_ini_all_sub_domain[pinn.all_ini_indices]
-        interfacial_indices = np.where(np.logical_and(self_phi_ini_all_sub_domain >= thresh_interface, self_phi_ini_all_sub_domain <= 1-thresh_interface))[0]
-        self_X_ini_all_sub_domain=self_X_ini_all_sub_domain[interfacial_indices]
-        self_phi_ini_all_sub_domain=self_phi_ini_all_sub_domain[interfacial_indices]
+        thresh=6*self.eta
+        thresh_interface=0.025# pinn.thresh_interface
+        self_X_ini_all_sub_domain= pinn.X_ini_all_sub_domain#[self.all_ini_indices]
+        self_phi_ini_all_sub_domain= pinn.phi_ini_all_sub_domain#[self.all_ini_indices]
+        interfacial_indices = np.where(np.logical_and(self_phi_ini_all_sub_domain > thresh_interface, self_phi_ini_all_sub_domain <1-thresh_interface))[0] #thresh_interface
+
+        if len(interfacial_indices) == 0:  # if interfacial_indices is empty
+            thresh_interface = 0  # increase threshold value
+            interfacial_indices = np.where(np.logical_and(self_phi_ini_all_sub_domain > thresh_interface, self_phi_ini_all_sub_domain < 1 - thresh_interface))[0]
+
+
+        interfacial_indices_tensor = tf.convert_to_tensor(interfacial_indices, dtype=tf.int32)
+        self_X_ini_all_sub_domain = tf.gather(self_X_ini_all_sub_domain, interfacial_indices_tensor)
+        self_phi_ini_all_sub_domain = tf.gather(self_phi_ini_all_sub_domain, interfacial_indices_tensor)
         
         if case =="condition_upper":
-            condition=abs(self_X_ini_all_sub_domain[:, 1] - (pos_row+1)* Y / np.sqrt(N_batches))<  thresh
+            condition=abs(self_X_ini_all_sub_domain[:, 1] - (pos_row+1)* Y / np.sqrt(N_batches))<=  thresh
                 
         if case =="condition_east":
-            condition=abs(self_X_ini_all_sub_domain[:, 0] -  (pos_col+1)*X / np.sqrt(N_batches))<  thresh
-            """ 
-            #Debug
-            if pinn.idx_pinn=="0000":
-                plt.figure()
-                scatter=plt.scatter(self_X_ini_all_sub_domain[:, 0], self_X_ini_all_sub_domain[:, 1], c=self_phi_ini_all_sub_domain, cmap='viridis', marker='o', label='0_1')
-                cbar = plt.colorbar(scatter, shrink=0.35)
-                cbar.set_label('phi')
-                plt.title(f"pinn_{self.idx_pinn}")
-                plt.xlim([0, 1])
-                plt.ylim([0, 1])
-                plt.savefig("subset_east")
-                plt.close()
-                tf.print(stop_here)
-            """
+            condition=abs(self_X_ini_all_sub_domain[:, 0] -  (pos_col+1)*X / np.sqrt(N_batches))<=  thresh
+
         if case =="condition_inner":
-            condition=abs(self_X_ini_all_sub_domain[:, 1] -  (pos_row)* Y / np.sqrt(N_batches))<  thresh
+            condition=abs(self_X_ini_all_sub_domain[:, 1] -  (pos_row)* Y / np.sqrt(N_batches))<=  thresh
         if case =="condition_west":
-            condition=abs(self_X_ini_all_sub_domain[:, 0] -   (pos_col)*X / np.sqrt(N_batches))<  thresh
-        
+            condition=abs(self_X_ini_all_sub_domain[:, 0] -   (pos_col)*X / np.sqrt(N_batches))<=  thresh       
         selected_indices=np.where(condition)[0]
-        subset=self_X_ini_all_sub_domain[selected_indices]
+        selected_indices = tf.convert_to_tensor(selected_indices, dtype=tf.int32)
+        subset = tf.gather(self_X_ini_all_sub_domain, selected_indices).numpy()
+        
+        #tf.print(pinn.idx_pinn,len(selected_indices))
         # take exact boundary
         if case =="condition_upper":
             subset[:, 1] = (pos_row+1)* Y / np.sqrt(N_batches)
@@ -789,8 +794,42 @@ class Sequentialmodel(tf.Module):
         # update time
         subset=np.unique(subset, axis=0)
         updated_time_column = np.random.uniform(pinn.t_min, pinn.t_max, subset.shape[0])
-        subset[:, 2]= updated_time_column        
-        return np.unique(subset, axis=0), selected_indices
+        subset[:, 2]= updated_time_column   
+        
+        self_pred = pinn.evaluate(subset)
+        self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
+        int_indices = np.where(np.logical_and(self_pred > thresh_interface, self_pred < 1-thresh_interface))[0]
+        coef_loss=1
+        
+        if int_indices is None or len(int_indices) == 0:
+            int_indices = np.where(np.logical_and(self_pred >= 0, self_pred <= 1))[0]
+            coef_loss=0.1   # ==> no interfacial contact between batches ==> the loss could be tolerated 
+            
+        else:
+            int_indices_tensor = tf.convert_to_tensor(int_indices, dtype=tf.int32)
+            subset = tf.gather(subset, int_indices_tensor)
+            self_pred = tf.gather(self_pred, int_indices_tensor)
+
+        #""" 
+        #Debug
+        if case =="condition_west":
+          if pinn.idx_pinn=="0201":
+              
+              plt.figure()
+              scatter=plt.scatter(self_X_ini_all_sub_domain[:, 0], self_X_ini_all_sub_domain[:, 1], c=self_phi_ini_all_sub_domain, cmap='magma',alpha=0.25, marker='o', label='0_1')
+              scatter=plt.scatter(subset[:, 0], subset[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
+              cbar = plt.colorbar(scatter, shrink=0.35)
+              cbar.set_label('phi')
+              plt.title(f"pinn_{self.idx_pinn}")
+              plt.xlim([0, 1])
+              plt.ylim([0, 1])
+              plt.savefig("subset")
+              plt.close()
+              #tf.print("coef loss:",coef_loss)
+              #tf.print(stop_here)
+        #"""        
+             
+        return np.unique(subset, axis=0), selected_indices, coef_loss*1.5
     ###############################################
     def loss_BC_custom(self,X_lb,X_ub,X_ltb,X_rtb,abs_x_min,abs_x_max,abs_y_min,abs_y_max):
         
@@ -806,10 +845,9 @@ class Sequentialmodel(tf.Module):
             
             global flag_scipy
             
-            if flag_scipy==True:
+            if flag_scipy==True or self.flag==0:
               return 0
             
-
             # get pinns_beta (pinns in the same bath but with different phases
             pinns_beta=self.find_pinn_by_idx_batch(self.idx_batch, self.idx_pinn,target_pinns=Master_PINN.pinns)
             
@@ -835,13 +873,16 @@ class Sequentialmodel(tf.Module):
             N_batches=len(Master_PINN.pinns)//self.num_phases
             # Loop through each batch index
             for pinn in Master_PINN.pinns:
-                if self.idx_phase == pinn.idx_phase and self.idx_pinn != pinn.idx_pinn and self.idx_batch != pinn.idx_batch: 
+                if self.idx_phase == pinn.idx_phase and self.idx_pinn != pinn.idx_pinn and self.idx_batch != pinn.idx_batch :
                     loss_BC = 0
-                    upper_neighbor, east_neighbor,pos_col, pos_row = self.get_neighboring_indices(self,N_batches)  # You need to implement this function
-                    if str(upper_neighbor)!= "-1":
+                    west_neighbour, inner_neighbour, pos_col, pos_row =self.get_neighboring_indices_west_inner(self, N_batches)
+                    upper_neighbor, east_neighbor,pos_col, pos_row = self.get_neighboring_indices(self,N_batches)  
+                    #tf.print(self.idx_pinn, west_neighbour,inner_neighbour,upper_neighbor,east_neighbor)
+                    ##############################################################
+                    if str(east_neighbor)!= "-1" and str(upper_neighbor)!= "-1" :  # batch in left inner corner 
                         #tf.print("batch_index:" ,self.idx_pinn, "==> upper, est : ",upper_neighbor,", ", east_neighbor, "pos_col, pos_row: ",pos_col, pos_row)
                         pinn_upper=self.find_pinn_by_idx_pinn(upper_neighbor, Master_PINN.pinns)
-                        subset_upper, indices_upper= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_upper")
+                        subset_upper, indices_upper, coef_loss= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_upper")
 
                         if len(indices_upper)==0:
                             tf.print("  !!! no  BC points (upper bound) for the pinn ",self.idx_pinn)
@@ -850,115 +891,239 @@ class Sequentialmodel(tf.Module):
                         self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
                         upper_pred=pinn_upper.evaluate(subset_upper)
                         upper_pred = tf.clip_by_value(upper_pred, 0.0, 1.0)
-                        loss_BC_upper=tf.reduce_mean(tf.square(self_pred-upper_pred))
+                        ref_pred_upper= self_pred# upper_pred
+                        loss_BC_upper=tf.reduce_mean(tf.square(self_pred-upper_pred)) *coef_loss
                         loss_BC+=loss_BC_upper
-    
+
                         # DEBUG
                         if self.idx_pinn=="9999":
-                                tf.print(subset_upper)
-                                plt.figure()
-                                plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o')
-                                scatter=plt.scatter(subset_upper[:, 0], subset_upper[:, 1], c=self_pred, cmap='viridis', marker='o')
-                                cbar = plt.colorbar(scatter, shrink=0.35)
-                                cbar.set_label('phi')
-                                plt.title(f"pinn_{self.idx_pinn}")
-                                #plt.xlim([0, 1])
-                                #plt.ylim([0, 1])
-                                plt.savefig(f"subset_upper_pinn_{self.idx_pinn}")
-                                plt.close()
-                                tf.print(subset_upper)
-                                tf.print(stop_here)
+                            #tf.print(subset_upper)
+                            plt.figure()
+                            plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o')
+                            scatter=plt.scatter(subset_upper[:, 0], subset_upper[:, 1], c=self_pred, cmap='viridis', marker='o')
+                            cbar = plt.colorbar(scatter, shrink=0.35)
+                            cbar.set_label('phi')
+                            plt.title(f"pinn_{self.idx_pinn}")
+                            #plt.xlim([0, 1])
+                            #plt.ylim([0, 1])
+                            plt.savefig(f"subset_upper_pinn_{self.idx_pinn}")
+                            plt.close()
+                            tf.print(self.idx_pinn, ref_pred_upper)
+                            tf.print(stop_here)
 
-                    if str(east_neighbor)!= "-1":
                         subset_est=np.copy(X_f_common)
                         pinn_east=self.find_pinn_by_idx_pinn(east_neighbor, target_pinns=Master_PINN.pinns)
-                        subset_east, indices_east= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_east")
+                        subset_east, indices_east,coef_loss= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_east")
                         
                         if len(indices_east)==0:
                             tf.print(" !!! no  BC points (east bound) for the pinn ",self.idx_pinn)
                             return 0  
 
-                        self_pred=self.evaluate(subset_east)
+                        self_pred = self.evaluate(subset_east)
                         self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
-                        east_pred=pinn_east.evaluate(subset_east)
+                        east_pred = pinn_east.evaluate(subset_east)
                         east_pred = tf.clip_by_value(east_pred, 0.0, 1.0)
-                        loss_BC_est=tf.reduce_mean(tf.square(self_pred-east_pred))
-                        loss_BC+=loss_BC_est
+                        ref_pred_est = self_pred #if int(self.idx_batch) < int(pinn_east.idx_batch) else east_pred ==> uncomment for generalization
+                        loss_BC_est = tf.reduce_mean(tf.square(self_pred - east_pred)) *coef_loss
+                        loss_BC += loss_BC_est
+
                         # DEBUG
-                        """ 
-                        plt.figure()
-                        plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o', label='batch ')
-                        scatter=plt.scatter(subset_east[:, 0], subset_east[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
-                        cbar = plt.colorbar(scatter, shrink=0.35)
-                        cbar.set_label('phi')
-                        plt.xlim([0, 1])
-                        plt.ylim([0, 1])
-                        plt.savefig(f"subset_east_pinn_{self.idx_pinn}")
-                        plt.close()  
-                        tf.print(subset_east)
-                        """ 
-                        
+                        if self.idx_pinn=="9999": 
+                            plt.figure()
+                            plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o', label='batch ')
+                            scatter=plt.scatter(subset_east[:, 0], subset_east[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
+                            cbar = plt.colorbar(scatter, shrink=0.35)
+                            cbar.set_label('phi')
+                            #plt.xlim([0, 1])
+                            #plt.ylim([0, 1])
+                            plt.savefig(f"subset_east_pinn_{self.idx_pinn}")
+                            plt.close()  
+                            tf.print(self.idx_pinn, ref_pred_est)
+                            tf.print(stop_here)
+                    ##############################################################
                     if str(east_neighbor)== "-1" and str(upper_neighbor)== "-1":  # batch in the upper right corner
-                        west_neighbour, inner_neighbour, pos_col, pos_row =self.get_neighboring_indices_west_inner(self, N_batches)
-                        
                         # subset_inner (inner neighbour)
                         pinn_inner=self.find_pinn_by_idx_pinn(inner_neighbour, pinns)
-                        subset_inner, indices_inner= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_inner")
+                        subset_inner, indices_inner,coef_loss= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_inner")
                         
                         if len(indices_inner)==0:
                             tf.print(" !!! no  BC points (inner bound) for the pinn ",self.idx_pinn)
                             return 0  
     
-                        self_pred=self.evaluate(subset_inner)
+                        self_pred = self.evaluate(subset_inner)
                         self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
-                        inner_pred=pinn_inner.evaluate(subset_inner)
+                        inner_pred = pinn_inner.evaluate(subset_inner)
                         inner_pred = tf.clip_by_value(inner_pred, 0.0, 1.0)
-                        loss_BC_inner=tf.reduce_mean(tf.square(self_pred-inner_pred))
-                        loss_BC+=loss_BC_inner
+                        ref_pred_inner = inner_pred# if int(self.idx_batch) < int(pinn_inner.idx_batch) else inner_pred ==> generalization
+                        loss_BC_inner = tf.reduce_mean(tf.square(self_pred - inner_pred)) *coef_loss
+                        loss_BC += loss_BC_inner
+
                         # DEBUG  
-                        """                      
-                        plt.figure()
-                        plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o', label='batch ')
-                        scatter=plt.scatter(subset_inner[:, 0], subset_inner[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
-                        plt.title(f"pinn_{self.idx_pinn} - inner_neighbour{pinn_inner.idx_pinn}")
-                        cbar = plt.colorbar(scatter, shrink=0.35)
-                        cbar.set_label('phi')
-                        plt.xlim([0, 1])
-                        plt.ylim([0, 1])
-                        plt.savefig(f"subset_inner_pinn_{self.idx_pinn}")
-                        plt.close() 
-                        tf.print("subset_inner" ,subset_inner)
-                        """
+                        if self.idx_pinn=="9999":                     
+                            plt.figure()
+                            plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o', label='batch ')
+                            scatter=plt.scatter(subset_inner[:, 0], subset_inner[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
+                            plt.title(f"pinn_{self.idx_pinn} - inner_neighbour{pinn_inner.idx_pinn}")
+                            cbar = plt.colorbar(scatter, shrink=0.35)
+                            cbar.set_label('phi')
+                            #plt.xlim([0, 1])
+                            #plt.ylim([0, 1])
+                            plt.savefig(f"subset_inner_pinn_{self.idx_pinn}")
+                            plt.close() 
+                            tf.print(self.idx_pinn,pinn_inner.idx_pinn, ref_pred_inner)
+                            tf.print(stop_here)
                         
                         # subset_west (west neighbour)
                         pinn_west=self.find_pinn_by_idx_pinn(west_neighbour, pinns)
-                        subset_west, indices_west= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_west")    
+                        subset_west, indices_west,coef_loss= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_west")    
                         
                         if len(indices_west)==0:
                             tf.print(" !!! no  BC points (west bound) for the pinn ",self.idx_pinn)
                             return 0
         
-                        self_pred=self.evaluate(subset_west)
+                        self_pred = self.evaluate(subset_west)
                         self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
-                        west_pred=pinn_west.evaluate(subset_west)
+                        west_pred = pinn_west.evaluate(subset_west)
                         west_pred = tf.clip_by_value(west_pred, 0.0, 1.0)
-                        loss_BC_west=tf.reduce_mean(tf.square(self_pred-west_pred))
-                        loss_BC+=loss_BC_west
+                        ref_pred_west = west_pred #if int(self.idx_batch) < int(pinn_west.idx_batch) else west_pred ==> generalization
+                        loss_BC_west = tf.reduce_mean(tf.square(self_pred - west_pred)) *coef_loss
+                        loss_BC += loss_BC_west
+
                         # DEBUG
-                        """
-                        plt.figure()
-                        plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o', label='batch ')
-                        scatter=plt.scatter(subset_west[:, 0], subset_west[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
-                        plt.title(f"pinn_{self.idx_pinn}")
-                        cbar = plt.colorbar(scatter, shrink=0.35)
-                        cbar.set_label('phi')
-                        plt.xlim([0, 1])
-                        plt.ylim([0, 1])
-                        plt.savefig(f"subset_west_pinn_{self.idx_pinn}")
-                        tf.print("subset_west" ,subset_west)
-                        plt.close()  
-                        """
+                        if self.idx_pinn=="9999":  
+                            plt.figure()
+                            plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o', label='batch ')
+                            scatter=plt.scatter(subset_west[:, 0], subset_west[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
+                            plt.title(f"pinn_{self.idx_pinn}")
+                            cbar = plt.colorbar(scatter, shrink=0.35)
+                            cbar.set_label('phi')
+                            #plt.xlim([0, 1])
+                            #plt.ylim([0, 1])
+                            plt.savefig(f"subset_west_pinn_{self.idx_pinn}")
+                            tf.print("subset_west" ,subset_west)
+                            tf.print(stop_here) 
+
+                    ############################################################## 
+                    if str(inner_neighbour)!= "-1" and str(east_neighbor)!= "-1" :   #  upper left corner 
+                        #tf.print("batch_index:" ,self.idx_pinn, "==> upper, est : ",upper_neighbor,", ", east_neighbor, "pos_col, pos_row: ",pos_col, pos_row)
+                        pinn_inner=self.find_pinn_by_idx_pinn(inner_neighbour, Master_PINN.pinns)
+                        subset_inner, indices_inner,coef_loss= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_inner")
+
+                        if len(indices_inner)==0:
+                            tf.print("  !!! no  BC points (inner bound) for the pinn ",self.idx_pinn)
+                            return 
+                            
+                        self_pred=self.evaluate(subset_inner)
+                        self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
+                        inner_pred=pinn_inner.evaluate(subset_inner)
+                        inner_pred = tf.clip_by_value(inner_pred, 0.0, 1.0)
+                        ref_pred=inner_pred# if int(self.idx_batch) < int(pinn_inner.idx_batch) else  inner_pred ==> generalization
+                        loss_BC_inner=tf.reduce_mean(tf.square(self_pred-inner_pred))*coef_loss
+                        loss_BC+=loss_BC_inner
+
+                        # DEBUG
+                        if self.idx_pinn=="9999": 
+                            plt.figure()
+                            plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o', label='batch ')
+                            scatter=plt.scatter(subset_inner[:, 0], subset_inner[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
+                            cbar = plt.colorbar(scatter, shrink=0.35)
+                            cbar.set_label('phi')
+                            #plt.xlim([0, 1])
+                            #plt.ylim([0, 1])
+                            plt.savefig(f"subset_inner_pinn_{self.idx_pinn}")
+                            plt.close()  
+                            print(self.idx_pinn,pinn_inner.idx_pinn )
+                            tf.print(stop_here)
+                                
+                        pinn_east=self.find_pinn_by_idx_pinn(east_neighbor, target_pinns=Master_PINN.pinns)
+                        subset_east, indices_east,coef_loss= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_east")
                         
+                        if len(indices_east)==0:
+                            tf.print(" !!! no  BC points (east bound) for the pinn ",self.idx_pinn)
+                            return 0  
+
+                        self_pred = self.evaluate(subset_east)
+                        self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
+                        east_pred = pinn_east.evaluate(subset_east)
+                        east_pred = tf.clip_by_value(east_pred, 0.0, 1.0)
+                        ref_pred_est = self_pred #if int(self.idx_batch) < int(pinn_east.idx_batch) else east_pred ==> generalization
+                        loss_BC_est = tf.reduce_mean(tf.square(self_pred - east_pred))*coef_loss
+                        loss_BC += loss_BC_est
+
+                        # DEBUG
+                        if self.idx_pinn=="9999": 
+                            plt.figure()
+                            plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o', label='batch ')
+                            scatter=plt.scatter(subset_east[:, 0], subset_east[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
+                            cbar = plt.colorbar(scatter, shrink=0.35)
+                            cbar.set_label('phi')
+                            #plt.xlim([0, 1])
+                            #plt.ylim([0, 1])
+                            plt.savefig(f"subset_east_pinn_{self.idx_pinn}")
+                            plt.close()  
+                            print(self.idx_pinn,pinn_east.idx_pinn )
+                            tf.print(stop_here)
+                    ##############################################################
+                    if str(upper_neighbor)!= "-1" and str(west_neighbour)!= "-1" :   # right inner corner 
+                        #tf.print("batch_index:" ,self.idx_pinn, "==> upper, est : ",upper_neighbor,", ", east_neighbor, "pos_col, pos_row: ",pos_col, pos_row)
+                        pinn_upper=self.find_pinn_by_idx_pinn(upper_neighbor, Master_PINN.pinns)
+                        subset_upper, indices_upper,coef_loss= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_upper")
+                        
+                        if len(indices_upper)==0:
+                            tf.print("  !!! no  BC points (upper bound) for the pinn ",self.idx_pinn)
+                            return 
+                            
+                        self_pred=self.evaluate(subset_upper)
+                        self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
+                        upper_pred=pinn_upper.evaluate(subset_upper)
+                        upper_pred = tf.clip_by_value(upper_pred, 0.0, 1.0)
+                        ref_pred=self_pred# if int(self.idx_batch) < int(pinn_upper.idx_batch) else  upper_pred ==> generalization
+                        loss_BC_upper=tf.reduce_mean(tf.square(self_pred-upper_pred)) *coef_loss
+                        loss_BC+=loss_BC_upper
+
+                        # DEBUG
+                        if self.idx_pinn=="9999": 
+                            plt.figure()
+                            plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma',alpha=0.25, marker='o', label='batch ')
+                            scatter=plt.scatter(subset_upper[:, 0], subset_upper[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
+                            cbar = plt.colorbar(scatter, shrink=0.35)
+                            cbar.set_label('phi')
+                            #plt.xlim([0, 1])
+                            #plt.ylim([0, 1])
+                            plt.savefig(f"subset_upper_pinn_{self.idx_pinn}")
+                            plt.close()  
+                            print(self.idx_pinn,pinn_upper.idx_pinn )
+                            tf.print(stop_here)
+                                
+                        pinn_west=self.find_pinn_by_idx_pinn(west_neighbour, pinns)
+                        subset_west, indices_west,coef_loss= self.get_X_ini_all(self,Master_PINN,pos_col, pos_row,N_batches,X,Y,"condition_west")    
+
+                        if len(indices_west)==0:
+                            tf.print(" !!! no  BC points (west bound) for the pinn ",self.idx_pinn)
+                            return 0  
+
+                        self_pred = self.evaluate(subset_west)
+                        self_pred = tf.clip_by_value(self_pred, 0.0, 1.0)
+                        west_pred = pinn_west.evaluate(subset_west)
+                        west_pred = tf.clip_by_value(west_pred, 0.0, 1.0)
+                        ref_pred_west = west_pred #if  int(self.idx_batch) < int(pinn_west.idx_batch) else west_pred
+                        loss_BC_west= tf.reduce_mean(tf.square(self_pred - west_pred)) *coef_loss
+                        loss_BC += loss_BC_west
+
+                        # DEBUG
+                        if self.idx_pinn=="9999": 
+                            plt.figure()
+                            plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma',alpha=0.25, marker='o', label='batch ')
+                            scatter=plt.scatter(subset_west[:, 0], subset_west[:, 1], c=self_pred, cmap='viridis', marker='o', label='0_1')
+                            cbar = plt.colorbar(scatter, shrink=0.35)
+                            cbar.set_label('phi')
+                            #plt.xlim([0, 1])
+                            #plt.ylim([0, 1])
+                            plt.savefig(f"subset_west_pinn_{self.idx_pinn}")
+                            plt.close()  
+                            print(self.idx_pinn,pinn_west.idx_pinn )
+                            tf.print(stop_here)
+
             if tf.reduce_any(tf.math.is_nan(tf.cast(loss_BC, dtype=tf.float32))):
                 tf.print(" !!!!!! Check BC points returning nan losses !!!!!! ", " ==> pinn: ", self.idx_pinn)
                 return 0
@@ -1290,9 +1455,9 @@ class Sequentialmodel(tf.Module):
         denoising_loss= 0#self.get_denoising_loss() if denoising_loss_==True and self.flag==1 else  0
         loss_IC = self.loss_IC(x_ini,phi_ini)      
         loss_f,loss_sum_constraint =  self.loss_PDE(xf,phi_ini)        
-        loss_BC =  0#  self.loss_BC_custom(x_lb,x_ub,x_ltb,x_rtb,abs_x_min,abs_x_max,abs_y_min,abs_y_max)        
+        loss_BC =  0 if Master_PINN.bc==0 else  0.01*self.loss_BC_custom(x_lb,x_ub,x_ltb,x_rtb,abs_x_min,abs_x_max,abs_y_min,abs_y_max)        
         if self.flag==0:
-            self.f=0.1  
+            self.f=0.1 
         loss =  self.f*loss_f +self.ic*loss_IC+self.bc*loss_BC +denoising_loss +  self.sum*loss_sum_constraint
         # 
         #l1_regularization = tf.reduce_sum([tf.reduce_sum(tf.abs(w)) for w in self.trainable_variables])
@@ -1341,7 +1506,7 @@ class Sequentialmodel(tf.Module):
                 grads_1d = tf.concat([grads_1d, grads_b_1d], 0) #concat grad_biases
 
             del grads, grads_w_1d,grads_b_1d
-            return loss_val.numpy(), grads_1d.numpy()
+            return loss_val.numpy(), grads_1d
     ###############################################
     def optimizer_callback_master(self, parameters):
         with tf.device('/CPU:0'):
@@ -2198,54 +2363,47 @@ class Sequentialmodel(tf.Module):
         pinn.percentage_inter_points= 0 if  len(phi)==0 else len(interfacial_indices)/len(phi)
         pinn.flag=1 if len(interfacial_indices)>0 else 0
         
+        # set N_ini_per_batch
+        x_min,x_max,y_min,y_max=pinn.limits
+        number_eta_squares= (math.ceil(abs(x_min-x_max)* abs(y_min-y_max) /self.eta**2) *pinn.percentage_inter_points) 
+        local_density=40
+        N_ini_per_batch= int(number_eta_squares*local_density)  
+
         zero_indices = np.where(phi <= thresh_interface)[0]
         one_indices =  np.where(phi >= 1 - thresh_interface)[0]
 
-        # if no interfacial points, pinn will not be considered in training (just take few points for plot and minor check)
-        if pinn.flag==0:  
-            random_indices= np.random.choice(len(phi), size=min(25,N_ini_min_per_batch) , replace=False)
-            return random_indices
 
-        def sigmoid(x,N_ini_min_batch,N_ini_max_batch):
-            return N_ini_min_batch + (N_ini_max_batch - N_ini_min_batch) / (1 + math.exp(-x))
-
-        def get_interfacial_indices_sampled(pinn,interfacial_indices,zero_indices,fraction_zeros_per_int_pts):
-            N_ini_per_batch = int(pinn.percentage_inter_points *(N_ini_max_per_batch-N_ini_min_per_batch) + N_ini_min_per_batch)
-            replace_1= False if len(interfacial_indices) > N_ini_per_batch  else True
-            interfacial_indices_sampled =np.random.choice(interfacial_indices, size=N_ini_per_batch, replace=replace_1)
+        def get_interfacial_indices_sampled(pinn,N_ini_per_batch,interfacial_indices,zero_indices,fraction_zeros_per_int_pts):
+            N_ini_per_batch = min(N_ini_per_batch, len(interfacial_indices))  
+            interfacial_indices_sampled = np.random.choice(interfacial_indices, size=N_ini_per_batch, replace=False)
             if len(zero_indices)>0:
-                zero_addition=np.random.choice(zero_indices, size=min(40,len(zero_indices)), replace=False)
+                zero_addition=np.random.choice(zero_indices, size=min(30,len(zero_indices)), replace=False)
                 interfacial_indices_sampled=np.concatenate([interfacial_indices_sampled, zero_addition])
             return interfacial_indices_sampled
         
-        def get_interfacial_indices_sampled_only_int(pinn,interfacial_indices):
+        def get_interfacial_indices_sampled_only_int(pinn,N_ini_per_batch,interfacial_indices):
             interfacial_zero_indices_combined = interfacial_indices
-            N_ini_per_batch = int(pinn.percentage_inter_points *(N_ini_max_per_batch-N_ini_min_per_batch) + N_ini_min_per_batch)
-            x = pinn.percentage_inter_points * 100 # adjust the scaling factor 
-            N_ini_per_batch = int(sigmoid(x,N_ini_min_per_batch,N_ini_max_per_batch))
-            N_ini_per_batch = min(N_ini_per_batch, N_ini_max_per_batch)
-            replace_1= False if len(interfacial_zero_indices_combined) > N_ini_per_batch  else True
-            interfacial_indices_sampled =np.random.choice(interfacial_zero_indices_combined, size=N_ini_per_batch, replace=replace_1)
-            #tf.print("here ",pinn.idx_pinn, len(interfacial_indices_sampled))
+            N_ini_per_batch = min(N_ini_per_batch, len(interfacial_zero_indices_combined))  # Corrected line
+            interfacial_indices_sampled = np.random.choice(interfacial_zero_indices_combined, size=N_ini_per_batch, replace=False)
             return interfacial_indices_sampled     
 
         if len(zero_indices)>0 and len(one_indices)==0:
-            return get_interfacial_indices_sampled(pinn,interfacial_indices,zero_indices,fraction_zeros_per_int_pts)
+            return get_interfacial_indices_sampled(pinn,N_ini_per_batch,interfacial_indices,zero_indices,fraction_zeros_per_int_pts)
         
         if len(zero_indices)==0 and len(one_indices)==0:
-            return get_interfacial_indices_sampled_only_int(pinn,interfacial_indices)
+            return get_interfacial_indices_sampled_only_int(pinn,N_ini_per_batch,interfacial_indices)
             
         if len(zero_indices)==0 and len(one_indices)>0:
-            return get_interfacial_indices_sampled(pinn,interfacial_indices,one_indices,fraction_ones_per_int_pts)
+            return get_interfacial_indices_sampled(pinn,N_ini_per_batch,interfacial_indices,one_indices,fraction_ones_per_int_pts)
         
         if len(zero_indices)>0 and len(one_indices)>0:        
+            replace_ = False
             x = pinn.percentage_inter_points * 100
-            N_ini_per_batch = int(sigmoid(x,N_ini_min_per_batch,N_ini_max_per_batch))# int(pinn.percentage_inter_points *(N_ini_max_per_batch-N_ini_min_per_batch) + N_ini_min_per_batch)
-            N_ini_per_batch = min(N_ini_per_batch, N_ini_max_per_batch)
-            replace_= False if len(interfacial_indices) > N_ini_per_batch  else True
+            N_ini_per_batch = min(N_ini_per_batch, N_ini_max_per_batch, len(interfacial_indices))
+
             interfacial_indices_sampled =np.random.choice(interfacial_indices, size=N_ini_per_batch, replace=replace_)            
-            zero_addition=np.random.choice(zero_indices, size=min(40,len(zero_indices)), replace=False)
-            one_addition=np.random.choice(one_indices, size=min(40,len(one_indices)), replace=False)
+            zero_addition=np.random.choice(zero_indices, size=min(30,len(zero_indices)), replace=False)
+            one_addition=np.random.choice(one_indices, size=min(30,len(one_indices)), replace=False)
             interfacial_indices_sampled=np.concatenate([interfacial_indices_sampled, zero_addition,one_addition])        
         return interfacial_indices_sampled
     ##############################################   
@@ -3470,6 +3628,8 @@ class Sequentialmodel(tf.Module):
         flag_scipy_optimize_pinns= 0 
         count_scipy_iter=0
         dummy_flag=1
+        epoch_scipy=0
+        epoch_continuity=0
         flag_pass=0
         flag_print_ignore=1
         global bool_flag_continuity
@@ -3512,6 +3672,7 @@ class Sequentialmodel(tf.Module):
             global Master_PINN
             Master_PINN = self
             Master_PINN.pinns = self.pinns
+            Master_PINN.bc=0
             Master_PINN.sum=1
             ############################################
             ############### EPOCH LOOP #################
@@ -3861,6 +4022,7 @@ class Sequentialmodel(tf.Module):
                     # call scipy optimizer if loss > thresh
                     if count_ % epoch_scipy_opt == 0 and max_loss > self.thresh and epoch>0 and flag_train_workers==1 and len(pinns_adam_above_thresh)>0 and count_>20: #:and self.f==1: #and N_batches==self.N_batches: 
                         flag_scipy= True
+                        epoch_scipy=np.copy(epoch)
                         tf.print("\n !!! Scipy optimize: !!! - Epoch: ",str(epoch))
                         tf.print("\n ! Scipy iteration number: ",str(count_scipy_iter+1))
                         #global Nfeval
@@ -3872,7 +4034,7 @@ class Sequentialmodel(tf.Module):
                         for pinn_idx in range(len(self.pinns)):
                             pinn=self.pinns[pinn_idx]
                             pinn.list_loss_scipy = []
-                            if pinn.flag>=0 and pinn.idx_pinn in pinns_adam_above_thresh:
+                            if pinn.flag>=0 and (pinn.idx_pinn in pinns_adam_above_thresh ):  # pinn.idx_batch==0 are always considerd as Ref
                                 batch_args_scipy.append([pinn,pinn.get_weights().numpy()])
                                 pinns_to_optimize.append(copy.copy(pinn))
                             
@@ -4001,30 +4163,35 @@ class Sequentialmodel(tf.Module):
 
                     ########################################################################
                     ########################################################################
-                    if flag_train_workers==1 and flag_print_ignore==1: 
-                        thresh_loss=np.copy(max_loss)
+                    thresh_loss=np.copy(max_loss)
+                    if flag_train_workers==1 and flag_print_ignore==1 and N_batches == self.min_batch_numbers and epoch> epoch_scipy: 
+                        
+                        if thresh_loss < self.thresh and epoch >0:
+                            tf.print("\n !!! -------------------------- !!! ")
+                            tf.print(f"\n !!! Start addressing continuity at epoch {epoch} !!! ")
+                            tf.print("\n !!! --------------------------!!! ")
+                            Master_PINN.bc=1  
+                            flag_print_ignore=0  
+                            Master_PINN.sum=1
+                            epoch_continuity=np.copy(epoch)
+
                     elif flag_train_Master==1 and flag_train_workers==0 : 
                         thresh_loss=np.copy(global_loss_Master)
-                        
-                    if thresh_loss < self.thresh and  epoch % epoch_print == 0 and flag_train_workers==0 :
-                        Nbr_f_pts_max_per_batch,Nbr_f_pts_min_per_batch=self.revert_the_increase(Nbr_f_pts_max_per_batch, Nbr_f_pts_min_per_batch)
-                        Master_PINN.sum=1
 
                     ########################################################################
                     ########################################################################
                     ###############  Save and change Domain (time or N:batches ) ###########
                     ########################################################################
                     ########################################################################                                           
-                    if thresh_loss < self.thresh and t_max<=self.ub[2] and flag==0 and epoch>0 and epoch % 17==0 and  Master_PINN.sum==1: #the last is added to ensure that the model train a bit before new changes and continuity of the minbatching   
-                        
+                    if thresh_loss < self.thresh and t_max<=self.ub[2] and flag==0 and epoch>0 and epoch % 17==0 and epoch > epoch_scipy and epoch > epoch_continuity: #the last is added to ensure that the model train a bit before new changes and continuity of the minbatching   
+                    
                         if flag_train_workers==1: 
                             tf.print("\n max_loss: {0:.3e} < Threshold: {1:.3e}\n".format(thresh_loss, self.thresh))
                             count_=0 # reset 
                             count_scipy_iter=0 # reset 
                             flag_print_ignore=1 # reset
                             self.coef_reduction*=1.5
-                            Master_PINN.sum=1
-                            
+                                
                         ################################################################
                         if  flag_weights:  # save weights at each time-domain change 
                             Nbr_f_pts_max_per_batch,Nbr_f_pts_min_per_batch=self.revert_the_increase(Nbr_f_pts_max_per_batch, Nbr_f_pts_min_per_batch)  
@@ -4088,7 +4255,7 @@ class Sequentialmodel(tf.Module):
                                 #flag_weights=0                            
 
                         # Save Master PREDICTIONS and prepare training on the next time domain
-                        if t_max<self.ub[2] and N_batches==self.min_batch_numbers and flag_pass==1 and epoch % 17==0 :
+                        if t_max<self.ub[2] and N_batches==self.min_batch_numbers and flag_pass==1 and epoch % 17==0 and Master_PINN.bc==1:
                             
                             tf.print('Increase time interval ==> Epoch: {0:d}, total_loss: {1:.3e}, loss_BC: {2:.3e}, loss_IC: {3:.3e}, loss_f: {4:.3e}'.format(epoch, global_loss_workers, global_loss_BC_workers,global_loss_IC_workers, global_loss_f_workers))
                             tf.print("\n ")
@@ -4111,6 +4278,7 @@ class Sequentialmodel(tf.Module):
                             flag_reduce_batches=0
                             N_batches=self.N_batches
                             count_=0
+                            Master_PINN.bc=0
 
                             #tf.print(stop_here)
 
