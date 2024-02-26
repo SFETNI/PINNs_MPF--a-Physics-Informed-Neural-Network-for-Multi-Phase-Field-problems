@@ -9,16 +9,15 @@ A global approach is taken here to concentrate the MPF problem at the interfacia
 ## Technical Remarks:
  1. The code requires Python 3.x to run. Ensure that you have the appropriate Python version installed.
  2. The following packages need to be installed:
-    - pyDOE: Latin Hypercube Sampling (can be installed using pip)
     - TensorFlow: Deep Learning framework
     - NumPy: Numerical computing library
     - SciPy: Scientific computing library
     - Matplotlib: Plotting library
-    - psutil: System monitoring library
+    - pyDOE: Latin Hypercube Sampling (can be installed using pip)
  3. Ensure that you have the necessary permissions to install packages via pip.
 
 ## Code content
-Please review the supplementary material of the paper (animated video or PDF) to become better familiarized with the code files. Additionally, it is advisable to look into the Benchmark 1 Python scripts (main.py, PINN.py, and Post_process.py) for 2D simulations in a first way. These scripts contain detailed comments about the code sequence before the complexity increases in subsequent benchmarks.
+Please review the supplementary material of the paper (animated video or PDF) to become better familiarized with the code content. Additionally, it is advisable to look into the Benchmark 2 Python scripts (main.py, PINN.py, and Post_process.py) for 2D simulations in a first way. These scripts contain detailed comments about the code sequence before the complexity increases in subsequent benchmarks.
 
  For optimal performance, it is recommended to use a system with specifications similar to the AMD Ryzen Threadripper PRO 5975WX 32-Cores, which should have a minimum of 32GB of RAM.
 
