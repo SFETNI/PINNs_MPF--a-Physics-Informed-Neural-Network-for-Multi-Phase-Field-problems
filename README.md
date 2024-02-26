@@ -1,7 +1,10 @@
 # PINNs-MPF
-These benchmarks in the current git are related to the article: PINNs-MPF: A Physics-Informed Neural Network Framework for Multi-Phase-Field Simulation of Interface Dynamics
+These benchmarks in the current git are related to the article: 
+
+PINNs-MPF: A Physics-Informed Neural Network Framework for Multi-Phase-Field Simulation of Interface Dynamics
+
 ## Abstract
-We present an application of Physical Informed Neural Networks (PINNs) to handle multi-phase-field (MPF) simulations of microstructure evolution.
+We present an application of Physics-Informed Neural Networks (PINNs) to handle multi-phase-field (MPF) simulations of microstructure evolution.
 This is realized through a multi-variable time-series problem by using full discrete resolution. 
 Within each time interval, space, time, and phases/grains were treated separately, constituting discrete subdomains. 
 A multi-networking concept is implemented to subdivide the simulation domain into multiple batches, with each batch associated with an independent Neural Network (NN) trained to predict the solution. 
@@ -21,13 +24,14 @@ The proposed PINNs-MPF framework successfully reproduces benchmark tests with hi
  3. Ensure that you have the necessary permissions to install packages via pip.
 
 ## Code content
-Please review the supplementary material of the paper (animated video or PDF) to become better familiarized with the code content. Additionally, it is advisable to look into the Benchmark 2 Python scripts (main.py, PINN.py, and Post_process.py) for 2D simulations in a first way. These scripts contain detailed comments about the code sequence before the complexity increases in subsequent benchmarks.
+Please review the supplementary material of the paper (animated video or PDF) to become better familiarized with the code content. Additionally, it is advisable to look into the Benchmark 2 Python scripts (main.py, PINN.py, and Post_process.py) for 2D simulations on the first try. These scripts contain detailed comments about the code sequence before the complexity increases in subsequent benchmarks.
 
  For optimal performance, it is recommended to use a system with specifications similar to the AMD Ryzen Threadripper PRO 5975WX 32-Cores, which should have a minimum of 32GB of RAM.
 
 ## License Information
  You are free to use, modify, and distribute the code in accordance with the terms of the license of the loaded packages.
 
+## Supplementary video:
 ![](https://github.com/SFETNI/PINNs_MPF/blob/Main/Supplementary/Intro_Framework.gif)
 
 
