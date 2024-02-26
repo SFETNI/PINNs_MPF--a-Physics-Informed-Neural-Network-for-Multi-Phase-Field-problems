@@ -1,4 +1,4 @@
-# PINNs-MPF: 
+# PINNs-MPF
 These benchmarks in the current git are related to the article: PINNs-MPF: A Physics-Informed Neural Network Framework for Multi-Phase-Field Simulation of Interface Dynamics
 ## Abstract
 We present an application of Physical Informed Neural Networks (PINNs) to handle multi-phase-field (MPF) simulations of microstructure evolution.
@@ -10,7 +10,7 @@ A set of systematic simulations with increasing complexity was performed, that b
 A comprehensive approach is adopted to specifically accord attention on the MPF problem to the interfacial regions, facilitating an automatic and dynamic meshing process, significantly simplifying the tuning of  hyper-parameters and serving as a fundamental key for addressing MPF problems using Machine Learning.
 The proposed PINNs-MPF framework successfully reproduces benchmark tests with high fidelity and Mean Squared Error (MSE) loss values ranging from 10$^{-4}$ to 10$^{-6}$ compared to ground truth solutions. 
 
-## Technical Remarks:
+## Technical Remarks
  1. The code requires Python 3.x to run. Ensure that you have the appropriate Python version installed.
  2. The following packages need to be installed:
     - TensorFlow: Deep Learning framework
@@ -25,7 +25,7 @@ Please review the supplementary material of the paper (animated video or PDF) to
 
  For optimal performance, it is recommended to use a system with specifications similar to the AMD Ryzen Threadripper PRO 5975WX 32-Cores, which should have a minimum of 32GB of RAM.
 
-## License Information:
+## License Information
  You are free to use, modify, and distribute the code in accordance with the terms of the license of the loaded packages.
 
 ![](https://github.com/SFETNI/PINNs_MPF/blob/Main/Supplementary/Intro_Framework.gif)
