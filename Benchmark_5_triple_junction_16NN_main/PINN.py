@@ -466,9 +466,7 @@ class Sequentialmodel(tf.Module):
                                 phi_ini_all_sub_domain_pinn_beta=pinn_beta.evaluate(X_phi_test_sub)
                                 phi_ini_all_sub_domain_pinn_beta = tf.clip_by_value(phi_ini_all_sub_domain_pinn_beta, 0.0, 1.0)
                                 sum_phases+=phi_ini_all_sub_domain_pinn_beta
-                                #if pinn.idx_pinn == "0201":
-                                #    tf.print(pinn_beta.idx_pinn, phi_ini_all_sub_domain_pinn_beta.shape, tf.reduce_min(phi_ini_all_sub_domain_pinn_beta),tf.reduce_max(phi_ini_all_sub_domain_pinn_beta)  )
-                            
+
                         interface_mask = tf.logical_and(phi > self.thresh_interface, phi < 1-self.thresh_interface)    
 
                         phi = tf.where(interface_mask, phi / sum_phases, phi)
@@ -579,10 +577,9 @@ class Sequentialmodel(tf.Module):
         return loss_IC
     ###############################################
     def loss_BC(self,X_lb,X_ub,X_ltb,X_rtb,abs_x_min,abs_x_max,abs_y_min,abs_y_max):
-        #tf.print("abs_x_min,abs_x_max,abs_y_min,abs_y_max: ", abs_x_min,abs_x_max,abs_y_min,abs_y_max)   
-        #tf.print("X_ltb: ", X_ltb)
-        #tf.print("X_ltb[:,1]: ", X_ltb[:,1])
-
+        """
+        Loss function considering external boundary condition.
+        """
         #X_ltb = tf.cast(X_ltb, dtype=self.precision)
         #X_rtb = tf.cast(X_rtb, dtype=self.precision)
         #X_ub = tf.cast(X_ub, dtype=self.precision)
@@ -751,8 +748,8 @@ class Sequentialmodel(tf.Module):
     ###############################################
     ###############################################
     def get_X_ini_all(self,pinn,Master_PINN,pos_col, pos_row,N_batches,X,Y, case): 
-        thresh=6*self.eta
-        thresh_interface=0.025# pinn.thresh_interface
+        thresh=6*self.eta  # could be adjustable
+        thresh_interface=0.025# pinn.thresh_interface  # could be adjustable
         self_X_ini_all_sub_domain= pinn.X_ini_all_sub_domain#[self.all_ini_indices]
         self_phi_ini_all_sub_domain= pinn.phi_ini_all_sub_domain#[self.all_ini_indices]
         interfacial_indices = np.where(np.logical_and(self_phi_ini_all_sub_domain > thresh_interface, self_phi_ini_all_sub_domain <1-thresh_interface))[0] #thresh_interface
@@ -760,7 +757,6 @@ class Sequentialmodel(tf.Module):
         if len(interfacial_indices) == 0:  # if interfacial_indices is empty
             thresh_interface = 0  # increase threshold value
             interfacial_indices = np.where(np.logical_and(self_phi_ini_all_sub_domain > thresh_interface, self_phi_ini_all_sub_domain < 1 - thresh_interface))[0]
-
 
         interfacial_indices_tensor = tf.convert_to_tensor(interfacial_indices, dtype=tf.int32)
         self_X_ini_all_sub_domain = tf.gather(self_X_ini_all_sub_domain, interfacial_indices_tensor)
@@ -832,7 +828,19 @@ class Sequentialmodel(tf.Module):
         return np.unique(subset, axis=0), selected_indices, coef_loss*1.5
     ###############################################
     def loss_BC_custom(self,X_lb,X_ub,X_ltb,X_rtb,abs_x_min,abs_x_max,abs_y_min,abs_y_max):
+        """
+        Customized loss function allowing efficient interaction of different NNs (handling same phase) at boundaries.
         
+        Parameters:
+        - X_lb: Lower boundary points
+        - X_ub: Upper boundary points
+        - X_ltb: Left top boundary points
+        - X_rtb: Right top boundary points
+        - abs_x_min: of each batch 
+        - abs_x_max: of each batch 
+        - abs_y_min: of each batch 
+        - abs_y_max: of each batch 
+        """        
         with tf.device('/CPU:0'):
             lock= multiprocessing.Lock()
             lock.acquire()        
@@ -896,7 +904,7 @@ class Sequentialmodel(tf.Module):
                         loss_BC+=loss_BC_upper
 
                         # DEBUG
-                        if self.idx_pinn=="9999":
+                        if self.idx_pinn=="9999":  # put 0000 or 0001 for example instead of 9999 to check you BC subsets
                             #tf.print(subset_upper)
                             plt.figure()
                             plt.scatter(X_f_common[:, 0], X_f_common[:, 1], c=X_f_common[:, 2], cmap='magma', marker='o')
@@ -1136,131 +1144,6 @@ class Sequentialmodel(tf.Module):
     ###############################################       
     def I_phi(self,lap_phi_alpha,phi_alpha,Prefactor):
         return (lap_phi_alpha +Prefactor*phi_alpha )
-    ###############################################  
-    def loss__PDE_2(self, X_f, phi_ini):
-            lock= multiprocessing.Lock()
-            lock.acquire()
-        
-            global dict_I
-            global epoch 
-            global dict_I_previous
-            global count_
-            global Master_PINN
-            global loss_sum_constraint_
-    
-            batch_X_ini=self.batch_X_ini
-            batch_phi_ini=self.batch_phi_ini
-            
-            # get pinns_beta (pinns in the same bath but with different phases
-            pinns_beta=self.find_pinn_by_idx_batch(self.idx_batch, self.idx_pinn,target_pinns=Master_PINN.pinns)
-            
-            # get X_f
-            if int(self.idx_phase) == 0:
-                X_f=self.batch_Xf
-            else: 
-                for pinn in pinns_beta:
-                    if int(pinn.idx_phase)==0:
-                        #tf.print(self.idx_pinn, pinn.idx_pinn)
-                        X_f=pinn.batch_Xf
-                        break  
-    
-            g = tf.Variable(X_f, dtype=self.precision, trainable=False) 
-            x, y, t= tf.split(g, num_or_size_splits=3, axis=1)
-            Prefactor = np.pi**2 / self.eta**2
-            thresh_interface=self.thresh_interface
-    
-            phase_fields= []                
-            phi_alpha= self.evaluate(g)   
-            phi_alpha = tf.clip_by_value(phi_alpha, 0.0, 1.0)
-            phase_fields.append(phi_alpha )
-            for pinn_beta in pinns_beta:     
-                key = [int(self.idx_phase), int(self.idx_batch), int(self.idx_phase), int(pinn_beta.idx_phase)] 
-                value = self.get_interaction_value(key)  # interaction or no 
-                interaction_condition=self.idx_pinn != pinn_beta.idx_pinn and  value >=0 and self.flag>=0 and pinn_beta.flag>=0
-                if interaction_condition:     
-                    phi_beta= pinn_beta.evaluate(g) 
-                    phase_fields.append(phi_beta )
-
-            # Sum loss 
-            phase_fields= tf.concat(phase_fields, axis=1)
-            sum_phases = tf.reduce_sum(phase_fields, axis=1, keepdims=True)
-            self.sum_phases=sum_phases 
-            #tf.print("sum_phases before correction: ",self.idx_pinn,"phase_fields: ", phase_fields.shape, " sum_phases", sum_phases.shape,tf.reduce_min(sum_phases), tf.reduce_max(sum_phases) )
-            #"""    
-            corrected_phase_fields = tf.zeros_like(sum_phases)
-            for alpha in range(phase_fields.shape[1]):
-                phi_alpha =  tf.expand_dims(phase_fields[:, alpha] , axis=1) 
-                phi_alpha /= sum_phases 
-                corrected_phase_fields += phi_alpha
-            
-            #"""
-            #tf.print("sum_phases corrected: corrected_phase_fields ",corrected_phase_fields.shape, self.idx_pinn,tf.reduce_min(corrected_phase_fields), tf.reduce_max(corrected_phase_fields) )
-            #sum_constraint=tf.reduce_mean(corrected_phase_fields) - 1
-            #loss_sum_constraint = tf.reduce_mean(tf.square(corrected_phase_fields-1 ))
-    
-            phase_fields= []  
-            with tf.GradientTape(persistent=True) as tape:
-                tape.watch(x)
-                tape.watch(y)
-                tape.watch(t)
-                g = tf.concat([x, y, t], axis=1)
-                phi_alpha= self.evaluate(g) 
-                #tf.print( self.idx_pinn,tf.reduce_min(phi_alpha), tf.reduce_max(phi_alpha))
-                phi_alpha/= sum_phases    
-                phi_alpha = tf.clip_by_value(phi_alpha, 0.0, 1.0)
-                phase_fields.append(phi_alpha )
-                loss_f = 0.0
-                phase_losses = []      
-                dPsi_dt=tf.zeros_like(phi_alpha )
-                tape.watch(phi_alpha)
-                phi_t_alpha = tape.gradient(phi_alpha, t)
-                phi_x_alpha = tape.gradient(phi_alpha, x)   
-                tape.watch(phi_x_alpha)              
-                phi_y_alpha = tape.gradient(phi_alpha, y)
-                tape.watch(phi_y_alpha)              
-                phi_xx_alpha = tape.gradient(phi_x_alpha, x)                   
-                phi_yy_alpha = tape.gradient(phi_y_alpha, y)
-                lap_phi_alpha = phi_xx_alpha + phi_yy_alpha
-                
-            I_alpha=self.I_phi(lap_phi_alpha,phi_alpha,Prefactor)      
-            dict_I[f"batch_{self.idx_batch}_phase_{int(self.idx_phase)}_value"] = 1 
-            self.I_beta=I_alpha  # the actual alpha is a beta in other phases
-            #for pinn_beta in pinns_beta:
-            #    tf.print(f"Epoch: {epoch}, Phase: {self.idx_phase}, Batch: {self.idx_batch}, alpha: {self.idx_phase}, beta: {pinn_beta.idx_phase}\n")            
-    
-            for pinn_beta in pinns_beta:     
-                key = [int(self.idx_phase), int(self.idx_batch), int(self.idx_phase), int(pinn_beta.idx_phase)] 
-                value = self.get_interaction_value(key)  # interaction or no 
-                interaction_condition=self.idx_pinn != pinn_beta.idx_pinn and  value >=0 and self.flag>=0 and pinn_beta.flag>=0
-                if interaction_condition: 
-                    #tf.print("phase ",self.idx_phase , " pinn ", self.idx_pinn, "in the batch ",self.idx_batch, " interact with pinn", pinn_beta.idx_pinn)
-                    while  dict_I[f"batch_{pinn_beta.idx_batch}_phase_{int(pinn_beta.idx_phase)}_value"] == 0:
-                        pass
-                    I_beta=pinn_beta.I_beta                             
-                    sigma_ab = self.sigma 
-                    # get dPsi_dt
-                    dPsi_dt += sigma_ab * (I_alpha -I_beta ) 
-                    phi_beta= pinn_beta.evaluate(g)   
-                    phi_beta/= sum_phases  
-                    phi_beta = tf.clip_by_value(phi_beta, 0.0, 1.0)
-                    phase_fields.append(phi_beta )
-     
-            right_side_eqn=  (self.mu/self.num_phases) * dPsi_dt
-            f = phi_t_alpha - right_side_eqn 
-            
-            phase_fields= tf.concat(phase_fields, axis=1)
-            sum_phases = tf.reduce_sum(phase_fields, axis=1, keepdims=True)
-            loss_sum_constraint = tf.reduce_mean(tf.square(phase_fields-1 ))
-            # PDE loss
-            loss_f += tf.reduce_mean(tf.square(f))
-            #tf.print("pinn: ", self.idx_pinn, loss_sum_constraint)
-            # value  busy-wait mechanism 
-            dict_I_previous[f"batch_{self.idx_batch}_phase_{int(self.idx_phase)}_value"] = 1
-    
-            lock.release()
-            return loss_f, loss_sum_constraint   
-    ###############################################
-    #@tf.function
     ###############################################
     #@tf.function
     def loss_PDE(self, X_f, phi_ini):
@@ -1344,10 +1227,11 @@ class Sequentialmodel(tf.Module):
         I_alpha=self.I_phi(lap_phi_alpha,phi_alpha,Prefactor)      
         dict_I[f"batch_{self.idx_batch}_phase_{int(self.idx_phase)}_value"] = 1 
         self.I_beta=I_alpha  # the actual alpha is a beta in other phases
+
+        #   uncomment to check pinns_beta
         #for pinn_beta in pinns_beta:
         #    tf.print(f"Epoch: {epoch}, Phase: {self.idx_phase}, Batch: {self.idx_batch}, alpha: {self.idx_phase}, beta: {pinn_beta.idx_phase}\n")            
         
-
         for pinn_beta in pinns_beta:     
             key = [int(self.idx_phase), int(self.idx_batch), int(self.idx_phase), int(pinn_beta.idx_phase)] 
             value = self.get_interaction_value(key)  # interaction or no 
@@ -1397,13 +1281,13 @@ class Sequentialmodel(tf.Module):
         phase_fields = tf.clip_by_value(phase_fields, 0.0, 1.0) 
 
         #tf.print("sum_phases corrected: corrected_phase_fields: ",corrected_phase_fields.shape, self.idx_pinn,tf.reduce_min(corrected_phase_fields), tf.reduce_max(corrected_phase_fields) )
-        #loss_sum_constraint = tf.reduce_mean(tf.abs(corrected_phase_fields - 1)*1000)
-        #loss_sum_constraint = tf.reduce_sum(tf.abs(corrected_phase_fields - 1) * 1000)
+
         loss_sum_constraint = tf.norm(corrected_phase_fields - 1, ord='euclidean') * 1000
 
         self.phi_ini_all_sub_domain = tf.reshape(phase_fields[0], (num_rows_cols * num_rows_cols, 1)) 
         #tf.print(self.phi_ini_all_sub_domain.shape)
 
+        # Debug 
         if self.idx_pinn=="9999":
             plt.figure()
             #scatter=plt.scatter(X_ini_all_sub_domain[:, 0], X_ini_all_sub_domain[:, 1], c=phi_alpha_all, cmap='viridis', marker='o')
@@ -1417,7 +1301,6 @@ class Sequentialmodel(tf.Module):
             tf.print(stop_here)        
 
 
-        #tf.print("pinn: ", self.idx_pinn, loss_sum_constraint)
         # value  busy-wait mechanism 
         dict_I_previous[f"batch_{self.idx_batch}_phase_{int(self.idx_phase)}_value"] = 1
 
@@ -2472,7 +2355,6 @@ class Sequentialmodel(tf.Module):
         
         X_ini_all_sub_domain_= []                   
 
-        #tf.print(self.X_ini_all_sub_domain.shape, self.phi_ini_all_sub_domain.shape)
         for phase_idx in range(self.num_phases): #this is a plot loop, no computng associated with 
             
             IC_nbr=0
@@ -2513,47 +2395,8 @@ class Sequentialmodel(tf.Module):
                     pinn.phi_ini_all_sub_domain_old = tf.identity(pinn.phi_ini_all_sub_domain)
                 else:
                     pinn.phi_ini_all_sub_domain_old = tf.identity(pinn.phi_ini_all_sub_domain)
-                """
-                else:
-                    #pinn.phi_ini_all_sub_domain=pinn.evaluate(pinn.X_ini_all_sub_domain)
-                    #pinn.phi_ini_all_sub_domain = tf.clip_by_value(pinn.phi_ini_all_sub_domain, 0.0, 1.0)
-                    ###########################################################
-                    if phase_idx==pinn_id:
-                        sum_phases= np.zeros_like(pinn.phi_ini_all_sub_domain)
-                        sum_phases += pinn.phi_ini_all_sub_domain 
-                        pinns_beta=self.find_pinn_by_idx_batch(pinn.idx_batch, pinn.idx_pinn,target_pinns=Master_PINN.pinns)
-                        for pinn_beta in pinns_beta:     
-                            key = [int(pinn.idx_phase), int(pinn.idx_batch), int(pinn.idx_phase), int(pinn_beta.idx_phase)] 
-                            value = pinn.get_interaction_value(key)  # interaction or no 
-                            interaction_condition=int(pinn.idx_phase)!=int(pinn_beta.idx_phase) and pinn.idx_pinn != pinn_beta.idx_pinn
-                            if interaction_condition: 
-                                phi_ini_all_sub_domain_pinn_beta=pinn_beta.evaluate(pinn.X_ini_all_sub_domain)
-                                phi_ini_all_sub_domain_pinn_beta = tf.clip_by_value(phi_ini_all_sub_domain_pinn_beta, 0.0, 1.0)
-                                sum_phases+=phi_ini_all_sub_domain_pinn_beta
 
-                        #pinn.phi_ini_all_sub_domain /= sum_phases
-                        interface_mask = tf.logical_and(pinn.phi_ini_all_sub_domain >= 0, pinn.phi_ini_all_sub_domain <= 1)    
-                        pinn.phi_ini_all_sub_domain = tf.where(interface_mask, pinn.phi_ini_all_sub_domain / sum_phases, pinn.phi_ini_all_sub_domain)
-                        #far_from_interface_indices, interface_indices = self.extract_far_from_interface_indices(pinn.X_ini_all_sub_domain[:,:2], pinn.phi_ini_all_sub_domain_old, self.eta)
-
-
-
-                        pinn.phi_ini_all_sub_domain  = tf.where(pinn.phi_ini_all_sub_domain  < 1e-6, 0.0, pinn.phi_ini_all_sub_domain )
-                        pinn.phi_ini_all_sub_domain  = tf.where(pinn.phi_ini_all_sub_domain  > 0.999, 1.0, pinn.phi_ini_all_sub_domain )
-                        pinn.phi_ini_all_sub_domain  =tf.clip_by_value(pinn.phi_ini_all_sub_domain , 0.0, 1.0)
-                        #pinn.phi_ini_all_sub_domain_old =pinn.phi_ini_all_sub_domain
-
-
-                        # debug 
-                        if pinn.idx_pinn == "9999":
-                            fig = plt.figure()
-                            scatter=plt.scatter(pinn.X_ini_all_sub_domain[:, 0], pinn.X_ini_all_sub_domain[:, 1], cmap=plt.get_cmap('jet'), c=pinn.phi_ini_all_sub_domain)
-                            cbar = plt.colorbar(scatter, shrink=0.35)
-                            plt.savefig("test2001")
-                            plt.close()
-                            tf.print(stop_here)
-                    ###########################################################
-                """
+                # uncomment if needed 
                 # near interface indices (interfaces + near points grouped )
                 #near_interface_indices = self.extract_near_interface_indices(pinn,pinn.X_ini_all_sub_domain[:,:2], pinn.phi_ini_all_sub_domain,  self.eta)  
                 # far from interface indices (only far points grouped )
@@ -2565,6 +2408,7 @@ class Sequentialmodel(tf.Module):
 
                 pinn.far_int_batch_phi_ini= tf.gather(pinn.phi_ini_all_sub_domain, far_from_interface_indices, axis=0) 
 
+                # uncomment if needed 
                 # then group the (interfaces + near points ) together in one batch (if percentage_zeros==percentage_ones=0 ==> only Interface considered )
                 #if len(near_interface_indices)>0:
                 #    pinn.phi_ini_all_sub_domain=pinn.phi_ini_all_sub_domain[near_interface_indices]
@@ -2584,7 +2428,7 @@ class Sequentialmodel(tf.Module):
                     if len(group1_indices) == 0 or len(group2_indices) == 0:
                         pinn.flag_one_side=1  
                         if len(group1_indices) == 0:
-                            #tf.print(group2_indices)
+
                             # when group1 is empty
                             pinn.flag_no_grain=1
                             pinn.flag_grain=0
@@ -2859,8 +2703,6 @@ class Sequentialmodel(tf.Module):
                     ax.text(x_avg, y_avg, f"{pinn.idx_pinn}", color=color, ha='right', va='bottom',fontsize=10)
                     ax.text(x_avg-L/4, y_avg-W/4, f"{len(batch_Xf)} pts", color='orange', ha='right', va='bottom',fontsize=8)
       
-            #cbar =plt.colorbar( shrink=0.5)                              
-            #cbar.set_label("Time")
 
             title=f"Collocation_points_{Col_nbr}_Epoch_{epoch}_for_Time_interval_t_min_{pinn.t_min:.5f}_t_max_{pinn.t_max:.5f}_Phase_{phase_idx}.jpg"
             plt.grid(True)
