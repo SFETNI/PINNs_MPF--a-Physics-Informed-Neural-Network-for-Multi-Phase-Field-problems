@@ -1338,6 +1338,8 @@ class Sequentialmodel(tf.Module):
         denoising_loss= 0#self.get_denoising_loss() if denoising_loss_==True and self.flag==1 else  0
         loss_IC = self.loss_IC(x_ini,phi_ini)      
         loss_f,loss_sum_constraint =  self.loss_PDE(xf,phi_ini)        
+        # Nb: the weighting of the BC loss here is compensated by specific overweghting of the interfacial
+        # regions in self.loss_BC_custom
         loss_BC =  0 if Master_PINN.bc==0 else  0.01*self.loss_BC_custom(x_lb,x_ub,x_ltb,x_rtb,abs_x_min,abs_x_max,abs_y_min,abs_y_max)        
         if self.flag==0:
             self.f=0.1 
