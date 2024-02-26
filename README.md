@@ -24,4 +24,4 @@ Please review the supplementary material of the paper (animated video or PDF) to
 ## License Information:
  You are free to use, modify, and distribute the code in accordance with the terms of the license of the loaded packages.
 
- ![Alt Text]([URL_of_the_GIF](https://ibb.co/dGVVXNy)https://ibb.co/dGVVXNy)
+![Alt Text]([https://ibb.co/dGVVXNy]  
