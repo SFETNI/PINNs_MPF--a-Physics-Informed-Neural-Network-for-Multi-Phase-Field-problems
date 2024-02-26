@@ -107,7 +107,7 @@ if __name__ == '__main__':     ###################
     dt = (ub[2] - lb[2]) / (Nt - 1)
     
     
-    # phyisical parameters
+    # physical parameters
     sigma= 1
     mu= 1e-4
     eta=6*dx
@@ -122,15 +122,16 @@ if __name__ == '__main__':     ###################
     
     N_batches=4 # base of the pyramid
     min_batch_numbers =4 # upper surface of the pyramid
-    # Training batch 
-    Nbr_f_pts_max_per_batch= 65 
-    Nbr_f_pts_min_per_batch= 55 #100
-    N_ini_max_per_batch=350
-    N_ini_min_per_batch=300
-    fraction_ones_per_int_pts=0.15
-    fraction_zeros_per_int_pts=0.15
-    coef_increase_points_f=2 # or decrease
-    coef_increase_points_ic=2 # or decrease
+
+    # Training batches
+    Nbr_f_pts_max_per_batch= 65  # to delete ==> automatic fill integrated ==> please ignore this param
+    Nbr_f_pts_min_per_batch= 55 # to delete ==> automatic fill integrated ==> please ignore this param
+    N_ini_max_per_batch=350 # to delete ==> automatic fill integrated ==> please ignore this param
+    N_ini_min_per_batch= 25   #to keep, this is the minimum number per batches to use if no interfacial points found 
+    fraction_ones_per_int_pts=0.15 # to delete ==> automatic fill integrated ==> please ignore this param
+    fraction_zeros_per_int_pts=0.15 # to delete ==> automatic fill integrated ==> please ignore this param
+    coef_increase_points_f=2 # or decrease # to delete ==> automatic fill integrated ==> please ignore this param
+    coef_increase_points_ic=2 # or decrease # to delete ==> automatic fill integrated ==> please ignore this param
     
 
     num_train_intervals=Nt
@@ -143,9 +144,9 @@ if __name__ == '__main__':     ###################
     x = np.unique(np.linspace(lb[0], ub[0], Nx))
     y = np.unique(np.linspace(lb[1], ub[1], Ny))
     t = np.unique(np.linspace(lb[2], ub[2], Nt))
-    f_values = [0, 0.33, 0.67, 1]
 
-    # Generate all combinations of x, y, t, and f
+
+    # Generate all combinations of x, y, t 
     X, Y, T= np.meshgrid(np.linspace(lb[0], ub[0], Nx),
                             np.linspace(lb[1], ub[1], Ny),
                             np.linspace(lb[2], ub[2], Nt),
@@ -201,26 +202,17 @@ if __name__ == '__main__':     ###################
         'all_interfaces': all_interfaces}
     np.savez('Initialization_Data.npz', **Initialization_Data)
     """
-
-    
-    # 
+    # load initialization ( please comment to use the initialization you choose)
     loaded_data = np.load('Initialization_Data.npz')
     all_phases = loaded_data['all_phases']
     all_interfaces = loaded_data['all_phases']
     all_flags_matrix=np.zeros_like(all_phases)
     all_phases_indexes=np.zeros_like(all_phases)
     phases_indexes=all_phases_indexes
-
- 
-    #tf.print("phases_indexes shape:", phases_indexes.shape)
-    #tf.print("all_flags_matrix shape:", all_flags_matrix.shape)
-    #tf.print("all_phases shape:", all_phases.shape)
-    #tf.print("all_interfaces shape:", all_interfaces.shape)
    
     # plot the initial micro
     Pre_Post.plot_init(all_phases,all_phases,Nx,Ny,path=pathOutput)
-        
-    tf.print("dt*Nt: ", Nt*dt)
+
     # get the training data
     X_f_train, X_ini_train_all,X_lb_train,X_ub_train,X_rtb_train,X_ltb_train,phi_ini_all =Pre_Post.set_training_data(x,y,N_ini,\
         all_phases, all_interfaces,all_flags_matrix,N_f,tb,lb,ub,path=pathOutput)

@@ -1,9 +1,4 @@
-Requirement already satisfied: pyDOE in /home/selfetni/anaconda3/envs/myenv_ML/lib/python3.11/site-packages (0.3.8)
-Requirement already satisfied: numpy in /home/selfetni/anaconda3/envs/myenv_ML/lib/python3.11/site-packages (from pyDOE) (1.23.5)
-Requirement already satisfied: scipy in /home/selfetni/anaconda3/envs/myenv_ML/lib/python3.11/site-packages (from pyDOE) (1.11.3)
-2023-12-10 09:46:57.512368: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: SSE4.1 SSE4.2 AVX, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2023-12-10 09:47:01.020322: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+
 X_f_train: (30000, 3), X_ini_all: (4225, 3), X_lb_train: (600, 3), X_ub_train: (600, 3), X_ltb_train: (600, 3), X_rtb_train: (600, 3), phi_ini_all: (4225, 1)
 
  ! Initilization of all workers pinns 
@@ -32,9 +27,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  0 !!! 
@@ -207,9 +202,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  86 !!! 
@@ -347,9 +342,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  154 !!! 
@@ -473,9 +468,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  205 !!! 
@@ -627,9 +622,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  273 !!! 
@@ -1027,9 +1022,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  511 !!! 
@@ -1188,9 +1183,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  579 !!! 
@@ -1328,9 +1323,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  630 !!! 
@@ -1468,9 +1463,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  698 !!! 
@@ -1540,9 +1535,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  715 !!! 
@@ -1680,9 +1675,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  766 !!! 
@@ -1820,9 +1815,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  817 !!! 
@@ -1946,9 +1941,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  868 !!! 
@@ -2185,9 +2180,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  970 !!! 
@@ -2285,9 +2280,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1021 !!! 
@@ -2446,9 +2441,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1106 !!! 
@@ -2572,9 +2567,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1157 !!! 
@@ -2658,9 +2653,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1191 !!! 
@@ -2723,9 +2718,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1208 !!! 
@@ -2863,9 +2858,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1259 !!! 
@@ -3003,9 +2998,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1310 !!! 
@@ -3157,9 +3152,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1378 !!! 
@@ -3229,9 +3224,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1395 !!! 
@@ -3301,9 +3296,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1412 !!! 
@@ -3509,9 +3504,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1514 !!! 
@@ -3677,9 +3672,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1582 !!! 
@@ -3742,9 +3737,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1599 !!! 
@@ -3835,9 +3830,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1650 !!! 
@@ -3968,9 +3963,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1701 !!! 
@@ -4047,9 +4042,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1735 !!! 
@@ -4119,9 +4114,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1752 !!! 
@@ -4212,9 +4207,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1803 !!! 
@@ -4338,9 +4333,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1854 !!! 
@@ -4410,9 +4405,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  1871 !!! 
@@ -4678,9 +4673,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2024 !!! 
@@ -4750,9 +4745,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2041 !!! 
@@ -4815,9 +4810,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2058 !!! 
@@ -4941,9 +4936,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2109 !!! 
@@ -5027,9 +5022,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2143 !!! 
@@ -5153,9 +5148,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2194 !!! 
@@ -5225,9 +5220,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2211 !!! 
@@ -5304,9 +5299,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2245 !!! 
@@ -5383,9 +5378,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2279 !!! 
@@ -5523,9 +5518,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2330 !!! 
@@ -5595,9 +5590,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2347 !!! 
@@ -5667,9 +5662,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2364 !!! 
@@ -5807,9 +5802,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2415 !!! 
@@ -5879,9 +5874,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2432 !!! 
@@ -5944,9 +5939,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2449 !!! 
@@ -6070,9 +6065,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2500 !!! 
@@ -6203,9 +6198,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2551 !!! 
@@ -6296,9 +6291,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2602 !!! 
@@ -6375,9 +6370,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2636 !!! 
@@ -6529,9 +6524,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2687 !!! 
@@ -6686,9 +6681,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2772 !!! 
@@ -6812,9 +6807,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2823 !!! 
@@ -6952,9 +6947,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2874 !!! 
@@ -7024,9 +7019,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2891 !!! 
@@ -7150,9 +7145,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2942 !!! 
@@ -7290,9 +7285,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  2993 !!! 
@@ -7416,9 +7411,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3044 !!! 
@@ -7542,9 +7537,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3095 !!! 
@@ -7668,9 +7663,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3146 !!! 
@@ -7747,9 +7742,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3180 !!! 
@@ -7894,9 +7889,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3231 !!! 
@@ -7959,9 +7954,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3248 !!! 
@@ -8045,9 +8040,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3282 !!! 
@@ -8171,9 +8166,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3333 !!! 
@@ -8250,9 +8245,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3367 !!! 
@@ -8376,9 +8371,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3418 !!! 
@@ -8502,9 +8497,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3469 !!! 
@@ -8628,9 +8623,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3520 !!! 
@@ -8761,9 +8756,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3571 !!! 
@@ -8887,9 +8882,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3622 !!! 
@@ -9027,9 +9022,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3673 !!! 
@@ -9153,9 +9148,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3724 !!! 
@@ -9225,9 +9220,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3741 !!! 
@@ -9351,9 +9346,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3792 !!! 
@@ -9444,9 +9439,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3843 !!! 
@@ -9509,9 +9504,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3860 !!! 
@@ -9656,9 +9651,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3911 !!! 
@@ -9796,9 +9791,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3962 !!! 
@@ -9861,9 +9856,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3979 !!! 
@@ -9933,9 +9928,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  3996 !!! 
@@ -10012,9 +10007,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4030 !!! 
@@ -10145,9 +10140,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4081 !!! 
@@ -10271,9 +10266,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4132 !!! 
@@ -10397,9 +10392,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4183 !!! 
@@ -10537,9 +10532,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4234 !!! 
@@ -10609,9 +10604,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4251 !!! 
@@ -10688,9 +10683,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4285 !!! 
@@ -10814,9 +10809,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4336 !!! 
@@ -10886,9 +10881,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4353 !!! 
@@ -11012,9 +11007,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4404 !!! 
@@ -11084,9 +11079,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4421 !!! 
@@ -11210,9 +11205,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4472 !!! 
@@ -11350,9 +11345,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4523 !!! 
@@ -11490,9 +11485,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4574 !!! 
@@ -11616,9 +11611,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4625 !!! 
@@ -11688,9 +11683,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4642 !!! 
@@ -11814,9 +11809,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4693 !!! 
@@ -11940,9 +11935,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4744 !!! 
@@ -12012,9 +12007,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4761 !!! 
@@ -12077,9 +12072,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4778 !!! 
@@ -12203,9 +12198,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4829 !!! 
@@ -12296,9 +12291,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4880 !!! 
@@ -12429,9 +12424,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4931 !!! 
@@ -12555,9 +12550,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4982 !!! 
@@ -12620,9 +12615,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  4999 !!! 
@@ -12706,9 +12701,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5033 !!! 
@@ -12799,9 +12794,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5084 !!! 
@@ -12925,9 +12920,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5135 !!! 
@@ -13004,9 +12999,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5169 !!! 
@@ -13076,9 +13071,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5186 !!! 
@@ -13148,9 +13143,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5203 !!! 
@@ -13274,9 +13269,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5254 !!! 
@@ -13346,9 +13341,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5271 !!! 
@@ -13472,9 +13467,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5322 !!! 
@@ -13537,9 +13532,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5339 !!! 
@@ -13677,9 +13672,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5390 !!! 
@@ -13749,9 +13744,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5407 !!! 
@@ -13875,9 +13870,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5458 !!! 
@@ -13961,9 +13956,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5492 !!! 
@@ -14040,9 +14035,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5526 !!! 
@@ -14133,9 +14128,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5577 !!! 
@@ -14259,9 +14254,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5628 !!! 
@@ -14331,9 +14326,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5645 !!! 
@@ -14410,9 +14405,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5679 !!! 
@@ -14536,9 +14531,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5730 !!! 
@@ -14608,9 +14603,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5747 !!! 
@@ -14694,9 +14689,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5781 !!! 
@@ -14820,9 +14815,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5832 !!! 
@@ -14960,9 +14955,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5883 !!! 
@@ -15025,9 +15020,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5900 !!! 
@@ -15097,9 +15092,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5917 !!! 
@@ -15223,9 +15218,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  5968 !!! 
@@ -15316,9 +15311,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6019 !!! 
@@ -15442,9 +15437,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6070 !!! 
@@ -15514,9 +15509,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6087 !!! 
@@ -15586,9 +15581,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6104 !!! 
@@ -15665,9 +15660,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6138 !!! 
@@ -15737,9 +15732,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6155 !!! 
@@ -15863,9 +15858,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6206 !!! 
@@ -15935,9 +15930,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6223 !!! 
@@ -16000,9 +15995,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6240 !!! 
@@ -16072,9 +16067,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6257 !!! 
@@ -16198,9 +16193,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6308 !!! 
@@ -16291,9 +16286,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6359 !!! 
@@ -16384,9 +16379,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6410 !!! 
@@ -16470,9 +16465,9 @@ dict_quarters_infos: {'Phase_0': {'quarter1': [{'idx_pinn': '0000',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 0.0, 4.642857142857142])}],
              'quarter4': [{'idx_pinn': '0300',
                            'limits': ListWrapper([4.642857142857142, 9.285714285714285, 4.642857142857142, 9.285714285714285])}]}}
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2115: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter_IC = plt.scatter([], [], cmap=plt.get_cmap('jet'))
-/home/selfetni/Desktop/Triple_junction_simulations/dual_phase_V8_one_phase_4NN_no_delta_g_2/PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+path to/.../PINN.py:2163: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
   scatter = plt.scatter([], [], cmap=plt.get_cmap('jet'))
  
  !!! updating Collocation points at epoch  6444 !!! 
