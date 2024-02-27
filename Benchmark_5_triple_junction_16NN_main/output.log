@@ -4,7 +4,7 @@ Requirement already satisfied: scipy in path to/anaconda3/envs/myenv_ML/lib/pyth
 2024-02-22 09:23:28.434501: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 2024-02-22 09:23:34.906455: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
-dt*Nt:  150.60240963855424
+
 X_f_train: (65000, 3), X_ini_all: (16900, 3), X_lb_train: (1000, 3), X_ub_train: (1000, 3), X_ltb_train: (1000, 3), X_rtb_train: (1000, 3), phi_ini_all: (16900, 1)
 
  ! Initilization of all workers pinns 
