@@ -28,6 +28,17 @@ Please review the supplementary material of the paper (animated video or PDF) to
 
  For optimal performance, it is recommended to use a system with specifications similar to the AMD Ryzen Threadripper PRO 5975WX 32-Cores, which should have a minimum of 32GB of RAM.
 
+## Reproducibility with  CodeOcean
+To ensure reproducibility and ease of running this code, we recommend also refering to  OceanCode. Code Ocean provides a controlled environment where you can execute the code with all necessary dependencies pre-configured.
+
+### Why Use CodeOcean?
+- **Reproducibility**: Code Ocean ensures that the code runs consistently, regardless of changes in Python packages or system configurations.
+- **Version Control**: You can access the exact environment used to develop and test this code.
+- **Documentation**: Detailed instructions and explanations are provided within the Code Ocean capsule.
+- 
+## Environment Configuration
+For consistent environment configuration, please refer to our [Code Ocean capsule](https://codeocean.com/capsule/9138079/tree/v1) where you can replicate the exact setup used for this project.
+
 ## License Information
  You are free to use, modify, and distribute the code in accordance with the terms of the license of the loaded packages.
 
