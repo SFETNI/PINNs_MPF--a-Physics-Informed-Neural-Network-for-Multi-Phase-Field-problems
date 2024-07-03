@@ -13,6 +13,22 @@ A set of systematic simulations with increasing complexity was performed, that b
 A comprehensive approach is adopted to specifically accord attention on the MPF problem to the interfacial regions, facilitating an automatic and dynamic meshing process, significantly simplifying the tuning of  hyper-parameters and serving as a fundamental key for addressing MPF problems using Machine Learning.
 The proposed PINNs-MPF framework successfully reproduces benchmark tests with high fidelity and Mean Squared Error (MSE) loss values ranging from 10$^{-4}$ to 10$^{-6}$ compared to ground truth solutions. 
 
+
+
+# link to arxiv 
+https://arxiv.org/pdf/2407.02230v1
+
+# Citation
+@misc{elfetni2024pinnsmpfphysicsinformedneuralnetwork,
+      title={PINNs-MPF: A Physics-Informed Neural Network Framework for Multi-Phase-Field Simulation of Interface Dynamics}, 
+      author={Seifallah Elfetni and Reza Darvishi Kamachali},
+      year={2024},
+      eprint={2407.02230},
+      archivePrefix={arXiv},
+      primaryClass={cond-mat.mtrl-sci},
+      url={https://arxiv.org/abs/2407.02230}, 
+}
+
 ## Technical Remarks
  1. The code requires Python 3.x to run. Ensure that you have the appropriate Python version installed.
  2. The following packages need to be installed:
