@@ -1,7 +1,7 @@
 # PINNs-MPF
 These benchmarks in the current git are related to the article: 
 
-PINNs-MPF: A Physics-Informed Neural Network Framework for Multi-Phase-Field Simulation of Interface Dynamics
+PINNs-MPF: A Physics-Informed Neural Network Framework for Multi-Phase-Field Simulation of Interface Dynamics (under considration by Journal of Computational Physics)
 
 ## Abstract
 We present an application of Physics-Informed Neural Networks (PINNs) to handle multi-phase-field (MPF) simulations of microstructure evolution.
@@ -18,7 +18,7 @@ The proposed PINNs-MPF framework successfully reproduces benchmark tests with hi
 # link to arxiv 
 https://arxiv.org/pdf/2407.02230v1
 
-## Citation (if you find this study helpful)
+## Citation (if you find this study helpful)  will be available, for instance please use:
 @misc{elfetni2024pinnsmpfphysicsinformedneuralnetwork,
       title={PINNs-MPF: A Physics-Informed Neural Network Framework for Multi-Phase-Field Simulation of Interface Dynamics}, 
       author={Seifallah Elfetni and Reza Darvishi Kamachali},
