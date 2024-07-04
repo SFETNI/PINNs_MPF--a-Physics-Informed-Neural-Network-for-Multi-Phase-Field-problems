@@ -18,7 +18,7 @@ The proposed PINNs-MPF framework successfully reproduces benchmark tests with hi
 # link to arxiv 
 https://arxiv.org/pdf/2407.02230v1
 
-# Citation
+# Citation (if you find this study helpful)
 @misc{elfetni2024pinnsmpfphysicsinformedneuralnetwork,
       title={PINNs-MPF: A Physics-Informed Neural Network Framework for Multi-Phase-Field Simulation of Interface Dynamics}, 
       author={Seifallah Elfetni and Reza Darvishi Kamachali},
