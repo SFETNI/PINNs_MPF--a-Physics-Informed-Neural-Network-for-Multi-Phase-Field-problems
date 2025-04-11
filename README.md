@@ -16,7 +16,7 @@ The proposed PINNs-MPF framework successfully reproduces benchmark tests with hi
 
 
 # link to the article 
-[https://arxiv.org/pdf/2407.02230v1](https://www.sciencedirect.com/science/article/pii/S0955799725000888)
+[Link](https://www.sciencedirect.com/science/article/pii/S0955799725000888)
 
 ## Citation (if you find this study helpful):
 @article{ELFETNI2025106200,
