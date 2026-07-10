@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software or its benchmarks, please cite the article below."
+title: "PINNs-MPF: A Physics-Informed Neural Network framework for Multi-Phase-Field simulation of interface dynamics"
+authors:
+  - family-names: Elfetni
+    given-names: Seifallah
+  - family-names: Darvishi Kamachali
+    given-names: Reza
+license: MIT
+preferred-citation:
+  type: article
+  title: "PINNs-MPF: A Physics-Informed Neural Network framework for Multi-Phase-Field simulation of interface dynamics"
+  authors:
+    - family-names: Elfetni
+      given-names: Seifallah
+    - family-names: Darvishi Kamachali
+      given-names: Reza
+  journal: "Engineering Analysis with Boundary Elements"
+  volume: 176
+  start: 106200
+  year: 2025
+  issn: "0955-7997"
+  doi: "10.1016/j.enganabound.2025.106200"
+  url: "https://www.sciencedirect.com/science/article/pii/S0955799725000888"
