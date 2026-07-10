@@ -218,11 +218,4 @@ python benchmarks/b3_driven_force/run.py --outdir <dir>
 
 ---
 
-## Suggested Caption
 
-> **Fig. X.** Driven-force grain shrinkage — PINNs-MPF validation on a `128 × 128` domain
-> (`η = 7` cells, `μ = σ = 1`, driving force `Δg = −0.5`). PINNs-MPF marches the grain radius over 40 time
-> intervals from `R = 38` to `R ≈ 13` cells and tracks the finite-difference phase-field reference with a
-> median radius error of `1.26%` through the validation target (`t ≈ 23`). The predicted shrinkage rate
-> matches the reference to within `4%` and the interface stays sharp and circular; a small accumulated
-> over-shrink near extinction (final gap `1.025` cells) is a disclosed limitation.
