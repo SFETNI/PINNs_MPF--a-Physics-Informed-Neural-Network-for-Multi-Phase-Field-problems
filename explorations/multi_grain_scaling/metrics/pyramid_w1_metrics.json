@@ -1,0 +1,677 @@
+{
+  "experiment": "multi_grain_scaling_k16_n256",
+  "purpose": "scaling study and pyramid-mechanism demonstration; not a validation or utility claim",
+  "physics_only": "FD frames supply window-start ICs and reference scoring only; never part of the training loss",
+  "setup": {
+    "tf_version": "2.16.2",
+    "gpus": [
+      "/physical_device:GPU:0"
+    ],
+    "dtype": "float32",
+    "seed": 1234
+  },
+  "dry_run": false,
+  "arm": "pyramid",
+  "seed": 1234,
+  "config": {
+    "N": 256,
+    "K": 16,
+    "C": 6,
+    "eta": 0.046875,
+    "eta_cells": 12.0,
+    "mu": 0.0001,
+    "sigma": 1.0,
+    "dt_window": 25.0,
+    "n_windows": 4,
+    "horizon": 100.0,
+    "hidden": [
+      64,
+      64,
+      64,
+      64,
+      64,
+      64
+    ],
+    "overlap": 0.1,
+    "core_margin_cells": 3,
+    "w_pde": 1.0,
+    "w_ic": 2.0,
+    "w_dn": 5.0,
+    "w_cont": 1.0,
+    "w_pbc": 1.0,
+    "n_f_total": 6400,
+    "n_f_child": 400,
+    "adam_per_cycle": 300,
+    "lbfgs_iters": 100,
+    "max_cycles_direct": 3,
+    "health_thresholds": {
+      "diffuse_band_max": 0.6,
+      "jfrac_max": 0.6,
+      "phase_sum_max_err": 1e-06
+    }
+  },
+  "fd_meta": {
+    "N": 256,
+    "K": 16,
+    "C": 6,
+    "ic_source": "data/initial_condition.npz",
+    "proper_coloring": true,
+    "n_junctions": 32,
+    "expected_2K": 32,
+    "eta": 0.046875,
+    "eta_cells": 12.0,
+    "mu": 0.0001,
+    "sigma": 1.0,
+    "dt_window": 25.0,
+    "n_windows": 4,
+    "horizon": 100.0,
+    "fd_dt": 0.00762939453125,
+    "fd_total_steps": 13108,
+    "ic_stats": {
+      "diffuse_band_frac": 0.309326171875,
+      "jcount_frac": 0.0126953125,
+      "min_maxphi": 0.45764879214666065,
+      "phase_sum_max_err": 3.3306690738754696e-16,
+      "finite": true
+    },
+    "endpoint_stats": {
+      "diffuse_band_frac": 0.3740234375,
+      "jcount_frac": 0.0185546875,
+      "min_maxphi": 0.3796850406779043,
+      "phase_sum_max_err": 2.220446049250313e-16,
+      "finite": true
+    },
+    "persistence_whole_horizon": {
+      "mse_to_fd": 0.008671879717821454,
+      "argmax_disagree_frac": 0.0712890625
+    }
+  },
+  "fd_cache": "data/fd_reference_marched.npz",
+  "ic_file": "data/initial_condition.npz",
+  "ic_tag": "designed_ic_brickN256_4x4",
+  "pyramid_w1": {
+    "arm": "pyramid_4x4_to_2x2_mechanics_w1",
+    "scope": "window_1_only_mechanism_demo_not_utility_claim",
+    "window1_persistence": {
+      "mse_to_fd": 0.005753560872127017,
+      "argmax_disagree_frac": 0.0537109375
+    },
+    "child_selection": {
+      "criterion": "IC interface-cell density per 4x4 core (maxphi<0.95); richest per 2x2 quadrant; deterministic, not post-hoc",
+      "selected": {
+        "Q00": [
+          0,
+          0
+        ],
+        "Q01": [
+          0,
+          2
+        ],
+        "Q10": [
+          2,
+          0
+        ],
+        "Q11": [
+          2,
+          2
+        ]
+      },
+      "child_info": {
+        "00": {
+          "bi": 0,
+          "bj": 0,
+          "quadrant": [
+            0,
+            0
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "01": {
+          "bi": 0,
+          "bj": 1,
+          "quadrant": [
+            0,
+            0
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "02": {
+          "bi": 0,
+          "bj": 2,
+          "quadrant": [
+            0,
+            1
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "03": {
+          "bi": 0,
+          "bj": 3,
+          "quadrant": [
+            0,
+            1
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "10": {
+          "bi": 1,
+          "bj": 0,
+          "quadrant": [
+            0,
+            0
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "11": {
+          "bi": 1,
+          "bj": 1,
+          "quadrant": [
+            0,
+            0
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "12": {
+          "bi": 1,
+          "bj": 2,
+          "quadrant": [
+            0,
+            1
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "13": {
+          "bi": 1,
+          "bj": 3,
+          "quadrant": [
+            0,
+            1
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "20": {
+          "bi": 2,
+          "bj": 0,
+          "quadrant": [
+            1,
+            0
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "21": {
+          "bi": 2,
+          "bj": 1,
+          "quadrant": [
+            1,
+            0
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "22": {
+          "bi": 2,
+          "bj": 2,
+          "quadrant": [
+            1,
+            1
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "23": {
+          "bi": 2,
+          "bj": 3,
+          "quadrant": [
+            1,
+            1
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "30": {
+          "bi": 3,
+          "bj": 0,
+          "quadrant": [
+            1,
+            0
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "31": {
+          "bi": 3,
+          "bj": 1,
+          "quadrant": [
+            1,
+            0
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "32": {
+          "bi": 3,
+          "bj": 2,
+          "quadrant": [
+            1,
+            1
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        },
+        "33": {
+          "bi": 3,
+          "bj": 3,
+          "quadrant": [
+            1,
+            1
+          ],
+          "iface_cells": 1267,
+          "junction_cells": 52
+        }
+      }
+    },
+    "children": {
+      "Q00": {
+        "tag": "L0_Q00_00",
+        "trajectory": [
+          {
+            "cycle": 0,
+            "cum_cps": 200000,
+            "jcount_frac": 0.009124755859375,
+            "diffuse_band_frac": 0.9639129638671875,
+            "fd_mse_local": 0.022139160883704476,
+            "healthy": false
+          },
+          {
+            "cycle": 1,
+            "cum_cps": 347600,
+            "jcount_frac": 0.010284423828125,
+            "diffuse_band_frac": 0.96258544921875,
+            "fd_mse_local": 0.019907797983316437,
+            "healthy": false
+          }
+        ],
+        "cum_cps": 347600,
+        "gated_cycle": 0,
+        "gated_jfrac": 0.009124755859375,
+        "child_box": [
+          0,
+          0
+        ]
+      },
+      "Q01": {
+        "tag": "L0_Q01_02",
+        "trajectory": [
+          {
+            "cycle": 0,
+            "cum_cps": 200000,
+            "jcount_frac": 0.0093536376953125,
+            "diffuse_band_frac": 0.961456298828125,
+            "fd_mse_local": 0.012656412676548661,
+            "healthy": false
+          },
+          {
+            "cycle": 1,
+            "cum_cps": 400000,
+            "jcount_frac": 0.0054779052734375,
+            "diffuse_band_frac": 0.954132080078125,
+            "fd_mse_local": 0.016141395047542594,
+            "healthy": false
+          }
+        ],
+        "cum_cps": 400000,
+        "gated_cycle": 1,
+        "gated_jfrac": 0.0054779052734375,
+        "child_box": [
+          0,
+          2
+        ]
+      },
+      "Q10": {
+        "tag": "L0_Q10_20",
+        "trajectory": [
+          {
+            "cycle": 0,
+            "cum_cps": 200000,
+            "jcount_frac": 0.0103607177734375,
+            "diffuse_band_frac": 0.96429443359375,
+            "fd_mse_local": 0.021499428765944396,
+            "healthy": false
+          },
+          {
+            "cycle": 1,
+            "cum_cps": 320800,
+            "jcount_frac": 0.0095977783203125,
+            "diffuse_band_frac": 0.96295166015625,
+            "fd_mse_local": 0.021055771966769277,
+            "healthy": false
+          }
+        ],
+        "cum_cps": 320800,
+        "gated_cycle": 1,
+        "gated_jfrac": 0.0095977783203125,
+        "child_box": [
+          2,
+          0
+        ]
+      },
+      "Q11": {
+        "tag": "L0_Q11_22",
+        "trajectory": [
+          {
+            "cycle": 0,
+            "cum_cps": 200000,
+            "jcount_frac": 0.006622314453125,
+            "diffuse_band_frac": 0.959259033203125,
+            "fd_mse_local": 0.01843658366582813,
+            "healthy": false
+          },
+          {
+            "cycle": 1,
+            "cum_cps": 400000,
+            "jcount_frac": 0.00604248046875,
+            "diffuse_band_frac": 0.9561767578125,
+            "fd_mse_local": 0.019454324005335907,
+            "healthy": false
+          }
+        ],
+        "cum_cps": 400000,
+        "gated_cycle": 1,
+        "gated_jfrac": 0.00604248046875,
+        "child_box": [
+          2,
+          2
+        ]
+      }
+    },
+    "l0_cps": 1468400,
+    "weight_copy_max_abs": {
+      "Q00": 0.0,
+      "Q01": 0.0,
+      "Q10": 0.0,
+      "Q11": 0.0
+    },
+    "transfer_bit_exact": true,
+    "parent_finetune": {
+      "raw_init": {
+        "fd_mse": 0.10998508455415851,
+        "fd_argmax": 0.6791534423828125,
+        "seam_lr_max": 0.9363967142999172,
+        "seam_bt_max": 0.9589466337445174,
+        "diffuse_band_frac": 0.8345184326171875,
+        "jcount_frac": 0.3703460693359375,
+        "healthy": false,
+        "pde": 0.010321577079594135
+      },
+      "dense": [
+        {
+          "label": "raw_init",
+          "cum_cps": 0,
+          "fd_mse": 0.10998508455415851,
+          "fd_argmax": 0.6791534423828125,
+          "healthy": false,
+          "diffuse_band_frac": 0.8345184326171875,
+          "jcount_frac": 0.3703460693359375,
+          "min_maxphi": 0.18537500500679016,
+          "phase_sum_max_err": 1.8233549781143665e-07,
+          "seam_lr_max": 0.9363967142999172,
+          "seam_bt_max": 0.9589466337445174,
+          "pde": 0.010321577079594135,
+          "ic": 0.06816752254962921,
+          "dn": 0.11979591846466064,
+          "cont": 0.07977014034986496,
+          "pbc": 0.1040344387292862,
+          "total_loss": 0.9294407963752747
+        },
+        {
+          "label": "c0_adam100",
+          "cum_cps": 640000,
+          "fd_mse": 0.012547037275166177,
+          "fd_argmax": 0.1104278564453125,
+          "healthy": false,
+          "diffuse_band_frac": 0.68695068359375,
+          "jcount_frac": 0.0335235595703125,
+          "min_maxphi": 0.28807270526885986,
+          "phase_sum_max_err": 1.8265563994646072e-07,
+          "seam_lr_max": 0.4125950157898295,
+          "seam_bt_max": 0.1753745824098587,
+          "pde": 0.016651930287480354,
+          "ic": 0.012377833016216755,
+          "dn": 0.005931693594902754,
+          "cont": 0.008874079212546349,
+          "pbc": 0.004148842766880989,
+          "total_loss": 0.08408898860216141
+        },
+        {
+          "label": "c0_adam200",
+          "cum_cps": 1280000,
+          "fd_mse": 0.006901806159624198,
+          "fd_argmax": 0.076171875,
+          "healthy": true,
+          "diffuse_band_frac": 0.506988525390625,
+          "jcount_frac": 0.025146484375,
+          "min_maxphi": 0.2576151490211487,
+          "phase_sum_max_err": 1.9023718778043985e-07,
+          "seam_lr_max": 0.1591080129146576,
+          "seam_bt_max": 0.2810462713241577,
+          "pde": 0.017774507403373718,
+          "ic": 0.0032800985500216484,
+          "dn": 0.00029725191416218877,
+          "cont": 0.0010663800640031695,
+          "pbc": 0.0014866875717416406,
+          "total_loss": 0.02837402932345867
+        },
+        {
+          "label": "c0_adam300",
+          "cum_cps": 1920000,
+          "fd_mse": 0.006451897420573102,
+          "fd_argmax": 0.074981689453125,
+          "healthy": true,
+          "diffuse_band_frac": 0.47894287109375,
+          "jcount_frac": 0.0263214111328125,
+          "min_maxphi": 0.2681266665458679,
+          "phase_sum_max_err": 1.969747245311737e-07,
+          "seam_lr_max": 0.1396823525428772,
+          "seam_bt_max": 0.2258146107196808,
+          "pde": 0.017936501652002335,
+          "ic": 0.0018636604072526097,
+          "dn": 0.0001580870448378846,
+          "cont": 0.0005800069193355739,
+          "pbc": 0.0009084259509108961,
+          "total_loss": 0.02394269034266472
+        },
+        {
+          "label": "c0_lbfgs",
+          "cum_cps": 3200000,
+          "fd_mse": 0.006517443393662523,
+          "fd_argmax": 0.073455810546875,
+          "healthy": true,
+          "diffuse_band_frac": 0.559722900390625,
+          "jcount_frac": 0.0565948486328125,
+          "min_maxphi": 0.24060268700122833,
+          "phase_sum_max_err": 1.8838909454643726e-07,
+          "seam_lr_max": 0.12447211146354675,
+          "seam_bt_max": 0.09077447652816772,
+          "pde": 0.016600901260972023,
+          "ic": 0.0007250287453643978,
+          "dn": 0.0001326875644735992,
+          "cont": 0.0002021219115704298,
+          "pbc": 0.0002184398181270808,
+          "total_loss": 0.01913495734333992,
+          "lbfgs_iters": 200
+        },
+        {
+          "label": "c1_adam100",
+          "cum_cps": 3840000,
+          "fd_mse": 0.006523887420029693,
+          "fd_argmax": 0.0742950439453125,
+          "healthy": true,
+          "diffuse_band_frac": 0.5547637939453125,
+          "jcount_frac": 0.05767822265625,
+          "min_maxphi": 0.24647143483161926,
+          "phase_sum_max_err": 1.880689524114132e-07,
+          "seam_lr_max": 0.12690633535385132,
+          "seam_bt_max": 0.08412620425224304,
+          "pde": 0.01657240279018879,
+          "ic": 0.0006898056017234921,
+          "dn": 0.00012377402163110673,
+          "cont": 0.00018440248095430434,
+          "pbc": 0.00018084021576214582,
+          "total_loss": 0.018936125561594963
+        },
+        {
+          "label": "c1_adam200",
+          "cum_cps": 4480000,
+          "fd_mse": 0.006663663538929058,
+          "fd_argmax": 0.074859619140625,
+          "healthy": true,
+          "diffuse_band_frac": 0.554229736328125,
+          "jcount_frac": 0.0589447021484375,
+          "min_maxphi": 0.23264393210411072,
+          "phase_sum_max_err": 1.85249973583268e-07,
+          "seam_lr_max": 0.12755876779556274,
+          "seam_bt_max": 0.082694411277771,
+          "pde": 0.016481781378388405,
+          "ic": 0.0006795583758503199,
+          "dn": 0.0001244321756530553,
+          "cont": 0.00018093200924340636,
+          "pbc": 0.00017202230810653418,
+          "total_loss": 0.018816012889146805
+        },
+        {
+          "label": "c1_adam300",
+          "cum_cps": 5120000,
+          "fd_mse": 0.006896095068698646,
+          "fd_argmax": 0.0757598876953125,
+          "healthy": true,
+          "diffuse_band_frac": 0.5550994873046875,
+          "jcount_frac": 0.0612640380859375,
+          "min_maxphi": 0.2312738001346588,
+          "phase_sum_max_err": 1.938169589266181e-07,
+          "seam_lr_max": 0.121360182762146,
+          "seam_bt_max": 0.09402966499328613,
+          "pde": 0.01636422611773014,
+          "ic": 0.0006717522628605366,
+          "dn": 0.00012767166481353343,
+          "cont": 0.00017589100752957165,
+          "pbc": 0.00018995223217643797,
+          "total_loss": 0.018711933866143227
+        },
+        {
+          "label": "c1_lbfgs",
+          "cum_cps": 6400000,
+          "fd_mse": 0.010868383744297461,
+          "fd_argmax": 0.093719482421875,
+          "healthy": true,
+          "diffuse_band_frac": 0.535369873046875,
+          "jcount_frac": 0.121002197265625,
+          "min_maxphi": 0.2167976051568985,
+          "phase_sum_max_err": 1.944717951118946e-07,
+          "seam_lr_max": 0.11438140273094177,
+          "seam_bt_max": 0.07240138947963715,
+          "pde": 0.01475148182362318,
+          "ic": 0.0005882337572984397,
+          "dn": 0.00014648733485955745,
+          "cont": 0.00018857776012737304,
+          "pbc": 0.00013330625370144844,
+          "total_loss": 0.016982270404696465,
+          "lbfgs_iters": 200
+        },
+        {
+          "label": "c2_adam100",
+          "cum_cps": 7040000,
+          "fd_mse": 0.010877222477038526,
+          "fd_argmax": 0.0928192138671875,
+          "healthy": true,
+          "diffuse_band_frac": 0.5302581787109375,
+          "jcount_frac": 0.124237060546875,
+          "min_maxphi": 0.21010340750217438,
+          "phase_sum_max_err": 1.948246790561825e-07,
+          "seam_lr_max": 0.11748406291007996,
+          "seam_bt_max": 0.07242091000080109,
+          "pde": 0.014636498875916004,
+          "ic": 0.0005603653844445944,
+          "dn": 0.0001437683531548828,
+          "cont": 0.0001763302570907399,
+          "pbc": 0.00011464415729278699,
+          "total_loss": 0.016767045482993126
+        },
+        {
+          "label": "c2_adam200",
+          "cum_cps": 7680000,
+          "fd_mse": 0.01098640022633783,
+          "fd_argmax": 0.093536376953125,
+          "healthy": true,
+          "diffuse_band_frac": 0.5283355712890625,
+          "jcount_frac": 0.1261444091796875,
+          "min_maxphi": 0.20793810486793518,
+          "phase_sum_max_err": 1.9200524548068643e-07,
+          "seam_lr_max": 0.11580121517181396,
+          "seam_bt_max": 0.07577499747276306,
+          "pde": 0.014525013975799084,
+          "ic": 0.0005543574225157499,
+          "dn": 0.00014440678933169693,
+          "cont": 0.00017841484805103391,
+          "pbc": 0.00011331414862070233,
+          "total_loss": 0.016647491604089737
+        },
+        {
+          "label": "c2_adam300",
+          "cum_cps": 8320000,
+          "fd_mse": 0.011168552500448015,
+          "fd_argmax": 0.09442138671875,
+          "healthy": true,
+          "diffuse_band_frac": 0.526641845703125,
+          "jcount_frac": 0.1314849853515625,
+          "min_maxphi": 0.2081223577260971,
+          "phase_sum_max_err": 1.9195067579858005e-07,
+          "seam_lr_max": 0.11638060212135315,
+          "seam_bt_max": 0.07794623076915741,
+          "pde": 0.014406534843146801,
+          "ic": 0.0005573107628151774,
+          "dn": 0.00014602989540435374,
+          "cont": 0.00018246549007017165,
+          "pbc": 0.00011717127199517563,
+          "total_loss": 0.0165509432554245
+        },
+        {
+          "label": "c2_lbfgs",
+          "cum_cps": 8345600,
+          "fd_mse": 0.011157233385420897,
+          "fd_argmax": 0.0942840576171875,
+          "healthy": true,
+          "diffuse_band_frac": 0.5265350341796875,
+          "jcount_frac": 0.1314239501953125,
+          "min_maxphi": 0.2081691473722458,
+          "phase_sum_max_err": 1.9738035916816443e-07,
+          "seam_lr_max": 0.10769066214561462,
+          "seam_bt_max": 0.0763639509677887,
+          "pde": 0.014402631670236588,
+          "ic": 0.0005506680463440716,
+          "dn": 0.00014603606541641057,
+          "cont": 0.00018219315097667277,
+          "pbc": 0.00010732705413829535,
+          "total_loss": 0.01652366854250431,
+          "lbfgs_iters": 4
+        }
+      ],
+      "best_fd": 0.006451897420573102,
+      "best_fd_label": "c0_adam300",
+      "best_fd_cps": 1920000,
+      "cum_cps": 8345600,
+      "wall_s": 2307.1
+    },
+    "parent_total_cps_incl_l0": 9814000,
+    "total_wall_s": 3132.2
+  },
+  "total_wall_s": 3132.6
+}

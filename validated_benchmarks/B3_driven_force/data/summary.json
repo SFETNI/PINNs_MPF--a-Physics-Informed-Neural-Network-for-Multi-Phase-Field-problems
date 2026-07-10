@@ -1,0 +1,51 @@
+{
+  "benchmark": "driven-force grain shrinkage",
+  "reference": "finite-difference phase-field solver (dx = 1 cell)",
+  "domain": "128 x 128",
+  "parameters": {
+    "mu": 1.0,
+    "sigma": 1.0,
+    "delta_g": -0.5,
+    "eta_cells": 7.0,
+    "initial_radius_cells": 38.0
+  },
+  "sharp_interface_law": "dR/dt = -mu (sigma/R + |delta_g|)",
+  "marching": {
+    "intervals": 40,
+    "dt": 1.15,
+    "time_span": [
+      0.0,
+      46.0
+    ]
+  },
+  "validation_target": {
+    "interval": 20,
+    "time": 23.0,
+    "radius_cells": 25.596,
+    "reference_radius_cells": 26.178,
+    "over_shrink_cells": 0.582,
+    "relative_error_pct": 2.22
+  },
+  "validated_region_relative_error_pct": {
+    "median": 1.26,
+    "mean": 1.26,
+    "max": 2.22
+  },
+  "full_trajectory_end": {
+    "interval": 40,
+    "time": 46.0,
+    "radius_cells": 12.868,
+    "reference_radius_cells": 13.893,
+    "over_shrink_cells": 1.025
+  },
+  "mean_shrinkage_rate_cells_per_time": {
+    "pinns_mpf": -0.547,
+    "reference": -0.525
+  },
+  "field_quality": {
+    "min_max_phi": 0.9997,
+    "seam_max_jump": 4.976091382695203e-06,
+    "reference_radius_alignment": "exact to machine precision (7e-15)"
+  },
+  "status": "validated through the interval-20 target; stable and rate-correct to near extinction; a small accumulated over-shrink appears near extinction (final 1.025 cells) and is reported as a known limitation"
+}

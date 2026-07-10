@@ -1,0 +1,38 @@
+{
+  "validated_region_intervals": [
+    1,
+    20
+  ],
+  "gap_cells": {
+    "pinns_mpf_vs_theory": {
+      "mean": 0.16571636980376728,
+      "median": 0.1786639549491138,
+      "max": 0.1916003491674232
+    },
+    "finite_difference_vs_theory": {
+      "mean": 0.21690933518303765,
+      "median": 0.21499859149697897,
+      "max": 0.4076838089134789
+    },
+    "pinns_mpf_vs_finite_difference": {
+      "mean": 0.3826257049868049,
+      "median": 0.4010480445109774,
+      "max": 0.581689358504331
+    }
+  },
+  "relative_pct": {
+    "pinns_mpf_vs_theory": {
+      "median": 0.5885140946078625,
+      "max": 0.6752202585942785
+    },
+    "finite_difference_vs_theory": {
+      "median": 0.6804335950544211,
+      "max": 1.5819976289637347
+    },
+    "pinns_mpf_vs_finite_difference": {
+      "median": 1.2603564061951924,
+      "max": 2.222064873938274
+    }
+  },
+  "note": "The PINNs-MPF loss uses no theory label; closeness to the analytic sharp-interface law is not a fit artifact. The finite-difference reference carries its own O(dx^2), dx=1 discretization error. Both references are kept, with distinct roles; this is not a claim that PINNs-MPF is more accurate than the finite-difference solver."
+}

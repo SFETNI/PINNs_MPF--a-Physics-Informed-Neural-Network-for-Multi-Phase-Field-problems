@@ -1,0 +1,132 @@
+{
+  "benchmark": "b2_grain_shrinkage",
+  "scheme": "decomposition(2x2)+time-march+projected-RHS+denoising",
+  "option": "B3_DIAG",
+  "quick": false,
+  "units": "grid",
+  "dx": 1.0,
+  "mu": 1.0,
+  "sigma": 1.0,
+  "delta_g": -250.0,
+  "eta": 7.0,
+  "eta_cells": 7.0,
+  "R0": 25.6,
+  "projected_rhs": true,
+  "pde_eps": 0.001,
+  "pde_bulk_frac": 0.0,
+  "periodic_embed": false,
+  "t_ext_sharp": 327.68000000000006,
+  "boxes": 4,
+  "K_intervals": 1,
+  "dt": 0.002,
+  "weights": {
+    "pde": 1.0,
+    "ic": 1.0,
+    "dn": 6.0,
+    "cont": 5.0
+  },
+  "denoise_margin_eta": 0.0,
+  "denoise_margin_cells": 0.0,
+  "denoise_margin_start_radius": null,
+  "denoise_margin_cells_per_interval": [
+    0.0
+  ],
+  "hidden": [
+    64,
+    64,
+    64,
+    64,
+    64,
+    64
+  ],
+  "gradnorm": false,
+  "n_dn": 400,
+  "lbfgs_pairs": 50,
+  "loss_terms_per_interval": [
+    {
+      "interval": 1,
+      "total": 0.7273373627443678,
+      "pde": 0.03173349649850161,
+      "ic": 0.11512391613689538,
+      "dn": 0.07672455208880802,
+      "cont": 0.024026527515224536,
+      "slope": 0.0,
+      "trend": 0.0,
+      "w_pde": 1.0,
+      "w_ic": 1.0,
+      "w_dn": 6.0,
+      "w_cont": 5.0,
+      "w_slope": 0.0,
+      "w_trend": 0.0
+    }
+  ],
+  "diag_per_interval": [
+    {
+      "interval": 1,
+      "t": 0.002,
+      "pinn": {
+        "R_cells": 24.136020859076723,
+        "mass": 1830.1269555084646,
+        "max_phi": 0.9447844126131538,
+        "free_energy": 81.71846059049072,
+        "interface": true,
+        "proj_frac_total": 0.0,
+        "proj_frac_interface": 0.0,
+        "proj_frac_bulk_low": 0.0,
+        "proj_frac_bulk_high": 0.0
+      },
+      "ref": {
+        "R_cells": 25.15058434031776,
+        "mass": 1987.2203789932064,
+        "max_phi": 1.0,
+        "free_energy": 27.107001105865695,
+        "interface": true
+      }
+    }
+  ],
+  "extinction": {
+    "extinction_t_pinn": null,
+    "clearance_t_pinn": null,
+    "R2_slope_pinn": null,
+    "extinction_t_ref": null,
+    "clearance_t_ref": null,
+    "R2_slope_ref": null
+  },
+  "annular_mse_final": 0.054966982590167815,
+  "seam": {
+    "seam_max_jump": 0.0910693551511903,
+    "baseline_max_jump": 0.0910693551511903
+  },
+  "done": true,
+  "intervals_completed": 1,
+  "mse_per_interval": [
+    0.08634429854282842
+  ],
+  "mse_vs_reference_mean": 0.08634429854282842,
+  "R_pinn": [
+    25.645271417273392,
+    24.136020859076723
+  ],
+  "R_ref": [
+    25.645271417273392,
+    25.15058434031776
+  ],
+  "R_pinn_cells": [
+    25.645271417273392,
+    24.136020859076723
+  ],
+  "R_ref_cells": [
+    25.645271417273392,
+    25.15058434031776
+  ],
+  "t_boundaries": [
+    0.0,
+    0.002
+  ],
+  "radius_mae": 0.5072817406205186,
+  "final_radius_rel_err": 0.04033955901432622,
+  "tf": "2.16.2",
+  "gpus": [
+    "/physical_device:GPU:0"
+  ]
+}

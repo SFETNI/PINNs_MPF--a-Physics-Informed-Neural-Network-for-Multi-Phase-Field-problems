@@ -1,0 +1,153 @@
+{
+  "description": "PINNs-MPF triple-junction 90-degree to near-120-degree relaxation, N=128",
+  "grid": "128x128",
+  "n_windows": 8,
+  "dt_window": 25.0,
+  "t_span": "0 to 200",
+  "tau_c": 87.890625,
+  "t_span_tau_c": "0 to 2.276 tau_c",
+  "model": {
+    "hidden": [
+      64,
+      64,
+      64,
+      64,
+      64,
+      64
+    ],
+    "n_workers": 4,
+    "n_params": 85776
+  },
+  "training": {
+    "adam_steps": 800,
+    "lbfgs_iters": 0,
+    "n_f": 4800,
+    "loss_schedule": "full_from_start"
+  },
+  "reference": "reference/b5_ref_90_to_120_128.npz",
+  "windows": [
+    {
+      "window": 1,
+      "t_start": 0.0,
+      "t_end": 25.0,
+      "mse_vs_fd": 0.002800382856870982,
+      "argmax_disagree": 0.02532958984375,
+      "max_sum_err": 3.3306690738754696e-16,
+      "seam_bt_max": 0.00740143947421037,
+      "seam_lr_max": 0.027189137551441478,
+      "n_junctions": 6,
+      "rms_dev_120": 22.17,
+      "wall_s": 573.2,
+      "required_criteria_satisfied": false
+    },
+    {
+      "window": 2,
+      "t_start": 25.0,
+      "t_end": 50.0,
+      "mse_vs_fd": 0.0006683720099349357,
+      "argmax_disagree": 0.01678466796875,
+      "max_sum_err": 3.3306690738754696e-16,
+      "seam_bt_max": 0.014261664972737093,
+      "seam_lr_max": 0.038587847269570985,
+      "n_junctions": 6,
+      "rms_dev_120": 8.68,
+      "wall_s": 550.8,
+      "required_criteria_satisfied": true
+    },
+    {
+      "window": 3,
+      "t_start": 50.0,
+      "t_end": 75.0,
+      "mse_vs_fd": 0.0005812774805800216,
+      "argmax_disagree": 0.0155029296875,
+      "max_sum_err": 3.3306690738754696e-16,
+      "seam_bt_max": 0.021424450272445796,
+      "seam_lr_max": 0.029321770714980766,
+      "n_junctions": 6,
+      "rms_dev_120": 6.85,
+      "wall_s": 550.3,
+      "required_criteria_satisfied": true
+    },
+    {
+      "window": 4,
+      "t_start": 75.0,
+      "t_end": 100.0,
+      "mse_vs_fd": 0.00048220916380938505,
+      "argmax_disagree": 0.0133056640625,
+      "max_sum_err": 3.3306690738754696e-16,
+      "seam_bt_max": 0.016577404208727074,
+      "seam_lr_max": 0.012310230203970152,
+      "n_junctions": 6,
+      "rms_dev_120": 4.87,
+      "wall_s": 546.6,
+      "required_criteria_satisfied": true
+    },
+    {
+      "window": 5,
+      "t_start": 100.0,
+      "t_end": 125.0,
+      "mse_vs_fd": 0.0004981277505193552,
+      "argmax_disagree": 0.01348876953125,
+      "max_sum_err": 3.3306690738754696e-16,
+      "seam_bt_max": 0.013386560351523524,
+      "seam_lr_max": 0.00335343762761664,
+      "n_junctions": 6,
+      "rms_dev_120": 5.69,
+      "wall_s": 546.7,
+      "required_criteria_satisfied": true
+    },
+    {
+      "window": 6,
+      "t_start": 125.0,
+      "t_end": 150.0,
+      "mse_vs_fd": 0.00032731773583580866,
+      "argmax_disagree": 0.01275634765625,
+      "max_sum_err": 4.440892098500626e-16,
+      "seam_bt_max": 0.014080936530325938,
+      "seam_lr_max": 0.006686355821266976,
+      "n_junctions": 6,
+      "rms_dev_120": 6.34,
+      "wall_s": 546.9,
+      "required_criteria_satisfied": true
+    },
+    {
+      "window": 7,
+      "t_start": 150.0,
+      "t_end": 175.0,
+      "mse_vs_fd": 0.00028232270697899997,
+      "argmax_disagree": 0.01171875,
+      "max_sum_err": 4.440892098500626e-16,
+      "seam_bt_max": 0.01962367860185177,
+      "seam_lr_max": 0.0068857840029920014,
+      "n_junctions": 6,
+      "rms_dev_120": 6.06,
+      "wall_s": 547.7,
+      "required_criteria_satisfied": true
+    },
+    {
+      "window": 8,
+      "t_start": 175.0,
+      "t_end": 200.0,
+      "mse_vs_fd": 0.00037000799443651414,
+      "argmax_disagree": 0.01361083984375,
+      "max_sum_err": 3.3306690738754696e-16,
+      "seam_bt_max": 0.018087722233068537,
+      "seam_lr_max": 0.017871523743038464,
+      "n_junctions": 6,
+      "rms_dev_120": 7.57,
+      "wall_s": 547.1,
+      "required_criteria_satisfied": true
+    }
+  ],
+  "final_window": {
+    "mse_vs_fd": 0.00037000799443651414,
+    "argmax_disagree": 0.01361083984375,
+    "rms_dev_120": 7.57,
+    "preferred_mse_pass": true,
+    "preferred_argmax_pass": true,
+    "preferred_angle_gap_pass": true
+  },
+  "w1_caveat": "W1 exceeds the preferred MSE target (2.80e-3 > 1.5e-3) and argmax target (2.53% > 2.0%) during the rapid initial transient. W2-W8 satisfy the field, topology, seam, and angle-tracking targets.",
+  "benchmark": "B5 triple junction",
+  "initial_condition": "periodic-safe four-phase six-junction geometry"
+}

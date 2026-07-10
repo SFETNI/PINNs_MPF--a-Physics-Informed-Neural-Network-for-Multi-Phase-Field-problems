@@ -1,0 +1,27 @@
+ImageIO==2.37.3
+h5py==3.16.0
+keras==3.14.1
+matplotlib==3.11.0
+numpy==1.26.4
+nvidia-cublas-cu12==12.3.4.1 ; platform_system == "Linux"
+nvidia-cuda-cupti-cu12==12.3.101 ; platform_system == "Linux"
+nvidia-cuda-nvcc-cu12==12.3.107 ; platform_system == "Linux"
+nvidia-cuda-nvrtc-cu12==12.3.107 ; platform_system == "Linux"
+nvidia-cuda-runtime-cu12==12.3.101 ; platform_system == "Linux"
+nvidia-cudnn-cu12==8.9.7.29 ; platform_system == "Linux"
+nvidia-cufft-cu12==11.0.12.1 ; platform_system == "Linux"
+nvidia-curand-cu12==10.3.4.107 ; platform_system == "Linux"
+nvidia-cusolver-cu12==11.5.4.101 ; platform_system == "Linux"
+nvidia-cusparse-cu12==12.2.0.103 ; platform_system == "Linux"
+nvidia-nccl-cu12==2.19.3 ; platform_system == "Linux"
+nvidia-nvjitlink-cu12==12.3.101 ; platform_system == "Linux"
+psutil==7.2.2
+pyDOE==0.9.3
+pytest==9.1.1
+scipy==1.17.1
+seaborn==0.13.2
+tensorflow-io-gcs-filesystem==0.31.0 ; platform_system == "Windows"
+tensorflow-io-gcs-filesystem==0.37.1 ; platform_system != "Windows"
+tensorflow-probability==0.24.0
+tensorflow==2.16.2
+tf-keras==2.16.0
