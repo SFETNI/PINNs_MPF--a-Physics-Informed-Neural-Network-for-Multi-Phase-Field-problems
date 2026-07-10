@@ -135,6 +135,4 @@ The accepted trajectory is reconstructed from the data files in `data/`. The lat
 
 ---
 
-## Suggested Caption (for paper)
 
-> **Fig. X.** Curvature-driven grain shrinkage (B4) - PINNs-MPF validation on a 64×64 domain (η=7 cells, μ=σ=1). The grain radius predicted by PINNs-MPF follows the finite-difference phase-field reference over three accepted intervals: early shrinkage, middle shrinkage with centered decomposition, and late small-radius extension after one FD handoff at t≈248. The combined trajectory covers R=25→8.49 cells, with mean relative errors of 0.40%, 0.67%, and 1.29% in the three intervals.
