@@ -29,7 +29,7 @@ Each time window is solved with a **softmax MultiNN** workflow in five stages: *
 
 *Implemented workflow, illustrated on the **B5 triple-junction benchmark** — a 90° → 120° relaxation (4 phases, 2×2 decomposition, 8 time windows). The microstructure panels are the benchmark's own finite-difference reference, PINNs-MPF prediction, and absolute-difference fields; the metrics shown are the run's actual values. For this validated B5 run, each window starts from the corresponding finite-difference reference frame; reference endpoints are used for evaluation, not as in-window training labels.*
 
-## Why the Method Decomposes: the Single-Network Limit (B2)
+## Why the Method Decomposes: the Single-Network Limit (B2) ?
 
 The space–time decomposition is not incidental — it is what makes these problems
 solvable. Under a bulk driving force, a single global network cannot hold a sharp
