@@ -277,7 +277,7 @@ scaling study** ([Explorations](#explorations-not-validated-benchmarks)) rather 
 benchmark: it maps the framework's behaviour on a much larger 16-grain / 6-phase microstructure and
 demonstrates the pyramidal-initialization mechanism, without making a validation claim.
 
-## Next releas
+## Next release
 PINN-Phase_V2 
 
 ## License
