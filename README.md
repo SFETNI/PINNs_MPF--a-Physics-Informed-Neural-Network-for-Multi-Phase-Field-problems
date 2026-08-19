@@ -158,7 +158,7 @@ The phase-sum constraint is enforced by a softmax output layer. The phase-field 
 
 For the complete governing physics, the per-term loss formulation, and the specific numerical considerations of each benchmark, see the **[Technical Report](TECHNICAL_REPORT.md)**.
 
-## Explorations (not validated benchmarks)
+## Explorations benchmarks
 
 Beyond the validated set (B1–B5), the [`explorations/`](explorations/) directory holds
 **exploratory framework studies**. These map the edge of the current framework and the options for
