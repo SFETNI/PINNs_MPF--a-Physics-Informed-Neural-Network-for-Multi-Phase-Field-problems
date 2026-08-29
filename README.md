@@ -277,8 +277,12 @@ scaling study** ([Explorations](#explorations-not-validated-benchmarks)) rather 
 benchmark: it maps the framework's behaviour on a much larger 16-grain / 6-phase microstructure and
 demonstrates the pyramidal-initialization mechanism, without making a validation claim.
 
-## Next release
+## Successor Model
 PINN-Phase_V2 
+
+PINN-Phase: Physics-informed neural time integrators for curvature-driven phase-field evolution.
+The model  advances an initial phase field one admissible neural step at a time, capturing growth, shrinkage, extinction, and topology change in two- and three-dimensional designed benchmarks.
+**[PINN-Phaseepository](https://github.com/SFETNI/PINN-Phase.git)**
 
 ## License
 
