@@ -266,11 +266,6 @@ python benchmarks/b3_driven_force/run.py --outdir outputs/b3_driven_force
 
 GPU runs should be launched only after review of the intended configuration, reference data, expected wall time, and output location.
 
-## Next Scientific Step
-
-The single- and multi-phase benchmark set B1–B5 is covered: B1 fixes the analytic baseline,
-B2 motivates the decomposition, and B3/B4/B5 validate the multi-network, time-marched results
-against analytic or finite-difference phase-field references.
 
 The pyramidal-training study (**B6**) from the original article is included as an **exploratory
 scaling study** ([Explorations](#explorations-not-validated-benchmarks)) rather than a validated
